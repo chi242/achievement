@@ -16,15 +16,15 @@
         </div>
         <div>
             Measureable
-            <textarea type="comment"　name="post[measureable]" placeholder="数字的な目標を書いてください。"></textarea>            
+            <textarea type="comment"　name="t_goal[measureable]" placeholder="数字的な目標を書いてください。"></textarea>            
         </div>
         <div>
             Actionable
-            <textarea type="comment" name="post[actionable]"placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
+            <textarea type="comment" name="t_goal[actionable]"placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
         </div>
         <div>
             Competent
-            <textarea type="comment" name="post[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
+            <textarea type="comment" name="t_goal[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
         </div>
             <div><input type ="submit" value="更新"/></div>
             
