@@ -8,14 +8,14 @@
     </head>
     <body>
         <form action="" method="POST">
-        <h2>{{$post->created_at->format('Y年m月d日') }}</h2>
+        <h2>{{$t_diary->created_at->format('Y年m月d日') }}</h2>
         <div class="ToDo">
             To do
-            <textarea type="comment" name="post[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
+            <textarea type="comment" name="t_diaries[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
         </div>
         <div class="Review">
             振り返り
-            <textarea type="comment" name="post[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
+            <textarea type="comment" name="t_diaries[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
         </div>
         <div><button type="submit" value="保存">保存</button></div>
         </form>

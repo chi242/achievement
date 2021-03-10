@@ -11,19 +11,19 @@
             @csrf
         <div>
             MainGoal
-            <input type="text" name="post[maingoal]" placeholder="メインの目標を書いてください。"/>
+            <input type="text" name="t_goal[maingoal]" placeholder="メインの目標を書いてください。"/>
         </div>
         <div>
             Measureable
-            <textatra type="comment"　name="post[measureable]" placeholder="数字的な目標を書いてください。"></textatra>        
+            <textatra type="comment"　name="t_goal[measureable]" placeholder="数字的な目標を書いてください。"></textatra>        
         </div>
         <div>
             Actionable
-            <textarea type="comment" name="post[actionable]" placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
+            <textarea type="comment" name="t_goal[actionable]" placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
         </div>
         <div>
             Competent
-            <textarea type="comment" name="post[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
+            <textarea type="comment" name="t_goal[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
         </div>
             <div><input type ="submit" value="登録"/></div>
             <div><button type=“button” onclick="location.href='/posts/{post}/cre-edit'">編集</button></div>

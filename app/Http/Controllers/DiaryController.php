@@ -9,18 +9,9 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
-    public function index(Post $post)
-    {
-        return view('index');
-    }
-    public function details(Post $post)
-    {
-        return view('details');
-    }
-    
-    public function create(Post $post)
-    {
-        return view('create');
+    public function show(Post $post)
+     {
+        return view('show');
     }
     
     public function store(Request $request, Post $post)
@@ -30,9 +21,9 @@ class PostController extends Controller
         return redirect('/posts/details' . $post->id);
     }
     
-    public function creedit(Post $post)
+    public function edit(Post $post)
     {
-        return view('creedit');
+        return view('edit');
     }
     
     public function update(Request $request, Post $post)
@@ -41,15 +32,4 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/details' . $post->id);
     }
-      
-    
-   
-    
 }
-
-
- 
-
-
-
- 

@@ -18,20 +18,21 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 
 Route::get('/posts/create','App\Http\Controllers\PostController@create');
 
-Route::get('/posts/show','App\Http\Controllers\PostController@show');
-
-Route::post('/posts/show','App\Http\Controllers\PostController@store');
+Route::get('/posts/show','App\Http\Controllers\DiaryController@show');
 
 Route::get('/posts/details', 'App\Http\Controllers\PostController@details');
 
 Route::post('/posts/details', 'App\Http\Controllers\PostController@store');
 
-Route::get('/posts/{post}/creedit', 'App\Http\Controllers\PostController@creedit');
+Route::get('/posts/{post}/edit', 'App\Http\Controllers\PostController@edit');
 
-Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
+Route::put('/posts/{post}/edit', 'App\Http\Controllers\PostController@update');
 
-Route::get('/posts/{post}/showedit', 'App\Http\Controllers\PostController@showedit');
+Route::post('/posts/show', 'App\Http\Controllers\DiaryController@store');
 
+Route::get('/posts/{post}/edit', 'App\Http\Controllers\DiaryController@edit');
+
+Route::put('/posts/{post}/edit', 'App\Http\Controllers\DiaryController@update');
 
 
 
