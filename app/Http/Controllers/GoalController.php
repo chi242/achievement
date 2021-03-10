@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Goal;
+use App\Models\Diary;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
 
 class GoalController extends Controller
 {
-    public function index(Goal $goal)
+    public function index(Goal $goal , Diary $diary)
     {
         return view('index');
     }
+    
     public function details(Goal $goal)
     {
         return view('details');
@@ -41,10 +44,6 @@ class GoalController extends Controller
         $goal->fill($input)->save();
         return redirect('/goals/details' . $goal->id);
     }
-      
-    
-   
-    
 }
 
 

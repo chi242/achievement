@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Diary;
 
 
 class PostController extends Controller

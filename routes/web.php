@@ -14,25 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'App\Http\Controllers\PostController@index');
+Route::get('/', 'App\Http\Controllers\GoalController@index');
 
-Route::get('/posts/create','App\Http\Controllers\PostController@create');
+Route::get('/posts/create','App\Http\Controllers\GoalController@create');
 
-Route::get('/posts/show','App\Http\Controllers\DiaryController@show');
+Route::get('/diaries/show','App\Http\Controllers\DiaryController@show');
 
-Route::get('/posts/details', 'App\Http\Controllers\PostController@details');
+Route::get('/goals/details', 'App\Http\Controllers\GoalController@details');
 
-Route::post('/posts/details', 'App\Http\Controllers\PostController@store');
+Route::post('/goals/details', 'App\Http\Controllers\GoalController@store');
 
-Route::get('/posts/{post}/edit', 'App\Http\Controllers\PostController@edit');
+Route::get('/goals/{post}/edit', 'App\Http\Controllers\GoalController@edit');
 
-Route::put('/posts/{post}/edit', 'App\Http\Controllers\PostController@update');
+Route::put('/goals/{post}/edit', 'App\Http\Controllers\GoalController@update');
 
-Route::post('/posts/show', 'App\Http\Controllers\DiaryController@store');
+Route::post('/diaries/show', 'App\Http\Controllers\DiaryController@store');
 
-Route::get('/posts/{post}/edit', 'App\Http\Controllers\DiaryController@edit');
+Route::get('/diaries/{post}/edit', 'App\Http\Controllers\DiaryController@edit');
 
-Route::put('/posts/{post}/edit', 'App\Http\Controllers\DiaryController@update');
+Route::put('/diaries/{post}/edit', 'App\Http\Controllers\DiaryController@update');
 
 
 

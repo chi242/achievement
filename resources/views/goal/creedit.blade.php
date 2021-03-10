@@ -7,24 +7,24 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form action="/posts/{post}" method="POST">
+        <form action="/goals/{post}" method="POST">
             @csrf
             @method="PUT"
         <div>
             MainGoal
-            <input type="text" name="post[maingoal]" placeholder="メインの目標を書いてください。"/>
+            <input type="text" name="goal[maingoal]" placeholder="メインの目標を書いてください。"/>
         </div>
         <div>
             Measureable
-            <textarea type="comment"　name="t_goal[measureable]" placeholder="数字的な目標を書いてください。"></textarea>            
+            <textarea type="comment"　name="goal[measureable]" placeholder="数字的な目標を書いてください。"></textarea>            
         </div>
         <div>
             Actionable
-            <textarea type="comment" name="t_goal[actionable]"placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
+            <textarea type="comment" name="goal[actionable]"placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
         </div>
         <div>
             Competent
-            <textarea type="comment" name="t_goal[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
+            <textarea type="comment" name="goal[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
         </div>
             <div><input type ="submit" value="更新"/></div>
             

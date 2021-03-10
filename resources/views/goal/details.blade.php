@@ -11,6 +11,9 @@
             <p class="navhome"><a href="/">ホーム</a></p>
             <p class="navgoal">細かいゴール</p>
         </nav>
-
+        <div> {{$goal->maingoal}}</div>
+        <div>{{$goal->measurable}}</div>
+        <div>{{$goal->actionable}}</div>
+        <div>{{$goal->competent}}</div
     </body>
 </html>
