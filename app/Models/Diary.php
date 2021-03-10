@@ -9,5 +9,5 @@ class T_Diary extends Model
 {
     use HasFactory;
     
-    protected $table = 't_diaries';
+    protected $table = 'diaries';
 }
