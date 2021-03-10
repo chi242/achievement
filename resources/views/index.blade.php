@@ -9,10 +9,11 @@
     <body>
         <nav class="nav">
             <p class="navhome">ホーム</p>
-            <p class="navgoal"><a href="posts/details">細かいゴール</p>
+            <p class="navgoal"><a href="goals/details">細かいゴール</p>
         </nav>
-        
-        <div class="calendar"><a href="posts/show">カレンダー</a>
+        <div> {{$goal->maingoal}}</div>
+        <div>{{$diary->todo}}</div>
+        <div class="calendar"><a href="diaries/show">カレンダー</a>
         <style>
                 .calendar{
                     width:200px; height:100px;
@@ -22,7 +23,7 @@
             </style>
         </div>
         
-        <div><a href="/posts/create">目標設定</a></div>
+        <div><a href="/goals/create">目標設定</a></div>
 
 
 
