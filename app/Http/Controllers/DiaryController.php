@@ -9,27 +9,27 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
-    public function show(Post $post)
+    public function show(Diary $diary)
      {
         return view('show');
     }
     
-    public function store(Request $request, Post $post)
+    public function store(Request $request,Diary $diary)
     {
-        $input = $request['post'];
-        $post->fill($input)->save();
-        return redirect('/posts/details' . $post->id);
+        $input = $request['diary'];
+        $diary->fill($diary)->save();
+        return redirect('/diaries/details' . $diary->id);
     }
     
-    public function edit(Post $post)
+    public function edit(Diary $diary)
     {
         return view('edit');
     }
     
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Diary $diary)
     {
-        $input_post= $request['post'];
-        $post->fill($input)->save();
-        return redirect('/posts/details' . $post->id);
+        $input_post= $request['diary'];
+        $diary->fill($input)->save();
+        return redirect('/diaries/details' . $diary->id);
     }
 }
