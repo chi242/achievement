@@ -8,7 +8,7 @@
     </head>
     <body>
         <form action="/posts/details" method="POST">
-            <h2>{{$diary->created_at->format('Y年m月d日') }}</h2>
+            <h2>{{$diary->created_at}}</h2>
             <div class="ToDo">
             To do
                 <textarea   type="comment" name="diaries[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
@@ -17,9 +17,9 @@
             振り返り
                 <textarea type="comment" name="diaries[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
             </div>
-            <button type="submit" value="更新"></button>
+            <button type="submit" value="更新">更新</button>
         </form>
-        <div>[<a href='/'>Back</a>]</div>
+        <div>[<a href='/diaries/show'>Back</a>]</div>
     </body>
             
 </html>

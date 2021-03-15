@@ -11,10 +11,9 @@
             <p class="navhome">ホーム</p>
             <p class="navgoal"><a href="goals/details">細かいゴール</p>
         </nav>
-        <div> {{$goal->maingoal}}</div>
-        <div>{{$diary->todo}}</div>
+
         <div class="calendar"><a href="diaries/show">カレンダー</a>
-        <style>
+            <style>
                 .calendar{
                     width:200px; height:100px;
                     margin:5px; padding:10px; border:1px solid black;
@@ -22,6 +21,8 @@
                  }                    
             </style>
         </div>
+        <div> {{$goal->maingoal}}</div>
+        <div>{{$diary->todo}}</div>
         
         <div><a href="/goals/create">目標設定</a></div>
 

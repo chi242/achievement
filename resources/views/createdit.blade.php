@@ -7,8 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form action="/posts/details" method="POST">
-        <h2>{{$diary->created_at}}</h2>
+        <form action="" method="POST">
+        <h2>{{$diary->created_at->format('Y年m月d日') }}</h2>
         <div class="ToDo">
             To do
             <textarea type="comment" name="diaries[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
@@ -19,7 +19,7 @@
         </div>
         <div><button type="submit" value="保存">保存</button></div>
         </form>
-        <div><button type=“button” onclick="location.href='/diaries/edit'">編集</button></div>
+        <div><button type=“button” onclick="location.href='/diaries/{post}/show/edit2'">編集</button></div>
         <div>[<a href='/'>Back</a>]</div>
     </body>
             
