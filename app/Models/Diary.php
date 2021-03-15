@@ -10,4 +10,10 @@ class Diary extends Model
     use HasFactory;
     
     protected $table = 'diaries';
+    
+    protected $fillable = [
+    'todo',
+    'review',
+    ];
+
 }

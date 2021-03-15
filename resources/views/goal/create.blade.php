@@ -26,7 +26,7 @@
             <textarea type="comment" name="goal[competent]" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。"></textarea>
         </div>
             <div><input type ="submit" value="登録"/></div>
-            <div><button type=“button” onclick="location.href='/goals/{post}/cre-edit'">編集</button></div>
+            <div><button type=“button” onclick="location.href='/goals/edit'">編集</button></div>
         </form>
         <div>[<a href='/'>Back</a>]</div>
 

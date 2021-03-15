@@ -10,6 +10,6 @@ class Post extends Model
     use HasFactory;
     
     protected $fillable = [
-         'id','goal', 'measurable','actionable','competent',
+         'id','maingoal', 'measurable','actionable','competent',
     ];
 }

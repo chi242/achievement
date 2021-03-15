@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diary;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Diary;
 
 
-class PostController extends Controller
+class DiaryController extends Controller
 {
     public function show(Diary $diary)
      {
-        return view('show');
+        return view('diary/show')->with(['diary' => $diary]);
     }
     
     public function store(Request $request,Diary $diary)
@@ -24,7 +24,7 @@ class PostController extends Controller
     
     public function edit(Diary $diary)
     {
-        return view('edit');
+        return view('diary/showedit')->with(['diary' => $diary]);
     }
     
     public function update(Request $request, Diary $diary)
