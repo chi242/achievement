@@ -21,7 +21,7 @@
             </div>
             <button type="submit" value="更新">更新</button>
         </form>
-        <div>[<a href='/diaries/show'>Back</a>]</div>
+        <div>[<a href='/diaries/create'>Back</a>]</div>
     </body>
             
 </html>

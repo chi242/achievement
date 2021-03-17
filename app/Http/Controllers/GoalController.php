@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Post;
+
 use App\Models\Goal;
 use App\Models\Diary;
 use App\Http\Requests\PostRequest;
@@ -32,7 +32,7 @@ class GoalController extends Controller
     
     public function store(Request $request , Goal $goal)
     {
-        $input = $request['goal'];
+       $input = $request['goal'];
         $goal->fill($input)->save();
         return redirect('/goals/details/' . $goal->id);
     }
@@ -46,7 +46,7 @@ class GoalController extends Controller
     {
         $input_goal= $request['goal'];
         $goal->fill($input)->save();
-        return redirect('/goals/details' . $goal->id);
+        return redirect('/goals/details/' . $goal->id);
     }
 }
 

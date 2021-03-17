@@ -12,7 +12,7 @@
             <p class="navgoal"><a href="goals/details">細かいゴール</p>
         </nav>
 
-        <div class="calendar"><a href="diaries/show">カレンダー</a>
+        <div class="calendar"><a href="/diaries/create">カレンダー</a>
             <style>
                 .calendar{
                     width:200px; height:100px;
