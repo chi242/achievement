@@ -14,7 +14,7 @@ class Goal extends Model
     protected $table = 'goals';
     
     protected $fillable = [
-    'maingoal ',
+    'maingoal',
     'measurable',
     'actionable',
     'competent',
