@@ -8,6 +8,7 @@ use App\Models\Goal;
 use App\Models\Diary;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 
 
@@ -29,25 +30,27 @@ class GoalController extends Controller
         return view('goal/create');
     }
     
-    public function store(Goal $goal)
+    public function store(Request $request , Goal $goal)
     {
         $input = $request['goal'];
         $goal->fill($input)->save();
-        return redirect('/goals/details' . $goal->id);
+        return redirect('/goals/details/' . $goal->id);
     }
     
     public function edit(Goal $goal)
     {
-        return view('/goal/creedit');
+        return view('/goal/creedit')->with(['goal' => $goal]);
     }
     
-    public function update(Goal $goal)
+    public function update(Request $request , Goal $goal)
     {
         $input_goal= $request['goal'];
         $goal->fill($input)->save();
         return redirect('/goals/details' . $goal->id);
     }
 }
+
+
 
 
  

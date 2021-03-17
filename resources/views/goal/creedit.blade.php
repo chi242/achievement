@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form action="/goals/{post}" method="POST">
+        <form action="/goals/{goal}" method="POST">
             @csrf
             @method="PUT"
         <div>

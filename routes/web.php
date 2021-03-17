@@ -28,11 +28,13 @@ Route::get('/goals/edit', 'App\Http\Controllers\GoalController@edit');
 
 Route::put('/goals/edit', 'App\Http\Controllers\GoalController@update');
 
-Route::post('/diaries/show', 'App\Http\Controllers\DiaryController@store');
+Route::post('/diaries/show/{diary}', 'App\Http\Controllers\DiaryController@store');
+
+Route::get('/diaries/show/{diary}', 'App\Http\Controllers\DiaryController@show');
 
 Route::get('/diaries/edit', 'App\Http\Controllers\DiaryController@edit');
 
-Route::put('/diaries/edit', 'App\Http\Controllers\DiaryController@update');
+Route::put('/diaries/edit/{diary}', 'App\Http\Controllers\DiaryController@update');
 
 
 
