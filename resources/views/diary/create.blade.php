@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form action="/diaries/show/{{$diary->id}}" method="POST" >
+        <form action="/diaries/create" method="POST" >
          @csrf 
         <h2>{{$diary->created_at}}</h2>
         <div class="ToDo">

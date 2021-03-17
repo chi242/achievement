@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diary;
-use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,27 +10,32 @@ use Illuminate\Http\Request;
 
 class DiaryController extends Controller
 {
-    public function show(Diary $diary)
+    public function create(Diary $diary)
      {
-        return view('diary/show')->with(['diary' => $diary]);
+        return view('diary/create')->with(['diary' => $diary]);
     }
     
     public function store(Request $request,Diary $diary)
     {
-        $input = $request['diary'];
+          $input = $request['diary'];
         $diary->fill($input)->save();
-        return redirect('/diaries/show/' . $diary->id);
+        return redirect('/diaries/create/' . $diary->id);
     }
      
     public function edit(Diary $diary)
     {
-        return view('diary/showedit')->with(['diary' => $diary]);
+        return view('diary/edit')->with(['diary' => $diary]);
     }
     
     public function update(Request $request, Diary $diary)
     {
         $input_post= $request['diary'];
-        $diary->fill($input)->save();
-        return redirect('/diaries/show' . $diary->id);
+        $diary->fill($input_diary)->save();
+        return redirect('/diaries/create/' . $diary->id);
+    }
+    
+    public function diary(Diary $diary)
+    {
+        return view('diary/diary')->with(['diary' => $diary]);
     }
 }

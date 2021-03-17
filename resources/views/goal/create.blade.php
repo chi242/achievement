@@ -14,8 +14,8 @@
             <input type="text" name="goal[maingoal]" placeholder="メインの目標を書いてください。"/>
         </div>
         <div>
-            Measureable
-            <textatra type="comment"　name="goal[measureable]" placeholder="数字的な目標を書いてください。"></textatra>        
+            Measurable
+            <textarea type="comment"　name="goal[measurable]" placeholder="数字的な目標を書いてください。"></textarea>        
         </div>
         <div>
             Actionable
