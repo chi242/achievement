@@ -22,7 +22,9 @@
             </style>
         </div>
         <div> {{$goal->maingoal}}</div>
-        <div>{{$diary->todo}}</div>
+        @foreach ($diaries as $diary)
+        <div>ToDo{{$diary->todo}}</div>
+        @endforeach
         
         <div><a href="/goals/create">目標設定</a></div>
 

@@ -17,7 +17,7 @@ class GoalController extends Controller
 {
     public function index(Goal $goal , Diary $diary)
     {
-        return view('index')->with(['goal' => $goal])->with(['diary' => $diary]);
+        return view('index')->with(['goal' => $goal])->with(['diary' => $diary])->with(['diaries' => $diary]); 
     }
     
     public function details(Goal $goal)
