@@ -15,11 +15,12 @@
             <input type="text" name="goal[maingoal]" placeholder="メインの目標を書いてください。"/>
         </div>
         <div>
-            Measureable<textarea type="comment"　name="goal[measureable]" placeholder="数字的な目標を書いてください。"></textarea>            
+            Measurable
+            <textarea type="comment"　name="goal[measurable]" placeholder="数字的な目標を書いてください。"></textarea>            
         </div>
         <div>
             Actionable
-            <textarea type="comment" name="goal[actionable]"placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
+            <textarea type="comment" name="goal[actionable]" placeholder="目標にたどり着くまでのプロセスを書いてください。"></textarea>
         </div>
         <div>
             Competent

@@ -26,7 +26,7 @@ Route::get('/goals/details', 'App\Http\Controllers\GoalController@details');
 
 Route::post('/goals/details', 'App\Http\Controllers\GoalController@store');
 
-Route::get('/diaries/create/{diary}', 'App\Http\Controllers\GoalController@index');
+Route::get('/goals/details/{goal}','App\Http\Controllers\GoalController@details');
 
 Route::get('/goals/edit', 'App\Http\Controllers\GoalController@edit');
 
