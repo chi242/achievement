@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'App\Http\Controllers\GoalController@index');
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
