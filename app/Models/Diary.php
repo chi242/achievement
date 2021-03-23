@@ -14,6 +14,7 @@ class Diary extends Model
     protected $fillable = [
     'todo',
     'review',
+    'id',
     ];
 
 }

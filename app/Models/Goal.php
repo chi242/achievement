@@ -18,5 +18,6 @@ class Goal extends Model
     'measurable',
     'actionable',
     'competent',
+    'id',
     ];
 }
