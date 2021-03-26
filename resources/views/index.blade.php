@@ -9,29 +9,22 @@
     <body>
         <nav class="nav">
             <div class="navhome"><h2>ホーム</h2></div>
-            <div class="navgoal"><h2><a href="goals/details">細かいゴール</h2></div>
-            
+            <div class="navgoal"><h2><a href="/goals">細かいゴール</h2></div>
         </nav>
-
         <div class="main">
-            <div class="calendar"><a href="/diaries/create">カレンダー</a> </div>
+            <div class="calendar"><a href="/diaries/create">カレンダー</a></div>
             <div class="maingoal">
                 <h3>maingoal</h3>{{$goal->maingoal}}
             </div>
-          
             <div class="todo">
                 <h3>ToDo</h3>
                     <div>
                         @foreach ($diaries as $diary)
-                        <a href="/diaries/create/{{ $diary->id }}"><div>{{$diary->created_at}}</div></a>
+                        <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at}}</div></a>
                         <div>{{$diary->todo}}</div>
                         @endforeach
                     </div>
             </div>
-            
-
-
-
-
+        </div>    
     </body>
 </html>

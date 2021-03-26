@@ -14,6 +14,10 @@ body {
   padding: 20px;
 }
 
+.back{
+    background-color: #FCF0E6; 
+}
+
 /*配置*/
 .frame{
     display: flex;

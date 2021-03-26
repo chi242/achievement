@@ -7,7 +7,7 @@
         <link href="secure_asset{{'../../../assets/css/goal/create.style.css'}} " rel="stylesheet">
     </head>
     <body>
-        <form action="/goals/details" method="POST">
+        <form action="/goals" method="POST">
             @csrf
         <div>    
             <div class="form frame">

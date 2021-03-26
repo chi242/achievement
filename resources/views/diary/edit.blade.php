@@ -4,24 +4,24 @@
         <meta charset="utf-8">
         <title>記録の編集画面</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/goal/edit.style.css'}} "  rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/goal/edit.style.css'}}"  rel="stylesheet">
     </head>
     <body>
-        <form action="/diaries/edit/{{$diary->id}}" method="POST">
+        <form action="/diaries/{{$diary->id}}/edit" method="POST">
          @csrf 
          @method('PUT')
             <h2>{{$diary->created_at}}</h2>
             <div class="ToDo">
             To do
-                <textarea   type="comment" name="diaries[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
+                <textarea type="comment" name="diaries[todo]" placeholder="今日やるべきことを記入してください。" value="{{ $diary->todo }}"></textarea>
             </div>
             <div class="Review">
             振り返り
-                <textarea type="comment" name="diaries[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
+                <textarea type="comment" name="diaries[review]" placeholder="今日のできたことやできなかったことを記入してください。" value="{{ $diary->review }}"></textarea>  
             </div>
             <button type="submit" value="更新">更新</button>
         </form>
-        <div>[<a href='/diaries/create'>Back</a>]</div>
+        <div>[<a href='/diaries/{{ $diary->id }}'>Back</a>]</div>
     </body>
             
 </html>

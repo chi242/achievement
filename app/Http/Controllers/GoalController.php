@@ -16,9 +16,9 @@ use Illuminate\Http\Request;
 class GoalController extends Controller
 {
     
-    public function details(Goal $goal)
+    public function index(Goal $goal)
     {
-        return view('goal/details')->with(['goal' => $goal->first()]);
+        return view('goal/index')->with(['goal' => $goal->orderby('id','desc')->first()]);
     }
     
     public function create(Goal $goal)
@@ -30,7 +30,7 @@ class GoalController extends Controller
     {
        $input = $request['goal'];
         $goal->fill($input)->save();
-        return redirect('/goals/details/' . $goal->id);
+        return redirect('/goals/' . $goal->id);
     }
     
     public function edit(Goal $goal)

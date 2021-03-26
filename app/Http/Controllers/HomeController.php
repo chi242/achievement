@@ -13,6 +13,6 @@ class HomeController extends Controller
 {
     public function index(Goal $goal , Diary $diary)
     {
-        return view('index')->with(['goal' => $goal->first()])->with(['diaries' => $diary->get()]); 
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['diaries' => $diary->get()]); 
     }
 }
