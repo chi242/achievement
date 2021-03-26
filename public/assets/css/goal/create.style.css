@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+body {
+    background-color: #F9F7D8;
+}
+
+.form{
+    background-color: #FBE1CC;
+}
+
+
+
+/*配置*/
+.form{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.frame textarea{
+   width:350px; 
+}
+
+.frame input{
+   width:300px; 
+}
+
+.frame p{
+    padding: 10px;
+}
+
+.button{
+    padding: 15px;
+}

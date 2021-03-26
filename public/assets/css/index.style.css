@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body {
+  background-color: #F9F7D8;
+  }
+
+/*色*/
+
+.navhome {
+  background-color: #FBE1CC;
+}
+
+.navgoal {
+  background-color: #FCF0E6;
+}
+
+
+/*配置*/
+.nav{
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.calendar{
+  width:200px; height:100px;
+  margin:5px; padding:10px; border:1px solid black;
+  background-color:lightgray; 
+}
+
+.main{
+  background-color: #FBE1CC;
+  padding: 20px;
+}
+
+

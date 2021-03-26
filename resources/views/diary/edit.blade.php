@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>記録の編集画面</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/goal/edit.style.css'}} "  rel="stylesheet">
     </head>
     <body>
         <form action="/diaries/edit/{{$diary->id}}" method="POST">

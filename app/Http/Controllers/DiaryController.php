@@ -17,7 +17,7 @@ class DiaryController extends Controller
     
     public function store(Request $request,Diary $diary)
     {
-          $input = $request['diary'];
+        $input = $request['diary'];
         $diary->fill($input)->save();
         return redirect('/diaries/create/' . $diary->id);
     }
