@@ -18,7 +18,7 @@ class GoalController extends Controller
     
     public function details(Goal $goal)
     {
-        return view('goal/details')->with(['goal' => $goal]);
+        return view('goal/details')->with(['goal' => $goal->first()]);
     }
     
     public function create(Goal $goal)

@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <title>細かいゴール</title>
         <!-- Fonts -->
-        <link href=="secure_asset{{'../../../assets/css/goal/details.style.css'}} "  rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/goal/details.style.css'}} " rel="stylesheet">
+        
     </head>
     <body>
         <nav class="nav">
