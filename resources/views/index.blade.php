@@ -4,32 +4,30 @@
         <meta charset="utf-8">
         <title>目標</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="secure_asset{{'../../assets/css/index.style.css'}}" rel="stylesheet">
     </head>
     <body>
         <nav class="nav">
-            <p class="navhome">ホーム</p>
-            <p class="navgoal"><a href="goals/details">細かいゴール</p>
+            <div class="navhome"><h2>ホーム</h2></div>
+            <div class="navgoal"><h2><a href="goals/details">細かいゴール</h2></div>
+            
         </nav>
 
-        <div class="calendar"><a href="/diaries/create">カレンダー</a>
-            <style>
-                .calendar{
-                    width:200px; height:100px;
-                    margin:5px; padding:10px; border:1px solid black;
-                    background-color:lightgray; 
-                 }                    
-            </style>
-        </div>
-        <div> {{$goal->maingoal}}</div>
-      
-        <div>
-            @foreach ($diaries as $diary)
-            <a href="/diaries/create/{{ $diary->id }}">
-            <p>ToDo{{$diary->todo}}</p></div>
-            @endforeach
-        
-        <div><a href="/goals/create">目標設定</a></div>
+        <div class="main">
+            <div class="calendar"><a href="/diaries/create">カレンダー</a> </div>
+            <div class="maingoal"><h3>maingoal</h3>{{$goal->maingoal}}</div>
+          
+            <div class="todo">
+                <h3>ToDo</h3>
+                    <div>
+                        @foreach ($diaries as $diary)
+                        <a href="/diaries/create/{{ $diary->id }}"><div>{{$diary->created_at}}</div></a>
+                        <div>{{$diary->todo}}</div>
+                        @endforeach
+                    </div>
+            </div>
+            
+
 
 
 

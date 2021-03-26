@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body {
+  background-color: #F9F7D8;
+}
+
+.navhome {
+  background-color: #FBE1CC;
+}
+
+.navgoal {
+  background-color: #FCF0E6;
+}
+
+.detail {
+  background-color: #FBE1CC;
+  padding: 20px;
+}
+
+/*配置*/
+
+.nav{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.goals{
+  padding: 20px;
+}

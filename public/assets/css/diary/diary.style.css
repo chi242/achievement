@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+    background-color: #F9F7D8;
+}
+
+.diary{
+   background-color: #FBE1CC; 
+}
+
+/*配置*/
+.diary{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
