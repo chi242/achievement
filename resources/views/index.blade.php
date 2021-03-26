@@ -15,7 +15,9 @@
 
         <div class="main">
             <div class="calendar"><a href="/diaries/create">カレンダー</a> </div>
-            <div class="maingoal"><h3>maingoal</h3>{{$goal->maingoal}}</div>
+            <div class="maingoal">
+                <h3>maingoal</h3>{{$goal->maingoal}}
+            </div>
           
             <div class="todo">
                 <h3>ToDo</h3>
