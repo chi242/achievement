@@ -18,21 +18,23 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/diaries/create','App\Http\Controllers\DiaryController@create');
 
-Route::get('/diaries/create/{diary}','App\Http\Controllers\DiaryController@diary');
+Route::get('/diaries/{diary}','App\Http\Controllers\DiaryController@index');
 
-Route::post('/diaries/create', 'App\Http\Controllers\DiaryController@store');
+Route::post('/diaries', 'App\Http\Controllers\DiaryController@store');
 
-Route::get('/diaries/edit', 'App\Http\Controllers\DiaryController@edit');
+Route::get('/diaries/{diary}/edit','App\Http\Controllers\DiaryController@edit');
 
-Route::put('/diaries/edit', 'App\Http\Controllers\DiaryController@update');
+Route::put('/diaries/{diary}/edit','App\Http\Controllers\DiaryController@update');
+
+Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
-Route::get('/goals/details', 'App\Http\Controllers\GoalController@details');
+Route::get('/goals/{goal}','App\Http\Controllers\GoalController@index');
 
-Route::post('/goals/details', 'App\Http\Controllers\GoalController@store');
+Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
-Route::get('/goals/details/{goal}','App\Http\Controllers\GoalController@details');
+
 
 
 

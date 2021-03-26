@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <title>記録</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/diary/create.style.css'}} " rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/diary/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <form action="/diaries/create" method="POST" >
+        <form action="/diaries" method="POST" >
          @csrf 
             <div class="form">
                 <h2>{{$diary->created_at}}</h2>
@@ -22,10 +22,9 @@
             </div>
             <div class="button frame">
                 <button type="submit" value="保存">保存</button>
-                <button type="button" onclick="location.href='/diaries/edit'">編集</button>
             </div>
         </form>
-        <div>[<a href='/'>Back</a>]</div>
+        <div class="back">[<a href='/'>Back</a>]</div>
     </body>
             
 </html>

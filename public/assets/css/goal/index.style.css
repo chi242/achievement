@@ -5,16 +5,20 @@ body {
 }
 
 .navhome {
-  background-color: #FBE1CC;
+  background-color: #FCF0E6;
 }
 
 .navgoal {
-  background-color: #FCF0E6;
+  background-color: #FBE1CC;
 }
 
 .detail {
   background-color: #FBE1CC;
   padding: 20px;
+}
+
+.newgoal{
+  background-color: #FCF0E6;
 }
 
 /*配置*/

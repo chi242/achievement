@@ -19,7 +19,7 @@ class DiaryController extends Controller
     {
         $input = $request['diary'];
         $diary->fill($input)->save();
-        return redirect('/diaries/create/' . $diary->id);
+        return redirect('/diaries/' . $diary->id);
     }
      
     public function edit(Diary $diary)
@@ -27,15 +27,15 @@ class DiaryController extends Controller
         return view('diary/edit')->with(['diary' => $diary]);
     }
     
-    public function update(Request $request, Diary $diary)
+    public function update(Request $request,Diary $diary)
     {
-        $input_post= $request['diary'];
-        $diary->fill($input_diary)->save();
-        return redirect('/diaries/create/' . $diary->id);
+        $input = $request['diary'];
+        $diary->fill($input)->save();
+        return redirect('/diaries/' . $diary->id); 
     }
     
-    public function diary(Diary $diary)
+    public function index(Diary $diary)
     {
-        return view('diary/diary')->with(['diary' => $diary]);
+        return view('diary/index')->with(['diary' => $diary]);
     }
 }

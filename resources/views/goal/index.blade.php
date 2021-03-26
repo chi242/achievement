@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <title>細かいゴール</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/goal/details.style.css'}} " rel="stylesheet">
-        
+        <link href="secure_asset{{'../../../assets/css/goal/index.style.css'}}" rel="stylesheet">
     </head>
     <body>
         <nav class="nav">
@@ -18,6 +17,6 @@
             <div class="goals"><h3>actionable</h3>{{ $goal->actionable }}</div>
             <div class="goals"><h3>competent</h3>{{ $goal->competent }}</div>
         </div>
-        <div><a href="/goals/create">目標設定</a></div>
+        <div class="newgoal"><a href="/goals/create">目標設定</a></div>
     </body>
 </html>
