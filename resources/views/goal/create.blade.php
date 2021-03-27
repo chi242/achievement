@@ -8,6 +8,13 @@
     </head>
     <body>
         <form action="/goals" method="POST">
+            @isset ($goal)
+            if (isset($goal)){
+               echo('あ');
+            }else{
+               echo('い<br><br>');
+            } 
+            @endisset
             @csrf
         <div>    
             <div class="form frame">
@@ -29,6 +36,7 @@
             <div class="form button">
                 <input type ="submit" value="登録"/>
             </div>
+
             </form>
         </div>
             <div>[<a href='/'>Back</a>]</div>

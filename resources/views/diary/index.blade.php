@@ -16,7 +16,7 @@
                 <p>振り返り:{{$diary->review}}</p>
             </div>
             <div class="button">
-                <button type="button" onclick="location.href='/diaries/edit'" autofocus>編集</button>
+                <a href="/diaries/{{$diary->id}}/edit">編集</a>
             </div>
         </div>
         <div class="back">[<a href='/'>Back</a>]</div>

@@ -38,12 +38,6 @@ class GoalController extends Controller
         return view('/goal/creedit')->with(['goal' => $goal]);
     }
     
-    public function update(Request $request , Goal $goal)
-    {
-        $input_goal= $request['goal'];
-        $goal->fill($input)->save();
-        return redirect('/goals/details/' . $goal->id);
-    }
 }
 
 
