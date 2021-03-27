@@ -3,3 +3,27 @@
 body {
     background-color: #F9F7D8;
 }
+
+.diary{
+   background-color: #FBE1CC; 
+}
+
+.back{
+    background-color: #FCF0E6; 
+}
+
+/*配置*/
+.item{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+.date{
+    padding-top: 0.1px;
+}
+
+.item{
+    padding: 15px 0px;
+}
+
