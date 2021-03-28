@@ -23,6 +23,10 @@ body {
     padding-top: 0.1px;
 }
 
+.diary{
+    padding-bottom: 10px;
+}
+
 .item{
     padding: 15px 0px;
 }

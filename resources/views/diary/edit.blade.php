@@ -20,7 +20,7 @@
                 振り返り
                     <textarea type="comment" name="diaries[review]" placeholder="{{ $diary->review }}" value="{{ $diary->review }}"></textarea>  
                 </div>
-                <button class="item" type="submit" value="更新">更新</button>
+                <button type="submit" value="更新">更新</button>
             </form>
         </div>
         <div class="back">[<a href='/diaries/{{ $diary->id }}'>Back</a>]</div>

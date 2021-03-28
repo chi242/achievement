@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diary;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\DiaryRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -27,10 +27,10 @@ class DiaryController extends Controller
         return view('diary/edit')->with(['diary' => $diary]);
     }
     
-   public function update(Request $request,Diary $diary, $input)
+   public function update(DiaryRequest $request,Diary $diary)
     {
-        $input = $request['diary'];
-        $diary->fill($input)->save();
+        $input_diary= $request['diary'];
+        $diary->fill($input_diary)->save();
         return redirect('/diaries/' . $diary->id); 
     }
     
