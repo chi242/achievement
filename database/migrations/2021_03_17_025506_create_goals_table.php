@@ -16,10 +16,10 @@ class CreateGoalsTable extends Migration
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('maingoal');
-            $table->text('measurable');
-            $table->text('actionable');
-            $table->text('competent');
+            $table->text('maingoal')->nullable();
+            $table->text('measurable')->nullable();
+            $table->text('actionable')->nullable();
+            $table->text('competent')->nullable();
             $table->timestamp('deleted_at')->useCurrent()->nullable();
         });
     }

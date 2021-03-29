@@ -15,10 +15,10 @@ class DiaryController extends Controller
         return view('diary/create')->with(['diary' => $diary]);
     }
     
-    public function store(Request $request,Diary $diary)
+    public function store(DiaryRequest $request,Diary $diary)
     {
-        $input = $request['diary'];
-        $diary->fill($input)->save();
+        $input_diary = $request['diary'];
+        $diary->fill($input_diary)->save();
         return redirect('/diaries/' . $diary->id);
     }
      
@@ -31,7 +31,8 @@ class DiaryController extends Controller
     {
         $input_diary= $request['diary'];
         $diary->fill($input_diary)->save();
-        return redirect('/diaries/' . $diary->id); 
+        return $diary;
+        // return redirect('/diaries/' . $diary->id); 
     }
     
     public function index(Diary $diary)

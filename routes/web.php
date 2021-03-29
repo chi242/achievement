@@ -18,13 +18,15 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/diaries/create','App\Http\Controllers\DiaryController@create');
 
+Route::put('/diaries/{diary}/store','App\Http\Controllers\DiaryController@update');
+
 Route::get('/diaries/{diary}','App\Http\Controllers\DiaryController@index');
 
 Route::post('/diaries', 'App\Http\Controllers\DiaryController@store');
 
 Route::get('/diaries/{diary}/edit','App\Http\Controllers\DiaryController@edit');
 
-Route::put('/diaries/{diary}','App\Http\Controllers\DiaryController@update');
+
 
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
