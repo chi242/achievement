@@ -8,17 +8,17 @@
     </head>
     <body>
         <div class="diary">
-            <form action="/diaries/{{$diary->id}}" method="POST">
+            <form action="/diaries/{{$diary->id}}/store" method="POST">
              @csrf 
              @method('PUT')
                 <div class="date"><h2>{{$diary->created_at}}</h2></div>
                 <div class="ToDo item">
                 To do
-                    <textarea type="comment" name="diaries[todo]" placeholder="{{ $diary->todo }}" value="{{ $diary->todo }}"></textarea>
+                    <textarea type="comment" name="diaries[todo]">{{ $diary->todo }}</textarea>
                 </div>
                 <div class="Review item">
                 振り返り
-                    <textarea type="comment" name="diaries[review]" placeholder="{{ $diary->review }}" value="{{ $diary->review }}"></textarea>  
+                    <textarea type="comment" name="diaries[review]">{{$diary->review }}</textarea>  
                 </div>
                 <button type="submit" value="更新">更新</button>
             </form>

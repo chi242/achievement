@@ -32,11 +32,7 @@ class GoalController extends Controller
         $goal->fill($input)->save();
         return redirect('/goals/' . $goal->id);
     }
-    
-    public function edit(Goal $goal)
-    {
-        return view('/goal/creedit')->with(['goal' => $goal]);
-    }
+  
     
 }
 
