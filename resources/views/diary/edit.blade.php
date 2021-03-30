@@ -7,6 +7,7 @@
         <link href="secure_asset{{'../../../../assets/css/diary/edit.style.css'}}"  rel="stylesheet">
     </head>
     <body>
+        @if($diary)
         <div class="diary">
             <form action="/diaries/{{$diary->id}}/store" method="POST">
              @csrf 
@@ -24,5 +25,6 @@
             </form>
         </div>
         <div class="back">[<a href='/diaries/{{ $diary->id }}'>Back</a>]</div>
+        @endif
     </body>
 </html>

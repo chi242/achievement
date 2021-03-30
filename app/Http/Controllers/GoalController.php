@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use App\Models\Diary;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\DiaryRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

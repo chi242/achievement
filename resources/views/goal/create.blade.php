@@ -8,13 +8,6 @@
     </head>
     <body>
         <form action="/goals" method="POST">
-            @isset ($goal)
-            if (isset($goal)){
-               echo('あ');
-            }else{
-               echo('い<br><br>');
-            } 
-            @endisset
             @csrf
         <div>    
             <div class="form frame">
