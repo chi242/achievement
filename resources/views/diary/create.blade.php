@@ -10,7 +10,9 @@
         <form action="/diaries" method="POST" >
          @csrf 
             <div class="form">
+                @if($diary)
                 <h2>{{$diary->created_at}}</h2>
+                @endif
                 <div class="frame">
                     <p>To do</p>
                     <textarea type="comment" name="diary[todo]" placeholder="今日やるべきことを記入してください。"></textarea>

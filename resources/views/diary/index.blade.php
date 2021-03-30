@@ -7,6 +7,7 @@
         <link href="secure_asset{{'../../../assets/css/diary/index.style.css'}}" rel="stylesheet">
     </head>
     <body>
+        @if($diary)
         <div class="diary">
             <div class="date"><h2>{{$diary->created_at}}</h2></div>
             <div class="ToDo item">
@@ -19,6 +20,7 @@
                 <a href="/diaries/{{$diary->id}}/edit">編集</a>
             </div>
         </div>
+        @endif
         <div class="back">[<a href='/'>Back</a>]</div>
     </body>
             

@@ -14,15 +14,19 @@
         <div class="main">
             <div class="calendar"><a href="/diaries/create">カレンダー</a></div>
             <div class="maingoal">
+                @if($goal)
                 <h3>maingoal</h3>{{$goal->maingoal}}
+                @endif
             </div>
             <div class="todo">
                 <h3>ToDo</h3>
                     <div>
+                        @if($goal)
                         @foreach ($diaries as $diary)
                         <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at}}</div></a>
                         <div>{{$diary->todo}}</div>
                         @endforeach
+                        @endif
                     </div>
             </div>
         </div>    

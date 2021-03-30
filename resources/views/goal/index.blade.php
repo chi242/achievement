@@ -7,6 +7,7 @@
         <link href="secure_asset{{'../../../assets/css/goal/index.style.css'}}" rel="stylesheet">
     </head>
     <body>
+        @if($goal)
         <nav class="nav">
             <div class="navhome"><h2><a href="/">ホーム</a></h2></div>
             <div class="navgoal"><h2>細かいゴール</h2></div>
@@ -17,6 +18,7 @@
             <div class="goals"><h3>actionable</h3>{{ $goal->actionable }}</div>
             <div class="goals"><h3>competent</h3>{{ $goal->competent }}</div>
         </div>
+        @endif
         <div class="newgoal"><a href="/goals/create">目標設定</a></div>
     </body>
 </html>
