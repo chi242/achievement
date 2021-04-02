@@ -25,8 +25,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Goal $goal ,Diary $diary)
     {
-        return view('index')->with(['goals' => $goal->orderby('id','desc')->first()])->with(['diaries' => $diary->get()]); 
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['diaries' => $diary->get()]); 
     }
 }
