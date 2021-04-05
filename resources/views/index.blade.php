@@ -12,7 +12,13 @@
             <div class="navgoal"><h2><a href="/goals">細かいゴール</h2></div>
         </nav>
         <div class="main">
-            <div class="calendar"><a href="/diaries/create">カレンダー</a></div>
+            <div class="calendar container-calendar">
+                <a href="/diaries/create">カレンダー</a>
+                       <h4 id="monthAndYear"></h4>
+                       <table class="table-calendar" id="calendar" data-lang="ja">
+                    　 <thead id="thead-month"></thead>
+                  　　 　<tbody id="calendar-body"></tbody>
+            </div>
             <div class="maingoal">
                 @if($goal)
                 <h3>maingoal</h3>{{$goal->maingoal}}
@@ -29,6 +35,7 @@
                         @endif
                     </div>
             </div>
-        </div>    
+        </div> 
+        <script src="../../assets/js/index.js" type="text/javascript"></script>
     </body>
 </html>
