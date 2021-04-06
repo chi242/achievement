@@ -12,12 +12,12 @@
             <div class="navgoal"><h2><a href="/goals">細かいゴール</h2></div>
         </nav>
         <div class="main">
-            <div class="calendar container-calendar">
+            <div class="container-calendar" id="calendar">
                 <a href="/diaries/create">カレンダー</a>
-                       <h4 id="monthAndYear"></h4>
+                       <div id="monthAndYear"></div>
                        <table class="table-calendar" id="calendar" data-lang="ja">
                     　 <thead id="thead-month"></thead>
-                  　　 　<tbody id="calendar-body"></tbody>
+                  　　 　<tbody id="calendar-body" onmouseover="over(this)" onmouseleave="leave(this)"y""></tbody>
             </div>
             <div class="maingoal">
                 @if($goal)
@@ -39,3 +39,4 @@
         <script src="../../assets/js/index.js" type="text/javascript"></script>
     </body>
 </html>
+
