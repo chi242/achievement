@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>記録</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/diary/index.style.css'}}" rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/diary/show.style.css'}}" rel="stylesheet">
     </head>
     <body>
         @if($diary)
