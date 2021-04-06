@@ -22,7 +22,7 @@ body {
   
 }
 
-/*.calendar{*/
+/*#calendar{*/
 /*  width:200px; height:100px;*/
 /*  margin:5px; padding:10px; border:1px solid black;*/
 /*  background-color:lightgray; */
@@ -62,11 +62,11 @@ body {
   text-align: center;
   vertical-align: top;
 }
-/*.date-picker.selected {*/
-/*  font-weight: bold;*/
-/*  color: #fff;*/
-/*  background: #cc0000;*/
-/*}*/
+.date-picker.selected {
+  font-weight: bold;
+  color: #fff;
+  background: #ef8d3e;
+}
 /*.date-picker.selected span {*/
 /*  border-bottom: 2px solid currentColor;*/
 /*}*/

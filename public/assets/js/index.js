@@ -7,9 +7,7 @@
 //   return years;
 // }
 
-var today = new Date();
-var currentMonth = today.getMonth();
-var currentYear = today.getFullYear();
+
 // var selectYear = document.getElementById("year");
 // var selectMonth = document.getElementById("month");
 
@@ -32,8 +30,12 @@ dayHeader += "</tr>";
 
 document.getElementById("thead-month").innerHTML = dayHeader;
 
-var monthAndYear;
-monthAndYear = document.getElementById("monthAndYear");
+var today = new Date();
+var currentMonth = today.getMonth();
+var currentYear = today.getFullYear();
+
+var monthAndYear = document.getElementById("monthAndYear");
+console.log(monthAndYear.innerHTML)
 showCalendar(currentMonth, currentYear);
 
 
@@ -82,6 +84,15 @@ function showCalendar(month, year) {
 
       tbl.appendChild(row);
   }
+  
+    function over(x) {
+        x.style.backgroundColor = "blue";
+    }
+
+    function leave(x) {
+        x.style.backgroundColor = "red";
+    }
+
 
 }
 
