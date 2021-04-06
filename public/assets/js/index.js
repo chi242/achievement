@@ -85,13 +85,13 @@ function showCalendar(month, year) {
       tbl.appendChild(row);
   }
   
-    function over(x) {
-        x.style.backgroundColor = "blue";
-    }
+    // function over(x) {
+    //     x.style.backgroundColor = "blue";
+    // }
 
-    function leave(x) {
-        x.style.backgroundColor = "red";
-    }
+    // function leave(x) {
+    //     x.style.backgroundColor = "null";
+    // }
 
 
 }
