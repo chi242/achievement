@@ -20,7 +20,7 @@ Route::get('/diaries/create','App\Http\Controllers\DiaryController@create');
 
 Route::put('/diaries/{diary}/store','App\Http\Controllers\DiaryController@update');
 
-Route::get('/diaries/{diary}','App\Http\Controllers\DiaryController@index');
+Route::get('/diaries/{diary}','App\Http\Controllers\DiaryController@show');
 
 Route::post('/diaries', 'App\Http\Controllers\DiaryController@store');
 
@@ -30,7 +30,7 @@ Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
-Route::get('/goals/{goal}','App\Http\Controllers\GoalController@index');
+// Route::get('/goals/{goal}','App\Http\Controllers\GoalController@index');
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 

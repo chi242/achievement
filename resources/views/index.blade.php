@@ -7,12 +7,21 @@
         <link href="secure_asset{{'../../assets/css/index.style.css'}}" rel="stylesheet">
     </head>
     <body>
+        
         <nav class="nav">
             <div class="navhome"><h2>ホーム</h2></div>
             <div class="navgoal"><h2><a href="/goals">細かいゴール</h2></div>
         </nav>
         <div class="main">
-            <div class="calendar"><a href="/diaries/create">カレンダー</a></div>
+            <div class="container-calendar" id="calendar">
+                <a href="/diaries/create">カレンダー</a>
+                    <div id="monthAndYear"></div>
+                    <table class="table-calendar" id="calendar" data-lang="ja">
+                        <thead id="thead-month"></thead>
+                      　<tbody id="calendar-body" class='select'></tbody>
+                      　<!--" onmouseover="over(this)" onmouseleave="leave(this)"y-->
+                    </table>
+            </div>
             <div class="maingoal">
                 @if($goal)
                 <h3>maingoal</h3>{{$goal->maingoal}}
@@ -28,7 +37,9 @@
                         @endforeach
                         @endif
                     </div>
+                    
             </div>
-        </div>    
+        </div> 
+        <script src="../../assets/js/index.js" type="text/javascript"></script>
     </body>
 </html>
