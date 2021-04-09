@@ -63,6 +63,15 @@ function showCalendar(month, year) {
               cellText = document.createTextNode("");
               cell.appendChild(cellText);
               row.appendChild(cell);
+              
+            // マウスオーバー処理
+              var element = element.addEventListener("mouseover", function (event) {
+                event.target.style.select.color = "green";
+                setTimeout(function () {
+                  event.target.style.color = "";
+                }, 500);
+              }, false);
+  
           } else if (date > daysInMonth(month, year)) {
               break;
           } else {
@@ -79,6 +88,10 @@ function showCalendar(month, year) {
               }
               row.appendChild(cell);
               date++;
+              
+
+  
+              
           }
       }
 

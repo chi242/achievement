@@ -13,7 +13,7 @@
             <div class="navgoal"><h2><a href="/goals">細かいゴール</h2></div>
         </nav>
         <div class="main">
-            <div class="container-calendar" id="calendar">
+            <div class="container-calendar" id="total-calendar">
                 <a href="/diaries/create">カレンダー</a>
                     <div id="monthAndYear"></div>
                     <table class="table-calendar" id="calendar" data-lang="ja">
