@@ -111,3 +111,13 @@ color: blue;
   padding: 5px 1em;
 }
 
+
+.mousecolor:hover {
+  color: green;
+}
+
+.month{
+  text-align: center;
+  font-size: 30px; 
+}
+

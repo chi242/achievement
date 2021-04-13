@@ -15,10 +15,19 @@
         <div class="main">
             <div class="container-calendar" id="total-calendar">
                 <a href="/diaries/create">カレンダー</a>
+                <div class="month" id="month">
+                    <script>
+                         var today = new Date();
+                         var month = today.getMonth();
+                         var disMonth = today.getMonth() + 1;
+                         document.write(disMonth + "月");
+                    </script>
+                </div>
+
                     <div id="monthAndYear"></div>
                     <table class="table-calendar" id="calendar" data-lang="ja">
                         <thead id="thead-month"></thead>
-                      　<tbody id="calendar-body" class='select'></tbody>
+                      　<tbody id="calendar-body"></tbody>
                       　<!--" onmouseover="over(this)" onmouseleave="leave(this)"y-->
                     </table>
             </div>
