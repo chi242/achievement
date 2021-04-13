@@ -15,14 +15,14 @@
 
 // document.getElementById("year").innerHTML = createYear;
 
-var calendar = document.getElementById("calendar");
-var lang = calendar.getAttribute('data-lang');
+let calendar = document.getElementById("calendar");
+let lang = calendar.getAttribute('data-lang');
 
-var months = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
-var days = ["日", "月", "火", "水", "木", "金", "土"];
+let months = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
+let days = ["日", "月", "火", "水", "木", "金", "土"];
 
-var dayHeader = "<tr>";
-var day;
+let dayHeader = "<tr>";
+let day;
 for (day in days) {
   dayHeader += "<th data-days='" + days[day] + "'>" + days[day] + "</th>";
 }
@@ -30,20 +30,21 @@ dayHeader += "</tr>";
 
 document.getElementById("thead-month").innerHTML = dayHeader;
 
-var today = new Date();
-var currentMonth = today.getMonth();
-var currentYear = today.getFullYear();
+// let today = new Date();
+// let currentMonth = today.getMonth();
+// let currentYear = today.getFullYear();
 
-var monthAndYear = document.getElementById("monthAndYear");
-console.log(monthAndYear.innerHTML)
-showCalendar(currentMonth, currentYear);
+// let monthAndYear = document.getElementById("monthAndYear");
+// console.log(monthAndYear.innerHTML);
+// showCalendar(currentMonth, currentYear);
+ 
+ 
 
 
-
-function showCalendar(month, year) {
-
-  var firstDay = ( new Date( year, month ) ).getDay();
-  var tbl ;
+// function showCalendar(month, year) {
+  const year = today.getFullYear();
+  let firstDay = ( new Date( year, month ) ).getDay();
+  let tbl ;
   tbl = document.getElementById("calendar-body");
 
   tbl.innerHTML = "";
@@ -53,24 +54,18 @@ function showCalendar(month, year) {
 //   selectMonth.value = month;
 
   // creating all cells
-  var date = 1;
-  for ( var i = 0; i < 6; i++ ) {
-      var row = document.createElement("tr");
-      var cell, cellText;
-      for ( var j = 0; j < 7; j++) {
+  let date = 1;
+  for ( let i = 0; i < 6; i++ ) {
+      let row = document.createElement("tr");
+      let cell, cellText;
+      for ( let j = 0; j < 7; j++) {
           if ( i === 0 && j < firstDay ) {
               cell = document.createElement( "td" );
               cellText = document.createTextNode("");
               cell.appendChild(cellText);
               row.appendChild(cell);
               
-            // マウスオーバー処理
-              var element = element.addEventListener("mouseover", function (event) {
-                event.target.style.select.color = "green";
-                setTimeout(function () {
-                  event.target.style.color = "";
-                }, 500);
-              }, false);
+            
   
           } else if (date > daysInMonth(month, year)) {
               break;
@@ -80,15 +75,19 @@ function showCalendar(month, year) {
               cell.setAttribute("data-month", month + 1);
               cell.setAttribute("data-year", year);
               cell.setAttribute("data-month_name", months[month]);
-              cell.className = "date-picker";
+              cell.className = "date-picker mousecolor";
               cell.innerHTML = "<span>" + date + "</span>";
-
+              
               if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
                   cell.className = "date-picker selected";
               }
               row.appendChild(cell);
               date++;
               
+//マウスオーバー処理
+document.getElementsByClassName("mousecolor").onclick = function(){
+  window.location.href = ('/diaries/create');  
+};
 
   
               
@@ -107,7 +106,7 @@ function showCalendar(month, year) {
     // }
 
 
-}
+// }
 
 function daysInMonth(iMonth, iYear) {
   return 32 - new Date(iYear, iMonth, 32).getDate();
