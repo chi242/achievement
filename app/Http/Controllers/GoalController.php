@@ -30,7 +30,7 @@ class GoalController extends Controller
     {
        $input = $request['goal'];
         $goal->fill($input)->save();
-        return redirect('/goals/' . $goal->id);
+        return redirect('/goals');
     }
   
     

@@ -14,10 +14,10 @@ class CreateDiariesTable extends Migration
     public function up()
     {
         Schema::create('diaries', function (Blueprint $table) {
-            $table->timestamps();
+            $table->id();
             $table->text('todo');
             $table->text('review');
-            $table->id();
+            $table->timestamps();
         });
     }
 

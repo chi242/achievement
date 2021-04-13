@@ -35,8 +35,8 @@ class DiaryController extends Controller
         // return redirect('/diaries/' . $diary->id); 
     }
     
-    public function index(Diary $diary)
+    public function show(Diary $diary)
     {
-        return view('diary/index')->with(['diary' => $diary]);
+        return view('diary/show')->with(['diary' => $diary]);
     }
 }
