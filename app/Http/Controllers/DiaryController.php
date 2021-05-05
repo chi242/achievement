@@ -27,7 +27,7 @@ class DiaryController extends Controller
         return view('diary/edit')->with(['diary' => $diary]);
     }
     
-   public function update(DiaryRequest $request,Diary $diary)
+    public function update(DiaryRequest $request,Diary $diary)
     {
         $input_diary= $request['diary'];
         $diary->fill($input_diary)->save();

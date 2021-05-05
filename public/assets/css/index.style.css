@@ -2,12 +2,26 @@
 
 body {
   background-color: #F9F7D8;
+  font-family: Helvetica , "游ゴシック", sans-serif;
   }
 
 /*色*/
+body{
+  color: #3e1300;
+}
+
+a {
+color: #3e1300;
+text-decoration: none;
+}
+
+a:hover {
+  color: #754F44;
+  text-decoration: underline;
+}
 
 .navhome {
-  background-color: #FBE1CC;
+  background-color: #FDD699;
 }
 
 .navgoal {
@@ -22,21 +36,15 @@ body {
   
 }
 
-/*#calendar{*/
-/*  width:200px; height:100px;*/
-/*  margin:5px; padding:10px; border:1px solid black;*/
-/*  background-color:lightgray; */
-/*}*/
-
 .main{
-  background-color: #FBE1CC;
+  background-color: #FDD699;
   padding: 20px;
 }
 
 
 .container-calendar {
-  background: #FBE1CC;
-  padding: 15px;
+  background: #FDD699;
+  /*padding: 15px;*/
   width: 100%;
   margin: 0 auto;
   overflow: auto;
@@ -67,9 +75,7 @@ body {
   color: #fff;
   background: #ef8d3e;
 }
-/*.date-picker.selected span {*/
-/*  border-bottom: 2px solid currentColor;*/
-/*}*/
+
 
 
 .wrapper {
@@ -111,7 +117,7 @@ color: blue;
   padding: 5px 1em;
 }
 
-
+/*マウスオーバー処理*/
 .mousecolor:hover {
   color: green;
 }

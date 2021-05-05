@@ -1,20 +1,3 @@
-
-// function generate_year_range(start, end) {
-//   var years = "";
-//   for (var year = start; year <= end; year++) {
-//       years += "<option value='" + year + "'>" + year + "</option>";
-//   }
-//   return years;
-// }
-
-
-// var selectYear = document.getElementById("year");
-// var selectMonth = document.getElementById("month");
-
-// var createYear = generate_year_range(1970, 2200);
-
-// document.getElementById("year").innerHTML = createYear;
-
 let calendar = document.getElementById("calendar");
 let lang = calendar.getAttribute('data-lang');
 
@@ -30,17 +13,6 @@ dayHeader += "</tr>";
 
 document.getElementById("thead-month").innerHTML = dayHeader;
 
-// let today = new Date();
-// let currentMonth = today.getMonth();
-// let currentYear = today.getFullYear();
-
-// let monthAndYear = document.getElementById("monthAndYear");
-// console.log(monthAndYear.innerHTML);
-// showCalendar(currentMonth, currentYear);
- 
- 
-
-
 // function showCalendar(month, year) {
   const year = today.getFullYear();
   let firstDay = ( new Date( year, month ) ).getDay();
@@ -48,10 +20,6 @@ document.getElementById("thead-month").innerHTML = dayHeader;
   tbl = document.getElementById("calendar-body");
 
   tbl.innerHTML = "";
-
-//   monthAndYear.innerHTML = months[month] + " " + year;
-//  selectYear.value = year;
-//   selectMonth.value = month;
 
   // creating all cells
   let date = 1;
@@ -65,8 +33,6 @@ document.getElementById("thead-month").innerHTML = dayHeader;
               cell.appendChild(cellText);
               row.appendChild(cell);
               
-            
-  
           } else if (date > daysInMonth(month, year)) {
               break;
           } else {
@@ -89,25 +55,10 @@ document.getElementById("thead-month").innerHTML = dayHeader;
 document.getElementsByClassName("mousecolor").onclick = function(){
   window.location.href = ('/diaries/create');  
 };
-
-  
-              
           }
       }
-
       tbl.appendChild(row);
   }
-  
-    // function over(x) {
-    //     x.style.backgroundColor = "blue";
-    // }
-
-    // function leave(x) {
-    //     x.style.backgroundColor = "null";
-    // }
-
-
-// }
 
 function daysInMonth(iMonth, iYear) {
   return 32 - new Date(iYear, iMonth, 32).getDate();

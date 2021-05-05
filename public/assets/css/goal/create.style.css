@@ -1,11 +1,22 @@
 @charset "UTF-8";
 
 body {
-    background-color: #F9F7D8;
+  background-color: #F9F7D8;
+  font-family: Helvetica , "游ゴシック", sans-serif;
+  }
+  
+a {
+color: #3e1300;
+text-decoration: none;
+}
+
+a:hover {
+  color: #754F44;
+  text-decoration: underline;
 }
 
 .form{
-    background-color: #FBE1CC;
+    background-color: #FDD699;
 }
 
 
