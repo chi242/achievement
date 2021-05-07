@@ -122,6 +122,35 @@ color: blue;
   color: green;
 }
 
+/*吹き出し*/
+.mousecolor:hover {
+  display: none;                /* インライン要素として表示 */
+}
+.mousecolor:  { 
+  margin       : auto;
+  width        : 150px;
+  height       : 100px;
+  background   : #fff;
+  border-radius: 10px;
+}
+.mouseolor:after{
+  margin       : auto;
+  width        : 150px;
+  height       : 100px;
+  background   : #fff;
+  border-radius: 10px;
+}
+
+
+
+.box{
+  margin       : auto;
+  width        : 150px;
+  height       : 100px;
+  background   : #fff;
+  border-radius: 10px;
+}
+
 .month{
   text-align: center;
   font-size: 30px; 

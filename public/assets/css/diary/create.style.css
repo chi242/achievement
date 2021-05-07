@@ -6,8 +6,8 @@ body {
   }
   
 a {
-color: #3e1300;
-text-decoration: none;
+  color: #3e1300;
+  text-decoration: none;
 }
 
 a:hover {
@@ -26,16 +26,17 @@ a:hover {
 }
 
 .back{
-    background-color: #FCF0E6; 
+  background-color: #FCF0E6; 
+  padding-left: 20px;
 }
 
 /*配置*/
 .frame{
-    display: flex;
-    justify-content: center;
-    padding: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }
 
 .frame textarea {
-    width:350px; 
+  width:350px; 
 }

@@ -26,7 +26,7 @@
                 <button type="submit" value="保存">保存</button>
             </div>
         </form>
-        <div class="back">[<a href='/'>Back</a>]</div>
+        <div class="back">[<a href='/'>Home</a>]</div>
     </body>
             
 </html>

@@ -13,6 +13,12 @@
         </nav>
         <div class="main">
             <div class="container-calendar">
+                <h3>maingoal</h3>
+                @if($goal)
+                <div class="maingoal">{{$goal->maingoal}}</div>
+                @endif
+                </div>
+                <div class="box"></div>
                 <a href="/diaries/create">カレンダー</a>
                 <!--月表示-->
                 <div class="month" id="month">
@@ -26,20 +32,16 @@
                 <table class="table-calendar" id="calendar" data-lang="ja">
                     <thead id="thead-month"></thead>
                     <tbody id="calendar-body"></tbody>
-                    <a class="mousecolor" href="/diaries/create"></a>
+                    <span class="mousecolor" href="/diaries/create"></span>
                 </table>
             </div>
-            <div class="maingoal">
-                @if($goal)
-                <h3>maingoal</h3>{{$goal->maingoal}}
-                @endif
-            </div>
+            
             <div class="todo">
                 <h3>ToDo</h3>
                 <div>
                     @if($goal)
                     @foreach ($diaries as $diary)
-                    <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at}}</div></a>
+                    <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at->format('Y年m月d日')}}</div></a>
                     <div>{{$diary->todo}}</div>
                     @endforeach
                     @endif

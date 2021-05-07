@@ -32,7 +32,7 @@
 
             </form>
         </div>
-            <div>[<a href='/'>Back</a>]</div>
+            <div>[<a href='/'>Home</a>]</div>
         
 
     </body>

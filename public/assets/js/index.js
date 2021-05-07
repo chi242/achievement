@@ -51,7 +51,6 @@ document.getElementById("thead-month").innerHTML = dayHeader;
               date++;
               
 //マウスオーバー処理
-
 document.getElementsByClassName("mousecolor").onclick = function(){
   window.location.href = ('/diaries/create');  
 };

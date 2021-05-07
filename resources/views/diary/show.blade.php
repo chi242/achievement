@@ -9,7 +9,7 @@
     <body>
         @if($diary)
         <div class="diary">
-            <div class="date"><h2>{{$diary->created_at}}</h2></div>
+            <div class="date"><h2>{{$diary->created_at->format('Y年m月d日')}}</h2></div>
             <div class="ToDo item">
                 <p>To do:{{$diary->todo}}</p>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
         @endif
-        <div class="back">[<a href='/'>Back</a>]</div>
+        <div class="back">[<a href='/'>Home</a>]</div>
     </body>
             
 </html>
