@@ -26,6 +26,10 @@ Route::post('/diaries', 'App\Http\Controllers\DiaryController@store');
 
 Route::get('/diaries/{diary}/edit','App\Http\Controllers\DiaryController@edit');
 
+Route::delete('/diaries/{diary}','App\Http\Controllers\DiaryController@delete');
+
+Route::get('/diaries/review/create','App\Http\Controllers\ReviewController@create');
+
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
@@ -33,6 +37,10 @@ Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 // Route::get('/goals/{goal}','App\Http\Controllers\GoalController@index');
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
+
+
+
+
 
 
 

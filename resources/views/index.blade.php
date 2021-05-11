@@ -9,7 +9,7 @@
     <body>
         <nav class="nav">
             <div class="navhome"><h2>ホーム</h2></div>
-            <div class="navgoal"><h2><a class="mousenav" href="/goals">細かいゴール</h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/goals">細かいゴール</a></h2></div>
         </nav>
         <div class="main">
             <div class="container-calendar">
@@ -17,9 +17,9 @@
                 @if($goal)
                 <div class="maingoal">{{$goal->maingoal}}</div>
                 @endif
-                </div>
-                <div class="box"></div>
-                <a href="/diaries/create">カレンダー</a>
+            </div>
+            <div class="TodayRecord"><a href="/diaries/create">今日の記録</a></div>
+
                 <!--月表示-->
                 <div class="month" id="month">
                     <script>
@@ -32,17 +32,30 @@
                 <table class="table-calendar" id="calendar" data-lang="ja">
                     <thead id="thead-month"></thead>
                     <tbody id="calendar-body"></tbody>
-                    <span class="mousecolor" href="/diaries/create"></span>
+                    <div>
+                        <div class="mousecolor" id="clickDiary" onclick="clickDiary()"></div>
+                        <p>ToDo</p>
+                        @if($goal)
+                        @foreach ($diaries as $diary)
+                        <a href="/diaries/{{ $diary->id }}">
+                            <div>{{$diary->created_at->format('Y年m月d日')}}</div>
+                        </a>
+                        <div>{{$diary->todo}}</div>
+                        @endforeach
+                        @endif
+                    </div> 
+                    <a href="disries/create"></a>
                 </table>
             </div>
             
             <div class="todo">
                 <h3>ToDo</h3>
-                <div>
                     @if($goal)
                     @foreach ($diaries as $diary)
+                    <div class="frame">
                     <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at->format('Y年m月d日')}}</div></a>
                     <div>{{$diary->todo}}</div>
+                    </div>
                     @endforeach
                     @endif
                 </div>

@@ -12,7 +12,7 @@
             <form action="/diaries/{{$diary->id}}/store" method="POST">
              @csrf 
              @method('PUT')
-                <div class="date"><h2>{{$diary->created_at}}</h2></div>
+                <div class="date"><h2>{{$diary->created_at->format('Y年m月d日')}}</h2></div>
                 <div class="ToDo item">
                 To do
                     <textarea type="comment" name="diaries[todo]">{{ $diary->todo }}</textarea>

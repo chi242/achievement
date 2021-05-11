@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diary;
-use App\Http\Requests\DiaryRequest;
+use App\Models\Review;
+use App\Http\Requests\ReviewRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-class DiaryController extends Controller
+class ReviewController extends Controller
 {
     public function create(Diary $diary)
      {
-        return view('diary/todo/create')->with(['diary' => $diary]);
+        return view('diary/review/create')->with(['diary' => $diary]);
     }
     
     public function store(DiaryRequest $request,Diary $diary)

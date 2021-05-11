@@ -42,22 +42,42 @@ document.getElementById("thead-month").innerHTML = dayHeader;
               cell.setAttribute("data-year", year);
               cell.setAttribute("data-month_name", months[month]);
               cell.className = "date-picker mousecolor";
+              cell.idName = "clickDiary";
               cell.innerHTML = "<span>" + date + "</span>";
+              const newA = document.createElement("a");      
+              cell.onclick = () => {
+              window.location.href ='diaries/create'; 
+              }
               
               if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
                   cell.className = "date-picker selected";
               }
               row.appendChild(cell);
               date++;
-              
-//マウスオーバー処理
-document.getElementsByClassName("mousecolor").onclick = function(){
-  window.location.href = ('/diaries/create');  
-};
+              }
           }
-      }
-      tbl.appendChild(row);
+          tbl.appendChild(row);
+  
+     
+//マウスオーバー処理
+
+
+}
+
+
+//吹き出し表示
+
+function showBalloon(){
+  var objectBalloon = document.getElementById("balloon");
+  if (objectBalloon().className == "balloonOn"){
+  objectBalloon.className = "balloonOn";
+  }else{
+  objectBalloon.className = "balloonOff";
   }
+  }
+
+
+
 
 function daysInMonth(iMonth, iYear) {
   return 32 - new Date(iYear, iMonth, 32).getDate();

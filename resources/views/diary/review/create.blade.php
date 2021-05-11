@@ -14,10 +14,6 @@
                 <h2>{{$diary->created_at}}</h2>
                 @endif
                 <div class="frame">
-                    <p>To do</p>
-                    <textarea type="comment" name="diary[todo]" placeholder="今日やるべきことを記入してください。"></textarea>
-                </div>
-                <div class="frame">
                     <p>振り返り</p>
                     <textarea type="comment" name="diary[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
                 </div>
