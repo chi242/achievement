@@ -4,7 +4,7 @@ body {
   background-color: #F9F7D8;
   font-family: Helvetica , "游ゴシック", sans-serif;
   }
-
+ 
 a {
 color: #3e1300;
 text-decoration: none;
@@ -17,10 +17,17 @@ a:hover {
 
 .diary{
    background-color: #FDD699; 
+   padding :20px;
 }
 
 .back{
     background-color: #FCF0E6; 
+    padding-left: 20px;
+}
+
+div{
+    background-color:#FDD699; 
+    padding: 20px;
 }
 
 /*配置*/
@@ -34,11 +41,13 @@ a:hover {
     padding-top: 0.1px;
 }
 
-.diary{
-    padding-bottom: 10px;
+.item{
+    padding: 0px;
 }
 
-.item{
+.button{
     padding: 15px 0px;
 }
+
+
 

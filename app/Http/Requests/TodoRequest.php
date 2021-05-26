@@ -4,12 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DiaryRequest extends FormRequest
+class TodoRequest extends FormRequest
 {
     public function rules()
     {
         return [
-            'diary.todo' => 'required|string|max:300',
+            'todo' => 'required|string|max:300',
         ];
     }
 }

@@ -18,8 +18,19 @@
                 <div class="maingoal">{{$goal->maingoal}}</div>
                 @endif
             </div>
-            <div class="TodayRecord"><a href="/diaries/create">今日の記録</a></div>
-
+                                <div>
+                        <div class="mousecolor" id="clickDiary" onclick="clickDiary()"></div>
+                        <h3>ToDo</h3>
+                        @if($goal)
+                        @foreach ($todo as $todo)
+                        <a href="/todos/{{ $todo->id }}">
+                            <div>{{$todo->created_at->format('Y年m月d日')}}</div>
+                        </a>
+                        <div>{{$todo->todolist}}</div>
+                        @endforeach
+                        @endif
+                    </div>             
+            
                 <!--月表示-->
                 <div class="month" id="month">
                     <script>
@@ -29,36 +40,20 @@
                         document.write(disMonth + "月");
                     </script>
                 </div>
+
                 <table class="table-calendar" id="calendar" data-lang="ja">
                     <thead id="thead-month"></thead>
                     <tbody id="calendar-body"></tbody>
-                    <div>
-                        <div class="mousecolor" id="clickDiary" onclick="clickDiary()"></div>
-                        <p>ToDo</p>
-                        @if($goal)
-                        @foreach ($diaries as $diary)
-                        <a href="/diaries/{{ $diary->id }}">
-                            <div>{{$diary->created_at->format('Y年m月d日')}}</div>
-                        </a>
-                        <div>{{$diary->todo}}</div>
-                        @endforeach
-                        @endif
-                    </div> 
-                    <a href="disries/create"></a>
+                    
+                    <a href="todos/create"></a>
                 </table>
+                <div>
+                    <p class="TodayRecord"><a href="/todos/create">今日の記録(Todo)</a></p>
+                    <p class="TodayRecord"><a href="/reviews/create">今日の振り返り(Review)</a></p>
+                </div>
             </div>
             
-            <div class="todo">
-                <h3>ToDo</h3>
-                    @if($goal)
-                    @foreach ($diaries as $diary)
-                    <div class="frame">
-                    <a href="/diaries/{{ $diary->id }}"><div>{{$diary->created_at->format('Y年m月d日')}}</div></a>
-                    <div>{{$diary->todo}}</div>
-                    </div>
-                    @endforeach
-                    @endif
-                </div>
+
             </div>
         </div> 
         <script src="../../assets/js/index.js" type="text/javascript"></script>

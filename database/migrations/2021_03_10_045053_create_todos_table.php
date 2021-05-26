@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiariesTable extends Migration
+class CreateTodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDiariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('diaries', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->text('todo');
+            $table->string('todolist')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateDiariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diaries');
+        Schema::dropIfExists('todos');
     }
 }

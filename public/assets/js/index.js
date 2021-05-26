@@ -46,7 +46,7 @@ document.getElementById("thead-month").innerHTML = dayHeader;
               cell.innerHTML = "<span>" + date + "</span>";
               const newA = document.createElement("a");      
               cell.onclick = () => {
-              window.location.href ='diaries/create'; 
+              window.location.href ='todos/create'; 
               }
               
               if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {

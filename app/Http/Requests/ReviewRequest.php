@@ -9,7 +9,7 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'diary.review' => 'required|string|max:300',
+            'review' => 'required|string|max:300',
         ];
     }
 }

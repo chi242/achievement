@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diary;
+use App\Models\Todo;
 use App\Models\Goal;
-use App\Http\Requests\DiaryRequest;
+use App\Http\Requests\TodoRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -25,8 +25,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Goal $goal ,Diary $diary)
+    public function index(Goal $goal ,Todo $todo)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['diaries' => $diary->get()]); 
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()]); 
     }
 }

@@ -44,3 +44,13 @@ a:hover {
 .button{
     padding: 15px;
 }
+
+div{
+  background-color: #FDD699;
+  padding: 20px;
+}
+
+.back{
+  background-color: #FCF0E6; 
+  padding-left: 20px;
+}

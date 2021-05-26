@@ -25,11 +25,12 @@ a:hover {
 
 .detail {
   background-color: #FDD699;
-  padding: 20px;
+  
 }
 
 .newgoal{
   background-color: #FCF0E6;
+  padding: 20px;
 }
 
 /*配置*/
@@ -42,3 +43,4 @@ a:hover {
 .goals{
   padding: 20px;
 }
+

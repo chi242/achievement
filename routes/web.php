@@ -16,25 +16,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-Route::get('/diaries/create','App\Http\Controllers\DiaryController@create');
 
-Route::put('/diaries/{diary}/store','App\Http\Controllers\DiaryController@update');
 
-Route::get('/diaries/{diary}','App\Http\Controllers\DiaryController@show');
+Route::get('/todos/create','App\Http\Controllers\TodoController@create');
 
-Route::post('/diaries', 'App\Http\Controllers\DiaryController@store');
+Route::post('/todos', 'App\Http\Controllers\TodoController@store');
 
-Route::get('/diaries/{diary}/edit','App\Http\Controllers\DiaryController@edit');
+Route::get('/todos/{todo}','App\Http\Controllers\TodoController@show');
 
-Route::delete('/diaries/{diary}','App\Http\Controllers\DiaryController@delete');
+Route::get('/todos/{todo}/edit','App\Http\Controllers\TodoController@edit');
 
-Route::get('/diaries/review/create','App\Http\Controllers\ReviewController@create');
+Route::put('/todos/{todo}/store','App\Http\Controllers\TodoController@update');
+
+Route::delete('/todos/{todo}','App\Http\Controllers\TodoController@delete');
+
+Route::get('/reviews/create','App\Http\Controllers\ReviewController@create');
+
+Route::post('/reviews', 'App\Http\Controllers\ReviewController@store');
+
+Route::get('/reviews/{review}','App\Http\Controllers\ReviewController@show');
+
+Route::get('/reviews/{review}/edit','App\Http\Controllers\ReviewController@edit');
+
+Route::put('/reviews/{review}/store','App\Http\Controllers\ReviewController@update');
 
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
-// Route::get('/goals/{goal}','App\Http\Controllers\GoalController@index');
+
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 

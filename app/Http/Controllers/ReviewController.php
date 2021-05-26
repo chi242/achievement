@@ -3,46 +3,55 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use App\Models\Todo;
 use App\Http\Requests\ReviewRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\TodoController;
 use Illuminate\Http\Request;
+
 
 
 class ReviewController extends Controller
 {
-    public function create(Diary $diary)
+    public function create(Todo $todo)
      {
-        return view('diary/review/create')->with(['diary' => $diary]);
+        return view('review/create')->with(['todo' => $todo]);
     }
     
-    public function store(DiaryRequest $request,Diary $diary)
+    public function store(Request $request, Review $review)
+    {   
+    
+        $input = $request['review'];
+        $review->fill($input)->save();
+        //  $review = Review::find($request->id);
+        //  $review->fill($request->all())->save();
+        return redirect('/reviews/' . $review->id);
+        
+    }
+    
+    public function show(Review $review, Todo $todo)
     {
-        $input_diary = $request['diary'];
-        $diary->fill($input_diary)->save();
-        return redirect('/diaries/' . $diary->id);
+        return view('review/show')->with(['review' => $review])->with(['todo' => $todo]);
     }
      
-    public function edit(Diary $diary)
+    public function edit(Review $review)
     {
-        return view('diary/todo/edit')->with(['diary' => $diary]);
+        return view('review/edit')->with(['review' => $review]);
     }
     
-    public function update(DiaryRequest $request,Diary $diary)
+    public function update(Request $request, Review $review)
     {
-        $input_diary= $request['diary'];
-        $diary->fill($input_diary)->save();
-        return $diary;
-        // return redirect('/diaries/' . $diary->id); 
+
+        $input= $request['review'];
+        $review->fill($input)->save();
+        return redirect('/reviews/' . $review->id); 
     }
     
-    public function show(Diary $diary)
-    {
-        return view('diary/todo/show')->with(['diary' => $diary]);
-    }
     
-    public function delete(Diary $diary){
-        $diary->delete();
-        return redirect('diaries/create');
+    
+    public function delete(Review $review){
+        $review->delete();
+        return redirect('review/create');
     }
     
     
