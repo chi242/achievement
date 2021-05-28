@@ -16,9 +16,6 @@
                 <div class="frame">
                     <p>To do</p>
                     <textarea type="comment" name="todo[todolist]" placeholder="今日やるべきことを記入してください。">
-                        <?php 
-                        $input = $request[todo];
-                        $todo->todolist = $request->input('todolist', ''); ?>
                     </textarea>
                 </div>
                 <div class="frame"><a href="/reviews/create">振り返りをする</a></div>

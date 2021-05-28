@@ -40,11 +40,11 @@ Route::get('/reviews/{review}/edit','App\Http\Controllers\ReviewController@edit'
 
 Route::put('/reviews/{review}/store','App\Http\Controllers\ReviewController@update');
 
+Route::delete('/reviews/{review}','App\Http\Controllers\ReviewController@delete');
+
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
-
-
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
