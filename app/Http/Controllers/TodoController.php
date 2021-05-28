@@ -21,10 +21,6 @@ class TodoController extends Controller
         $todo->fill($input)->save();
         return redirect('/todos/' . $todo->id);
     }
-    
-
-    
-    
      
     public function show(Todo $todo)
     {   

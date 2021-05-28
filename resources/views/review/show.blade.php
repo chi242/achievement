@@ -10,7 +10,7 @@
         
         @if($todo)
         <div class="todo" method="post">
-            <form action="/todso/{{ $todo->id }}" id="form_{{ $todo->id }}" method="POST" style="display:inline">
+            <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="POST" style="display:inline">
                 @csrf
                 @method('DELETE')
                 

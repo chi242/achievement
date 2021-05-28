@@ -47,8 +47,6 @@ class ReviewController extends Controller
         return redirect('/reviews/' . $review->id); 
     }
     
-    
-    
     public function delete(Review $review){
         $review->delete();
         return redirect('reviews/create');

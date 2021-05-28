@@ -9,7 +9,7 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'todo' => 'required|string|max:300',
+            'todolist' => 'required|string|max:300',
         ];
     }
 }
