@@ -29,6 +29,6 @@ class HomeController extends Controller
      */
     public function index(Goal $goal ,Todo $todo,Review $review)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()]); 
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()])->with(['todo' => $todo->get()]); 
     }
 }

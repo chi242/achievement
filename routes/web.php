@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/', 'App\Http\Controllers\HomeController@index');
-
-
 
 Route::get('/todos/create','App\Http\Controllers\TodoController@create');
 
@@ -48,7 +50,3 @@ Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
