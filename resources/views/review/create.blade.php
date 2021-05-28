@@ -7,7 +7,6 @@
         <link href="secure_asset{{'../../../assets/css/review/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <div><?php include_once("index.html"); ?></div>
         <form action="/reviews" method="POST" >
          @csrf 
             <div class="form">
