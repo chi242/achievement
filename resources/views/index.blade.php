@@ -18,18 +18,34 @@
                 <div class="maingoal">{{$goal->maingoal}}</div>
                 @endif
             </div>
-                                <div>
-                        <div class="mousecolor" id="clickDiary" onclick="clickDiary()"></div>
-                        <h3>ToDo</h3>
-                        @if($goal)
-                        @foreach ($todo as $todo)
-                        <a href="/todos/{{ $todo->id }}">
-                            <div>{{$todo->created_at->format('Y年m月d日')}}</div>
-                        </a>
-                        <div>{{$todo->todolist}}</div>
-                        @endforeach
-                        @endif
-                    </div>             
+            <div>
+                <div class="mousecolor" id="clickDiary" onclick="clickDiary()"></div>
+                <h3>ToDo</h3>
+                @if($goal)
+                @foreach ($todo as $todo)
+                <a href="/todos/{{ $todo->id }}">
+                <div>{{$todo->created_at->format('Y年m月d日')}}</div>
+                </a>
+                <div>{{$todo->todolist}}</div>
+                @endforeach
+                @endif
+            </div>   
+            
+
+            <!--達成割合表示-->
+            <div id ="calculation">
+            <script>
+            let totalNumbers = $totalNumbers;
+            let achievementNumbers = $achievemntNumbers;
+            let calculation = (totalNumbers,achievementNumbers)=>{
+               return achievementNumbers/totalNumbers*100;
+            }
+            
+            let percentage = calculation($totalNumbers,$achievemntNumbers)
+            console.log(percentage);
+            document.write(percentage);
+            </script>
+            </div>
             
                 <!--月表示-->
                 <div class="month" id="month">
@@ -57,6 +73,7 @@
             </div>
         </div> 
         <script src="../../assets/js/index.js" type="text/javascript"></script>
+        <script src="../../assets/js/index-percentage.js" type="text/javascript"></script>
     </body>
 </html>
 

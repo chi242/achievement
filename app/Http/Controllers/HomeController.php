@@ -27,8 +27,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Goal $goal ,Todo $todo,Review $review)
+    public static function index(Goal $goal ,Todo $todo,Review $review)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()])->with(['todo' => $todo->get()]); 
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()]);
+        
+        
+        $totalNumbers = DB::table('todos_table')->count('todolist')->get();
+        
+        $achievementNumbers = DB::table('reviews_table')-> count('evaluation')->get();
     }
+    
+    
 }
+

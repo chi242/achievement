@@ -39,21 +39,17 @@ class LineNotify extends Command
      *
      * @return int
      */
-
+    
+    // if($review->null){
     public function handle()
     {
         $uri = 'https://notify-api.line.me/api/notify';
         $client = new Client();
-        $client->post($uri, [
-            'headers' => [
-                'Content-Type'  => 'application/x-www-form-urlencoded',
-                'Authorization' => 'Bearer qkbzVtwy6NBOOBmsJNxMsuSeW5Fs3ubCGg1NIf5UFTr',
-            ],
-            'form_params' => [
-                'message' => '今日も振り返りをしよう！'
-            ]
-        ]);
+        $client->post($uri, ['headers' => ['Content-Type'  => 'application/x-www-form-urlencoded','Authorization' => 'Bearer qkbzVtwy6NBOOBmsJNxMsuSeW5Fs3ubCGg1NIf5UFTr',],'form_params' => ['message' => '今日も振り返りをしよう！']]);
+        
+        
     }
-}
+    }
+
     
 // 2021年4月28日制作
