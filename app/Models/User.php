@@ -40,4 +40,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+
+  Public function goals()
+  {
+    return $this->hasMany('App\Goal');
+  }
+  public function Todos()
+  {
+    return $this->hasMany('App\Todo');
+  }
+  public function reviews()
+  {
+    return $this->hasMany('App\Review');
+  }
 }
+
+
+
+

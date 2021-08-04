@@ -17,6 +17,31 @@ class Review extends Model
     'review',
     'evaluation',
     'id',
+    'user_id',
     ];
 
+}
+
+class User extends Model
+{
+    public function user()
+    {
+    return $this->belongsTo('App\User');
+    }
+}
+
+class Todo extends Model
+{
+    public function todo()
+    {
+    return $this->belongsTo('App\Todo');
+    }
+}
+
+class Goal extends Model
+{
+    public function goal()
+    {
+    return $this->belongsTo('App\Goal');
+    }
 }

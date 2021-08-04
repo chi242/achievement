@@ -19,5 +19,36 @@ class Goal extends Model
     'actionable',
     'competent',
     'id',
+    'user_id',
     ];
+    
+    public function user()
+    {
+    return $this->belongsTo('App\User');
+    }
+    
 }
+
+
+class Todo extends Model
+{
+  Public function todos()
+  {
+    return $this->hasMany('App\Todo');
+  }
+}
+
+class Review extends Model
+{
+  Public function reviews()
+  {
+    return $this->hasMany('App\Review');
+  }
+}
+
+
+
+
+
+
+  

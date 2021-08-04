@@ -10,11 +10,12 @@ class Todo extends Model
 {
     use HasFactory;
     
-    protected $table = 'todo';
+    protected $table = 'todos';
     
     protected $fillable = [
     'todolist',
     'id',
+    'user_id',
     ];
     
      public static function getHoge() {
@@ -23,4 +24,27 @@ class Todo extends Model
 
 }
 
+class Review extends Model
+{
+  Public function review()
+  {
+    return $this->hasOne('App\Review');
+  }
+}
+
+class User extends Model
+{
+    public function user()
+    {
+    return $this->belongsTo('App\User');
+    }
+}
+
+class Goal extends Model
+{
+    public function goal()
+    {
+    return $this->belongsTo('App\Goal');
+    }
+}
 

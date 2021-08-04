@@ -17,6 +17,8 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('todolist')->nullable();
             $table->timestamps();
+            
+            $table->foreignId('user_id')->nullable();
         });
     }
 

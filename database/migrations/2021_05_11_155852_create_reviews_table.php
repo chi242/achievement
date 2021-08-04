@@ -18,6 +18,8 @@ class CreateReviewsTable extends Migration
             $table->string('review')->nullable();
             $table->integer('evaluation')->nullable();
             $table->timestamps();
+            
+            $table->foreignId('user_id')->nullable();
         });
     }
 

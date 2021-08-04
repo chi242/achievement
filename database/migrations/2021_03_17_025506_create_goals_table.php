@@ -21,6 +21,8 @@ class CreateGoalsTable extends Migration
             $table->text('competent')->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->useCurrent()->nullable();
+            
+            $table->foreignId('user_id')->nullable();
         });
     }
 

@@ -8,7 +8,13 @@
     </head>
     <body>
         <nav class="nav">
-            <div class="navhome"><h2>ホーム</h2></div>
+            <div class="navhome">
+                <h2>
+                @if($goal)
+                <div class="maingoal">{{$goal->maingoal}}</div>
+                @endif
+                </h2>
+            </div>
             <div class="navgoal"><h2><a class="mousenav" href="/goals">細かいゴール</a></h2></div>
         </nav>
         <div class="main">
