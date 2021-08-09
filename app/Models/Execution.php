@@ -7,40 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TodoController;
 
-class Review extends Model
+class Execution extends Model
 {
     use HasFactory;
     
-    protected $table = 'reviews';
+    protected $table = 'executions';
     
     protected $fillable = [
-    'review',
-    'evaluation',
-    'id',
-    'user_id',
+    'execution_start_time',
+    'execution_times',
+    'achievement_rate',
+    'review_content',
     ];
-
-}
-
-class User extends Model
-{
-    public function user()
+public function user()
     {
     return $this->belongsTo('App\User');
     }
-}
-
-class Todo extends Model
-{
-    public function todo()
+public function todo()
     {
     return $this->belongsTo('App\Todo');
     }
-}
-
-class Goal extends Model
-{
-    public function goal()
+public function goal()
     {
     return $this->belongsTo('App\Goal');
     }

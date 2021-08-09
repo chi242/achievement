@@ -24,27 +24,19 @@ class Goal extends Model
     
     public function user()
     {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo(User::class);
     }
+    public function plans()
+  {
+    return $this->hasMany(Plan::class,'goal_id','id');
+  }
+    public function reviews()
+  {
+    return $this->hasMany(Review::class);
+  }
     
 }
 
-
-class Todo extends Model
-{
-  Public function todos()
-  {
-    return $this->hasMany('App\Todo');
-  }
-}
-
-class Review extends Model
-{
-  Public function reviews()
-  {
-    return $this->hasMany('App\Review');
-  }
-}
 
 
 

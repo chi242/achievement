@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewsTable extends Migration
+class CreatePlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->string('review')->nullable();
-            $table->integer('evaluation')->nullable();
-            $table->timestamps();
-            
+            $table->foreignId('goal_id')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->string('plan_content');
+            $table->time('plan_start_time');
+            $table->time('plan_times');
+            $table->date('selected_at');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +32,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('plans');
     }
 }
