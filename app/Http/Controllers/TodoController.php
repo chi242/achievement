@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use App\Http\Requests\TodoRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\GoalController;
 use Illuminate\Http\Request;
 
 
 class TodoController extends Controller
 {
+    public function index(Todo $todo ,Goal $goal)
+    {
+        return view('todo/index')->with(['todo' => $todo]);
+    }
     public function create(Todo $todo)
      {
         return view('todo/create')->with(['todo' => $todo]);

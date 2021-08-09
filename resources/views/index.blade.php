@@ -16,6 +16,7 @@
                 </h2>
             </div>
             <div class="navgoal"><h2><a class="mousenav" href="/goals">細かいゴール</a></h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/todos">ToDoリスト</a></h2></div>
         </nav>
         <div class="main">
             <div class="container-calendar">
@@ -52,7 +53,11 @@
             document.write(percentage);
             </script>
             </div>
-            
+            <div>
+                <form action="" method="POST">
+                    <input type="date" name="calendar" max="9999-12-31">
+                </form>
+            </div>
                 <!--月表示-->
                 <div class="month" id="month">
                     <script>

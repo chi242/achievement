@@ -20,6 +20,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
+Route::get('/todos', 'App\Http\Controllers\TodoController@index');
+
 Route::get('/todos/create','App\Http\Controllers\TodoController@create');
 
 Route::post('/todos', 'App\Http\Controllers\TodoController@store');
