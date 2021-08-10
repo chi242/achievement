@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\ExecutionController;
+use App\Http\Controllers\PlanController;
 
 class Execution extends Model
 {
@@ -19,6 +19,7 @@ class Execution extends Model
     'achievement_rate',
     'review_content',
     ];
+   
 public function user()
     {
     return $this->belongsTo('App\User');

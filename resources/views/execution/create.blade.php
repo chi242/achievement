@@ -4,29 +4,30 @@
         <meta charset="utf-8">
         <title>記録</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/review/create.style.css'}}" rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/execution/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <form action="/reviews" method="POST" >
+        <form action="/executions" method="POST" >
          @csrf 
             <div class="form">
-                @if($todo)
-                <h2>{{$todo->created_at}}</h2>
+                @if($plan)
+                <h2>{{$plan->created_at}}</h2>
                 @endif
                 <div class="frame">
                     <p>振り返り</p>
-                    <textarea type="comment" name="review[review]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
+                    <textarea type="comment" name="execution[execution]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
                 </div>
+                <div><input type="time" name="executions[execution_start_time]" style="width:80px"></div>
+                <div><input type="time" name="executions[execution_times]" style="width:80px"></div>
                 <div class="frame">
                     <p>達成度</p>
-                    <select name="review[evaluation]">
+                    <select name="execution[evaluation]">
                         <option value=1>1</button>
                         <option value=2>2</button>
                         <option value=3>3</button>                        
                         <option value=4>4</button>
                         <option value=5>5</button>
                     </select>
-
                 </div>
             </div>
             <div class="button frame form">

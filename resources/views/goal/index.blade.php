@@ -8,8 +8,11 @@
     </head>
     <body>
         <nav class="nav">
-            <div class="navhome"><h2><a href="/">ホーム</a></h2></div>
-            <div class="navgoal"><h2>細かいゴール</h2></div>
+            <div class="navhome"><h2><a class="mousenav" href="/">Home</a></h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/goals"> 目標データ </a></h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/planlists"> Planリスト </a></h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
+            <div class="navgoal"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
         <div class="detail">
         @if($goal)

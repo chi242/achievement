@@ -17,10 +17,10 @@ class CreatePlansTable extends Migration
             $table->id();
             $table->foreignId('goal_id')->nullable();
             $table->foreignId('user_id')->nullable();
-            $table->string('plan_content');
-            $table->time('plan_start_time');
-            $table->time('plan_times');
-            $table->date('selected_at');
+            $table->foreignId('date_id')->nullable();
+            $table->string('plan_content')->default('○○をする');;
+            $table->time('plan_start_time')->default('00:00:00');;
+            $table->time('plan_times')->default('00:00:00');
             $table->timestamps();
         });
     }

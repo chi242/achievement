@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Todo;
+use App\Models\Plan;
 use App\Models\Goal;
-use App\Models\Review;
+use App\Models\Execution;
 
-use App\Http\Requests\TodoRequest;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,14 +25,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public static function index(Goal $goal ,Todo $todo,Review $review)
+    public static function index(Goal $goal,Plan $plan,Execution $execution)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['todo' => $todo->get()]);
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['plan' => $plan->get()]);
         
         
-        $totalNumbers = DB::table('todos_table')->count('todolist')->get();
+        $totalNumbers = DB::table('plans_table')->count('plan_content')->get();
         
-        $achievementNumbers = DB::table('reviews_table')-> count('evaluation')->get();
+        $achievementNumbers = DB::table('executions_table')-> count('achivement_rate')->get();
     }
     
     

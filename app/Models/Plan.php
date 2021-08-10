@@ -16,7 +16,6 @@ class Plan extends Model
         'plan_content',
         'plan_start_time',
         'plan_times',
-        'selected_at',
     ];
     
     public function goal()

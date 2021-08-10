@@ -17,11 +17,13 @@ class CreateExecutionsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable();
             $table->foreignId('goal_id')->nullable();
-            $table->time('execution_start_time');
-            $table->time('execution_times');
+            $table->foreignId('date_id')->nullable();
+            $table->time('execution_start_time')->default('00:00:00');;
+            $table->time('execution_times')->default('00:00:00');;
             $table->integer('achievement_rate')->nullable();
-            $table->string('review_content')->nullable();
-            $table->timestamps();
+            $table->string('review_content')->default('〇〇はできたが○○はできなかった');;
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

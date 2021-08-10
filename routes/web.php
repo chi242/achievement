@@ -20,35 +20,52 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-Route::get('/todos', 'App\Http\Controllers\TodoController@index');
+Route::post('/dates', 'App\Http\Controllers\DateController@store');
 
-Route::get('/todos/create','App\Http\Controllers\TodoController@create');
+Route::get('/plans', 'App\Http\Controllers\PlanController@index');
 
-Route::post('/todos', 'App\Http\Controllers\TodoController@store');
+Route::get('/plans/create','App\Http\Controllers\PlanController@create');
 
-Route::get('/todos/{todo}','App\Http\Controllers\TodoController@show');
+Route::post('/plans', 'App\Http\Controllers\PlanController@store');
 
-Route::get('/todos/{todo}/edit','App\Http\Controllers\TodoController@edit');
+Route::get('/plans/{plan}','App\Http\Controllers\PlanController@show');
 
-Route::put('/todos/{todo}/store','App\Http\Controllers\TodoController@update');
+Route::get('/plans/{plan}/edit','App\Http\Controllers\PlanController@edit')->name('plan.edit');
 
-Route::delete('/todos/{todo}','App\Http\Controllers\TodoController@delete');
+Route::put('/plans/{plan}/store','App\Http\Controllers\PlanController@update');
 
-Route::get('/reviews/create','App\Http\Controllers\ReviewController@create');
+Route::delete('/plans/{plan}','App\Http\Controllers\PlanController@delete');
 
-Route::post('/reviews', 'App\Http\Controllers\ReviewController@store');
+Route::get('/executions/create','App\Http\Controllers\ExecutionController@create')->name('execution.create');
 
-Route::get('/reviews/{review}','App\Http\Controllers\ReviewController@show');
+Route::post('/executions', 'App\Http\Controllers\ExecutionController@store');
 
-Route::get('/reviews/{review}/edit','App\Http\Controllers\ReviewController@edit');
+Route::get('/executions/{execution}','App\Http\Controllers\ExecutionController@show');
 
-Route::put('/reviews/{review}/store','App\Http\Controllers\ReviewController@update');
+Route::get('/executions/{plan}/edit','App\Http\Controllers\ExecutionController@edit');
 
-Route::delete('/reviews/{review}','App\Http\Controllers\ReviewController@delete');
+Route::put('/executions/{execution}/store','App\Http\Controllers\ExecutionController@update');
+
+Route::delete('/executions/{execution}','App\Http\Controllers\ExecutionController@delete');
 
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
 Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
+
+Route::get('/datas', 'App\Http\Controllers\DataController@index');
+
+Route::get('/planlists/{planlists}/edit', 'App\Http\Controllers\PlanlistController@edit');
+
+Route::get('/planlists', 'App\Http\Controllers\PlanlistController@index');
+
+Route::get('/planlists/{plan}', 'App\Http\Controllers\PlanlistController@show');
+
+Route::get('/reminders', 'App\Http\Controllers\ReminderController@index');
+
+
+
+
+
 
