@@ -30,10 +30,6 @@ class Goal extends Model
   {
     return $this->hasMany(Plan::class,'goal_id','id');
   }
-    public function reviews()
-  {
-    return $this->hasMany(Review::class);
-  }
     
 }
 

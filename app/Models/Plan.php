@@ -16,16 +16,17 @@ class Plan extends Model
         'plan_content',
         'plan_start_time',
         'plan_times',
+        'refrection_start_time',
+        'refrection_times',
+        'refrection_content',
+        'selected_date',
+        'status',
     ];
     
     public function goal()
     {
     return $this->belongsTo(Goal::class);
     }
-    public function review()
-  {
-    return $this->hasOne(Review::class);
-  }
   public function user()
     {
     return $this->belongsTo(User::class);
