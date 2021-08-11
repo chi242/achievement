@@ -41,7 +41,7 @@
             <div id='app'>
                 <form action="/dates" method="POST">
                     @csrf
-                    <input type="date" name="date[selected_at]" max="9999-12-31" @select="onSelect">
+                    <input type="date" name="date[selected_at]" max="9999-12-31" value={{$date->selected_at}}　required>
                     <input type ="submit" value="登録"/>
                 </form>
             </div>

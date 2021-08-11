@@ -16,10 +16,15 @@ class DateController extends Controller
     
     public function store(Request $request,Date $date)
     {
-        $date->selected_at = '2021-08-10';
+        $date = new \App\Models\Date;
+        $date->selected_at = $request->selected_at;
+        // $date->selected_at = '2021-08-10';
         // $request->selected_at;
         $date->save();
-        return view('plan/create');
+        return redirect('plans/create');
     }
 }
+
+
+ 
 
