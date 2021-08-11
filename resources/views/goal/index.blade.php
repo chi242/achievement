@@ -5,6 +5,7 @@
         <title>細かいゴール</title>
         <!-- Fonts -->
         <link href="secure_asset{{'../../../assets/css/goal/index.style.css'}}" rel="stylesheet">
+        
     </head>
     <body>
         <nav class="nav">

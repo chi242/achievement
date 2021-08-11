@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Goal;
-use App\Models\Todo;
+use App\Models\Plan;
 use App\Http\Requests\DiaryRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

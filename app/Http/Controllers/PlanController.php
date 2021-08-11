@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
-use App\Models\Date;
 use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\GoalController;
 use Illuminate\Http\Request;
 
 
