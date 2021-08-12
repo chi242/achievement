@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <title>記録</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/execution/create.style.css'}}" rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/reflection/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <form action="/executions" method="POST" >
+        <form action="/reflections" method="POST" >
          @csrf 
             <div class="form">
                 @if($plan)
@@ -15,13 +15,13 @@
                 @endif
                 <div class="frame">
                     <p>振り返り</p>
-                    <textarea type="comment" name="execution[execution]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
+                    <textarea type="comment" name="reflection[reflection]" placeholder="今日のできたことやできなかったことを記入してください。"></textarea>  
                 </div>
-                <div><input type="time" name="executions[execution_start_time]" style="width:80px"></div>
-                <div><input type="time" name="executions[execution_times]" style="width:80px"></div>
+                <div><input type="time" name="reflection[reflection_start_time]" style="width:80px"></div>
+                <div><input type="time" name="reflection[reflection_times]" style="width:80px"></div>
                 <div class="frame">
                     <p>達成度</p>
-                    <select name="execution[evaluation]">
+                    <select name="reflection[evaluation]">
                         <option value=1>1</button>
                         <option value=2>2</button>
                         <option value=3>3</button>                        

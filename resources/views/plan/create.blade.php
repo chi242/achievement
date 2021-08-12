@@ -30,7 +30,7 @@
                     </div>
                     
                 </div>
-                <div class="frame"><a href="/execution/create">振り返りをする</a></div>
+                <div class="frame"><a href="/reflections/create">振り返りをする</a></div>
             </div>
             <div class="button frame">
                 <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>
