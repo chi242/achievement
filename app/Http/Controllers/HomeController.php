@@ -26,15 +26,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public static function index(Goal $goal,Plan $plan)
+    public static function index(Goal $goal)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()])->with(['plan' => $plan ->get()]);
+        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()]);
         
         
         $totalNumbers = DB::table('plans_table')->count('plan_content')->get();
         
         $achievementNumbers = DB::table('executions_table')-> count('achivement_rate')->get();
     }
+    
     
     
 }

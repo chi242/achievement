@@ -14,12 +14,13 @@ class PlanController extends Controller
     {
         return view('plan/index')->with(['plan' => $plan]);
     }
+    
     public function create(Plan $plan)
      {
         return view('plan/create')->with(['plan' => $plan]);
     }
     
-    public function store(Request $request,Plan $plan,Date $date)
+    public function store(Request $request,Plan $plan)
     {   
         $input = $request['plan'];
         $plan->fill($input)->save();

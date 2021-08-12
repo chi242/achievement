@@ -5,6 +5,8 @@
         <title>目標</title>
         <!-- Fonts -->
         <link href="secure_asset{{'../../assets/css/index.style.css'}}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     </head>
     <body>
         <nav class="nav">
@@ -39,9 +41,9 @@
             </div>
             <!--選択カレンダー-->
             <div id='app'>
-                <form action="/dates" method="POST">
+                <form action="/selected_date" method="POST">
                     @csrf
-                    <input type="date" name="date[selected_date]" max="9999-12-31" value={{$plan->selected_date}}　required>
+                    <input type="date" name="plan[selected_date]" max="9999-12-31" value="selected_date"　required>
                     <input type ="submit" value="登録"/>
                 </form>
             </div>
@@ -82,5 +84,6 @@
         <script src="../../assets/js/index.js" type="text/javascript"></script>
         <script src="../../assets/js/index-percentage.js" type="text/javascript"></script>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>
 
