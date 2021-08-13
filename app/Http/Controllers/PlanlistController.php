@@ -14,10 +14,11 @@ class PlanlistController extends Controller
 {
     public function index(Plan $plan,Goal $goal)
     {
-        $plan = Plan::select('id','plan_content','plan_start_time','plan_times')->get();
-        // foreach($plans as $plan){
-            
-        // }
+        $plan = Plan::select('id','plan_content','plan_start_time','plan_times','selected_date')->orderBy('selected_date','desc')->first();
+        if($plan){
+                
+        }
+        
         return view('planlist/index',['plan' => $plan]);
         // ->with(['goal' => $goal->orderby('id','desc')->first()])->with(['plan' => $plan->get()]);
     }
