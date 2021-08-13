@@ -20,7 +20,7 @@ class CreatePlansTable extends Migration
             $table->string('plan_content')->default('○○をする');
             $table->time('plan_start_time')->default('00:00:00');
             $table->time('plan_times')->default('00:00:00');
-            $table->date('selected_date');
+            $table->date('selected_date')->default('2000-01-01');
             $table->time('reflection_start_time')->default('00:00:00');
             $table->time('refrection_times')->default('00:00:00');
             $table->string('refrection_content')->default('○○をする');

@@ -22,6 +22,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::post('/selected_date', 'App\Http\Controllers\Selected_dateController@store');
 
+// Route::post('/selected_dates', 'function(Request $request){dd($request)}');
+
 Route::get('/plans', 'App\Http\Controllers\PlanController@index');
 
 Route::get('/plans/create','App\Http\Controllers\PlanController@create');

@@ -7,6 +7,8 @@ use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Auth; //認証モデルを使用する
+
 
 class PlanController extends Controller
 {

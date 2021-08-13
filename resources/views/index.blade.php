@@ -43,7 +43,7 @@
             <div id='app'>
                 <form action="/selected_date" method="POST">
                     @csrf
-                    <input type="date" name="plan[selected_date]" max="9999-12-31" value="selected_date"　required>
+                    <lavel>日付選択<input type="date" name="selected_date" max="9999-12-31"/></lavel>
                     <input type ="submit" value="登録"/>
                 </form>
             </div>

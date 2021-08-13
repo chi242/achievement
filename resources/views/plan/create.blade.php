@@ -13,22 +13,16 @@
          @csrf 
             <div class="form">
                 @if($plan)
-                <h2>{{$plan->selected_at}}</h2>
+                <h2>{{$plan->selected_date}}</h2>
                 @endif
                     <p>Plan</p>
-                    <div class="form-floating">
-                      <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]"></textarea>
-                      <label for="floatingTextarea">内容</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <input type="time" class="form-control" id="floatingInput" placeholder="開始時間" name="plan[plan_start_time]">
-                      <label for="floatingInput">開始時間</label>
-                    </div>
-                    <div class="form-floating">
-                      <input type="time" class="form-control" id="floatingPassword" placeholder="取り組む時間" name="plan[plan_times]">
-                      <label for="floatingPassword">取り組む時間</label>
-                    </div>
-                    
+                      <label for="floatingTextarea" class="form-label">内容</label>
+                      <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
+                      <label for="floatingInput" class="form-label">開始時間</label>
+                      <input type="datetime-local" class="form-control" id="floatingInput" name="plan[plan_start_time]" required>
+                      <label for="floatingPassword" class="form-label">取り組む時間</label>
+                      <input type="datetime-local" class="form-control" id="floatingPassword" name="plan[plan_times]" required>
+
                 </div>
                 <div class="frame"><a href="/reflections/create">振り返りをする</a></div>
             </div>
