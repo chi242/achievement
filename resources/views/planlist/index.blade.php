@@ -25,7 +25,16 @@
         <div>
             @foreach ($plan as $plan)
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;>
-            <a href=""><div><?php echo $plan['plan_content'] ?></div></a>
+                <div>
+                    <a href="">
+                    <?php 
+                        
+                        if($plan['selected_date'] == '2021-08-15'){
+                        echo $plan['plan_content'] ;
+                        }
+                    ?>
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>   

@@ -30,7 +30,7 @@
                 
                 echo $statusNumbers;
                 echo '/';
-                echo $totalNumbers;
+                echo $totalNumbers,PHP_EOL;
                 
                 $formula = achievement_rate($totalNumbers,$statusNumbers);//達成率
                 $round_formula= round($formula);//四捨五入
@@ -44,9 +44,30 @@
             
             <P></P>
             <div>
+                <div>
+                    <?php
+                        $get_selected_dates = \App\Models\Plan::select('selected_date')->get();
+                         $array = (array) $get_selected_dates;
+                            $count_same_date = array_count_values($array);
+                            echo current($count_same_date); 
+
+                        echo $get_selected_dates;
+                        
+                            
+                         $gt_selected_dates = \APP\Models\Plan::where('id','>=',5)->get();  
+                         echo $gt_selected_dates;
+                            
+                            
+                        
+                
+                    ?>
+                    
+                    </div>
                 @foreach($plan as $plan)
                <div>
                    <p>取り組んだ時間</p>
+                   
+                    <div>
                    <?php
                     $total_refrection_times = \APP\Models\Plan::select('selected_date','refrection_times')->groupBy('selected_date')->first();
                     $total_plan_times = \Illuminate\Support\Facades\DB::table('plans')->sum('plan_times');
@@ -55,14 +76,15 @@
                     echo '/';
                     echo $total_plan_times;
                     ?>
+
                     <p><?php echo $plan['refrection_times'] ?></p>
                     <p><?php echo $plan['plan_times'] ?></p>
+                    </div>
                </div>
                <div>
                    <p>開始時間</p>
                    <ul>
-                   <li>予定時間  {{$plan->plan_times}}</li>
-                   <li>実行時間  {{$plan->refrection_times}}</li>
+
                    </ul>
                </div>
                @endforeach
