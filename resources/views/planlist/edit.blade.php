@@ -9,7 +9,7 @@
     <body>
         <p>Planリスト編集</p>
         <a href="/plans/1{{ $plan->id }}/edit">編集</a>
-        <a href={{ route('execution.create') }}>振り返りを書く</a>
+        <a href={{ route('reflection_page.create') }}>振り返りを書く</a>
     </body>
 </html>
 {{ $plan->id }}

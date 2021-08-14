@@ -9,7 +9,7 @@
     <body>
         @if($reflection)
         <div class="reflection">
-            <form action="/reflections/{{$reflection->id}}/store" method="POST">
+            <form action="/reflection_page/{{$reflection->id}}/store" method="POST">
              @csrf 
              @method('PUT')
                 <div class="date"><h2>{{$reflection->created_at->format('Y年m月d日')}}</h2></div>

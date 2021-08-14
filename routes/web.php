@@ -38,17 +38,17 @@ Route::put('/plans/{plan}/store','App\Http\Controllers\PlanController@update');
 
 Route::delete('/plans/{plan}','App\Http\Controllers\PlanController@delete');
 
-Route::get('/reflections/create','App\Http\Controllers\ReflectionController@create')->name('reflection.create');
+Route::get('/reflection_pages/create','App\Http\Controllers\Reflection_pageController@create')->name('reflection_page.create');
 
-Route::post('/reflections', 'App\Http\Controllers\ReflectionController@store');
+Route::post('/reflection_pages', 'App\Http\Controllers\Reflection_pageController@store');
 
-Route::get('/reflections/{reflection}','App\Http\Controllers\ReflectionController@show');
+Route::get('/reflection_pages/{reflection}','App\Http\Controllers\Reflection_pageController@show');
 
-Route::get('/reflections/{plan}/edit','App\Http\Controllers\ReflectionController@edit');
+Route::get('/reflection_pages/{plan}/edit','App\Http\Controllers\Reflection_pageController@edit');
 
-Route::put('/reflections/{reflection}/store','App\Http\Controllers\ReflectionController@update');
+Route::put('/reflection_pages/{reflection}/store','App\Http\Controllers\Reflection_pageController@update');
 
-Route::delete('/reflections/{reflection}','App\Http\Controllers\ReflectionController@delete');
+Route::delete('/reflection_pages/{reflection}','App\Http\Controllers\Reflection_pageController@delete');
 
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 

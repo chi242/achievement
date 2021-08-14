@@ -74,7 +74,7 @@
                 </table>
                 <div>
                     <p class="TodayRecord"><a href="/plans/create">今日の記録(plan)</a></p>
-                    <p class="TodayRecord"><a href="/executions/create">今日の振り返り(execution)</a></p>
+                    <p class="TodayRecord"><a href="/reflection_pages/create">今日の振り返り(reflection)</a></p>
                 </div>
             </div>
             

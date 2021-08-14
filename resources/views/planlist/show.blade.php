@@ -8,6 +8,6 @@
     </head>
     <body>
         <p>Planリスト記入済</p>
-        <a href="/executions/{{ $plan->id }}/edit">振り返りの編集</a>
+        <a href="/reflection_pages/{{ $plan->id }}/edit">振り返りの編集</a>
     </body>
 </html>

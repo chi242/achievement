@@ -7,7 +7,7 @@
         <link href="secure_asset{{'../../../assets/css/reflection/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <form action="/reflections" method="POST" >
+        <form action="/reflection_pages" method="POST" >
          @csrf 
             <div class="form">
                 @if($plan)
