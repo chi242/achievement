@@ -14,6 +14,6 @@ class DataController extends Controller
     
     public function index(Plan $plan)
     {
-        return view('data/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->first()]);
+        return view('data/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
     }
 }

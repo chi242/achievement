@@ -25,7 +25,7 @@
         <div>
             @foreach ($plan as $plan)
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;>
-            <a href=""><div>{{$plan->plan_content}}</div></a>
+            <a href=""><div><?php echo $plan['plan_content'] ?></div></a>
             </div>
             @endforeach
         </div>   

@@ -15,12 +15,11 @@
             <div class="navgoal"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
-        <p>分析</p>
         <div>
             <p>達成度</p>
                 <?php 
                 function achievement_rate($totalNumbers,$statusNumbers){
-                $formula = statusNumbers/totalNumbers*100;
+                $formula = $statusNumbers/$totalNumbers*100;
                 return $formula;
                 }
                 /*planテーブルのレコード数を取得*/
@@ -28,31 +27,45 @@
                 $plans = \App\Models\Plan::where('status','0');
                 $statusNumbers = $plans->count();
                 
-                echo $totalNumbers;
-                echo $statusNumbers;
                 
-                $achievement_rate($totalNumbers,$statusNumbers)
-                print '達成率.$achievement_rate';
+                echo $statusNumbers;
+                echo '/';
+                echo $totalNumbers;
+                
+                $formula = achievement_rate($totalNumbers,$statusNumbers);//達成率
+                $round_formula= round($formula);//四捨五入
+                print '達成率'.$round_formula.'%';
                 ?>
         </div>
         <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><? php echo $round_formula ?></div>
             </div>
         <div>
             
             <P></P>
             <div>
+                @foreach($plan as $plan)
                <div>
                    <p>取り組んだ時間</p>
-                   <p>{{$plan->plan_times}}</p>
+                   <?php
+                    $total_refrection_times = \APP\Models\Plan::select('selected_date','refrection_times')->groupBy('selected_date')->first();
+                    $total_plan_times = \Illuminate\Support\Facades\DB::table('plans')->sum('plan_times');
+            
+                    echo $total_refrection_times;
+                    echo '/';
+                    echo $total_plan_times;
+                    ?>
+                    <p><?php echo $plan['refrection_times'] ?></p>
+                    <p><?php echo $plan['plan_times'] ?></p>
                </div>
                <div>
                    <p>開始時間</p>
                    <ul>
-                   <li>予定時間{{$plan->plan_times}}</li>
-                   <li>実行時間</li>
+                   <li>予定時間  {{$plan->plan_times}}</li>
+                   <li>実行時間  {{$plan->refrection_times}}</li>
                    </ul>
                </div>
+               @endforeach
             </div>
             
         </div>
