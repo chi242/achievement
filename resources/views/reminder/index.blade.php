@@ -19,20 +19,28 @@
           <div class="row">
             <div class="col-6">
               振り返り未記入
-            <p>
+            <p> 
             <?php
-            $unreflection = \Illuminate\Support\Facades\DB::table('plans')->where('refrection_content','like','○○をする')->select('refrection_content')->get();
-            echo $unreflection;
+              $plan = \App\Models\Plan::get();
+              foreach($plan as $plan){
+              $all_reflection_content = $plan['refrection_content'];
+              if($all_reflection_content === '○○をする'){
+              echo $plan['plan_content'];
+              }
+              }
             ?>
             </p>
             </div>
             <div class="col-6">
               未達成のPlan
               <?php
-              $unachievement = \App\Models\Plan::where('status','=',0)
-              ->value('plan_content')
-              ->get();
-              echo $unachievement;
+              $plan = \App\Models\Plan::get();
+              foreach($plan as $plan){
+              $all_status = $plan['status'];
+              if($all_status === 0){
+              echo $plan['plan_content'];
+              }
+              }
               ?>
             </div>
           </div>

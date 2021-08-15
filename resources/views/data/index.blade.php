@@ -45,22 +45,35 @@
             <P></P>
             <div>
                 <div>
-                    <?php
-                        $get_selected_dates = \App\Models\Plan::select('selected_date')->get();
-                         $array = (array) $get_selected_dates;
-                            $count_same_date = array_count_values($array);
-                            echo current($count_same_date); 
+                                <?php
+                                  $plan = \App\Models\Plan::get();
+                                  foreach($plan as $plan){
+                                  $all_reflection_content = $plan['refrection_content'];
+                                  if($all_reflection_content === '○○をする'){
+                                  echo $plan['plan_content'];
+                                  }
+                                  }
+                                ?>
+                    
+                        <?php
+                        $plan = \App\Models\Plan::get();
+                        foreach($plan as $plan){
+                        $all_plans = $plan['selected_date'];
+                        }
+                        
+                        $all_plans = array();
 
-                        echo $get_selected_dates;
+                        echo $all_plans;
                         
-                            
-                         $gt_selected_dates = \APP\Models\Plan::where('id','>=',5)->get();  
-                         echo $gt_selected_dates;
-                            
-                            
                         
-                
+                        array_push($array,$all_plans);
+                        dd($array);
+                        $count_same_date = array_count_values($all_plans);
+                        echo current($count_same_date); 
+                        
+
                     ?>
+                                            
                     
                     </div>
                 @foreach($plan as $plan)
