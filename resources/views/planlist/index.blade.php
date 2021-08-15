@@ -23,20 +23,17 @@
         <p><a href="/planlists/1/edit">△△テキストP5~P10まで解く(振り返り未記入)</a></p>
         </div>
         <div>
-            @foreach ($plan as $plan)
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;>
-                <div>
                     <a href="">
                     <?php 
-                        
-                        if($plan['selected_date'] == '2021-08-15'){
-                        echo $plan['plan_content'] ;
+                        $plan = App\Models\Plan::orderBy('selected_date','desc')->get();
+                        foreach($plan as $plan){
+                        echo $plan['selected_date'];
+                        echo $plan['plan_content'];
                         }
                     ?>
                     </a>
-                </div>
             </div>
-            @endforeach
         </div>   
             
     </body>

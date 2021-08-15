@@ -18,10 +18,10 @@ class Selected_dateController extends Controller
         $plans = new \App\Models\Plan;
         $plans->selected_date = $request->selected_date;
         $plans->save();
+        
         return redirect('plans/create')->with(['plan' => $plan]);
     }
-        // $date->selected_at = '2021-08-10';
-        
+
     
 }
 

@@ -24,6 +24,7 @@ class PlanController extends Controller
     
     public function store(Request $request,Plan $plan)
     {   
+        $plan = \App\Models\Plan::orderby('id','desc')->first();
         $input = $request['plan'];
         $plan->fill($input)->save();
         return redirect('/');

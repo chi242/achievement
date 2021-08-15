@@ -12,19 +12,24 @@
         <form action="/plans" method="POST" >
          @csrf 
             <div class="form">
-                @if($plan)
-                <h2>{{$plan->selected_date}}</h2>
-                @endif
+            
                     <p>Plan</p>
+                     <h2>
+                        <?php
+                        $plan = App\Models\Plan::orderby('id','desc')->first();
+                         if(isset($plan['selected_date'])){
+                            echo $plan['selected_date'];
+                         }
+                        ?>
+                     </h2>
                       <label for="floatingTextarea" class="form-label">内容</label>
                       <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
                       <label for="floatingInput" class="form-label">開始時間</label>
-                      <input type="datetime-local" class="form-control" id="floatingInput" name="plan[plan_start_time]" required>
+                      <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" required>
                       <label for="floatingPassword" class="form-label">取り組む時間</label>
-                      <input type="datetime-local" class="form-control" id="floatingPassword" name="plan[plan_times]" required>
+                      <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" required>
 
                 </div>
-                <div class="frame"><a href="/reflections/create">振り返りをする</a></div>
             </div>
             <div class="button frame">
                 <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>

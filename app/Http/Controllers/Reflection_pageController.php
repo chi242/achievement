@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
-use App\Http\Requests\ReflectionRequest;
+use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -18,11 +18,14 @@ class Reflection_pageController extends Controller
     
     public function store(Request $request,Plan $plan)
     {   
-        $plans = new \App\Models\Plan();
-        
+        $plans = \App\Models\Plan::orderby('id','desc')->first();;
+        $plans->reflection_content = $request->reflection_content;
         $plans->reflection_start_time = $request->reflection_start_time;
         $plans->reflection_times = $request->reflection_times;
+        $plans->status = $request->status;
         $plans->save();
+        
+        
         // $input = $request['reflection_page'];
         // $reflection_page->fill($input)->save();
         //  $reflection = reflection::find($request->id);

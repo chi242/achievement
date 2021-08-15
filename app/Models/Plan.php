@@ -17,9 +17,9 @@ class Plan extends Model
         'plan_content',
         'plan_start_time',
         'plan_times',
-        'refrection_start_time',
-        'refrection_times',
-        'refrection_content',
+        'reflection_start_time',
+        'reflection_times',
+        'reflection_content',
         'selected_date',
         'status',
     ];
