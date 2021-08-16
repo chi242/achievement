@@ -4,31 +4,27 @@
         <meta charset="utf-8">
         <title>記録</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../assets/css/review/show.style.css'}}" rel="stylesheet">
+        <link href="secure_asset{{'../../../assets/css/reflection/show.style.css'}}" rel="stylesheet">
     </head>
     <body>
         
-        @if($todo)
-        <div class="todo" method="post">
-            <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="POST" style="display:inline">
+        @if($plan)
+        <div class="plan" method="post">
+            <form action="/reflection_pages/{{ $plan->id }}" id="form_{{ $plan->id }}" method="POST" style="display:inline">
                 @csrf
                 @method('DELETE')
                 
-                <div class="date"><h2>{{$review->created_at->format('Y年m月d日')}}</h2></div>
-                <div class="ToDo item">
-                    
-                    <!--<p>To do:{{$todo->todolist}}</p>-->
-                </div>
+                <div class="date"><h2>{{$plan->selected_date}}</h2></div>
                 <div>
-                    <div class="Review item">
-                        <p>振り返り:{{$review->review}}</p>
+                    <div class="reflection item">
+                        <p>Plan：{{$plan->plan_content}}</p>
                     </div>
                     <div class="item">
-                        <p>達成度：{{$review->evaluation}}</p>
+                        <p>振り返り:{{$plan->reflection_content}}</p>
                     </div>
     
                     <div class="button">
-                        <a href="/reviews/{{$review->id}}/edit">編集</a>
+                        <p><a href="/reflection_pages/create">振り返りを書く</a></p>
                         <input type="submit" value="削除"/> 
                     </div>
                 </div>

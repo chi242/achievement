@@ -42,11 +42,11 @@ Route::get('/reflection_pages/create','App\Http\Controllers\Reflection_pageContr
 
 Route::post('/reflection_pages', 'App\Http\Controllers\Reflection_pageController@store');
 
-Route::get('/reflection_pages/{reflection}','App\Http\Controllers\Reflection_pageController@show');
+Route::get('/reflection_pages/{plan}','App\Http\Controllers\Reflection_pageController@show');
 
 Route::get('/reflection_pages/{plan}/edit','App\Http\Controllers\Reflection_pageController@edit');
 
-Route::put('/reflection_pages/{reflection}/store','App\Http\Controllers\Reflection_pageController@update');
+Route::put('/reflection_pages/{plan}/store','App\Http\Controllers\Reflection_pageController@update');
 
 Route::delete('/reflection_pages/{reflection}','App\Http\Controllers\Reflection_pageController@delete');
 

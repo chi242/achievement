@@ -23,7 +23,7 @@ class CreatePlansTable extends Migration
             $table->date('selected_date')->default('2000-01-01');
             $table->time('reflection_start_time')->default('00:00:00');
             $table->time('reflection_times')->default('00:00:00');
-            $table->string('reflection_content')->default('○○をする');
+            $table->string('reflection_content')->default('未記入');
             $table->smallInteger('status')->default('0');
             $table->timestamps();
         });

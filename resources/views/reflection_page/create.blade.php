@@ -30,11 +30,17 @@
                 <div class="frame">
                     <p>達成度</p>
                     <select name="status" required>  
-                        <option value=1>1</button>
-                        <option value=2>2</button>
-                        <option value=3>3</button>                        
-                        <option value=4>4</button>
-                        <option value=5>5</button>
+                        <option value=0>0</button>
+                        <option value=10>10</button>
+                        <option value=20>20</button>                        
+                        <option value=30>30</button>
+                        <option value=40>40</button>
+                        <option value=50>50</button>
+                        <option value=60>60</button>
+                        <option value=70>70</button>                        
+                        <option value=80>80</button>
+                        <option value=90>90</button>
+                        <option value=100>100</button>
                     </select>
                 </div>
             </div>

@@ -57,6 +57,22 @@ document.getElementById("thead-month").innerHTML = dayHeader;
               }
           }
           tbl.appendChild(row);
+          
+          
+  <html><!--月表示-->
+                <div class="month" id="month">
+                    <script>
+                        var today = new Date();
+                        var month = today.getMonth();
+                        var disMonth = today.getMonth() + 1;
+                        document.write(disMonth + "月");
+                    </script>
+                </div>
+                
+                <table class="table-calendar" id="calendar" data-lang="ja">
+                    <thead id="thead-month"></thead>
+                    <tbody id="calendar-body"></tbody>
+  </html>
   
      
 //マウスオーバー処理

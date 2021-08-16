@@ -19,25 +19,15 @@
         <div class="main">
             <div class="container-calendar">
                 <h3>maingoal</h3>
-                @if($goal)
+                <?php
+                if($goal){
+                ?>
                 <div class="maingoal">{{$goal->maingoal}}</div>
-                @endif
-            </div>
-
-
-            <!--達成割合表示-->
-            <div id ="calculation">
-            <script>
-            let totalNumbers = $totalNumbers;
-            let achievementNumbers = $achievemntNumbers;
-            let calculation = (totalNumbers,achievementNumbers)=>{
-               return achievementNumbers/totalNumbers*100;
-            }
-            
-            let percentage = calculation($totalNumbers,$achievemntNumbers)
-            console.log(percentage);
-            document.write(percentage);
-            </script>
+                <?php
+                }else{
+                echo 'Maingoalは未設定です。';
+                }
+                ?>
             </div>
             <!--選択カレンダー-->
             <div id='app'>
@@ -56,19 +46,7 @@
                     console.log('選択されました')
                  })
                 </script>
-                <!--月表示-->
-                <div class="month" id="month">
-                    <script>
-                        var today = new Date();
-                        var month = today.getMonth();
-                        var disMonth = today.getMonth() + 1;
-                        document.write(disMonth + "月");
-                    </script>
-                </div>
                 
-                <table class="table-calendar" id="calendar" data-lang="ja">
-                    <thead id="thead-month"></thead>
-                    <tbody id="calendar-body"></tbody>
                     
                     <a href="plans/create"></a>
                 </table>

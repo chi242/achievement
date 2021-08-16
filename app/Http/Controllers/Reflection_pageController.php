@@ -25,24 +25,20 @@ class Reflection_pageController extends Controller
         $plans->status = $request->status;
         $plans->save();
         
-        
-        // $input = $request['reflection_page'];
-        // $reflection_page->fill($input)->save();
-        //  $reflection = reflection::find($request->id);
-        //  $reflection->fill($request->all())->save();
         return redirect('/planlists/' . $plan->id);
         
     }
     
-    public function show(plan $plan)
+    public function show(Plan $plan)
     {
-        return view('reflection_page/show')->with(['reflection' => $reflection])->with(['plan' => $plan]);
+        $plans = \App\Models\Plan::orderby('id','desc')->first();;
+        return view('reflection_page/show')->with(['plan' => $plan]);
     }
      
-    public function edit()
+    public function edit(Plan $plan)
     {
         $reflection = reflection::all();
-        return view('reflection_page/edit',['reflection'-> $reflection]);
+        return view('reflection_page/edit',['plan'-> $plan]);
     }
     
     public function update(Request $request)

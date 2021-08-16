@@ -14,26 +14,17 @@
             <div class="navgoal"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
-        <p>Planリスト一覧</p>
         <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
         <div>
-            <p>〇月〇日</p>
-            <!--1の代わりにid-->
-        <p><a href="/planlists/1">〇〇テキストP5~P10まで解く(振り返り記入済)</a></p>
-        <p><a href="/planlists/1/edit">△△テキストP5~P10まで解く(振り返り未記入)</a></p>
-        </div>
-        <div>
-            <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;>
-                    <a href="">
-                    <?php 
+            <a href= onclick="document">
+                        <?php 
                         $plan = App\Models\Plan::orderBy('selected_date','desc')->get();
                         foreach($plan as $plan){
-                        echo $plan['selected_date'];
-                        echo $plan['plan_content'];
-                        }
-                    ?>
-                    </a>
-            </div>
+                        echo $plan['selected_date']."\n";?>
+                        <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}."><?php echo $plan['plan_content'].'<br />';?></a>
+                        <?php } ?>
+                
+            
         </div>   
             
     </body>

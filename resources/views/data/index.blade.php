@@ -15,26 +15,36 @@
             <div class="navgoal"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
+        <!--達成率表示-->
         <div>
             <p>達成度</p>
                 <?php 
-                function achievement_rate($totalNumbers,$statusNumbers){
-                $formula = $statusNumbers/$totalNumbers*100;
-                return $formula;
-                }
+                
                 /*planテーブルのレコード数を取得*/
                 $totalNumbers = \Illuminate\Support\Facades\DB::table('plans')->count();
                 $plans = \App\Models\Plan::where('status','0');
                 $statusNumbers = $plans->count();
                 
+                if($totalNumbers !== 0){
+                function achievement_rate($totalNumbers,$statusNumbers){
+                $formula = $statusNumbers/$totalNumbers*100;
+                return $formula;
+                $formula = achievement_rate($totalNumbers,$statusNumbers);//達成率
+                $round_formula= round($formula);//四捨五入
+                print '達成率'.$round_formula.'%';
                 
                 echo $statusNumbers;
                 echo '/';
                 echo $totalNumbers,PHP_EOL;
+                }
+                }else{
+                echo 'Planはまだありません。';
+                }
                 
-                $formula = achievement_rate($totalNumbers,$statusNumbers);//達成率
-                $round_formula= round($formula);//四捨五入
-                print '達成率'.$round_formula.'%';
+                
+                
+                
+                
                 ?>
         </div>
         <div class="progress">
@@ -42,60 +52,22 @@
             </div>
         <div>
             
-            <P></P>
             <div>
-                <div>
-                                <?php
-                                  $plan = \App\Models\Plan::get();
-                                  foreach($plan as $plan){
-                                  $all_reflection_content = $plan['refrection_content'];
-                                  if($all_reflection_content === '○○をする'){
-                                  echo $plan['plan_content'];
-                                  }
-                                  }
-                                ?>
-                    
-                        <?php
-                        $plan = \App\Models\Plan::get();
-                        foreach($plan as $plan){
-                        $all_plans = $plan['selected_date'];
-                        }
-                        
-                        $all_plans = array();
-
-                        echo $all_plans;
-                        
-                        
-                        array_push($array,$all_plans);
-                        dd($array);
-                        $count_same_date = array_count_values($all_plans);
-                        echo current($count_same_date); 
-                        
-
-                    ?>
-                                            
-                    
-                    </div>
                 @foreach($plan as $plan)
                <div>
-                   <p>取り組んだ時間</p>
-                   
-                    <div>
-                   <?php
-                    $total_refrection_times = \APP\Models\Plan::select('selected_date','refrection_times')->groupBy('selected_date')->first();
-                    $total_plan_times = \Illuminate\Support\Facades\DB::table('plans')->sum('plan_times');
-            
-                    echo $total_refrection_times;
+                    <h3><?php echo $plan['selected_date'] ?></h3>
+                    <p>取り組んだ時間</p>
+                    <p>
+                    <?php
+                    echo $plan['reflection_times'];
                     echo '/';
-                    echo $total_plan_times;
+                    echo $plan['plan_times'];
                     ?>
-
-                    <p><?php echo $plan['refrection_times'] ?></p>
-                    <p><?php echo $plan['plan_times'] ?></p>
-                    </div>
+                    <p>予定開始時間　<?php echo $plan['reflection_start_time'] ?></p>
+                    <p>実行開始時間　<?php echo $plan['plan_start_time'] ?></p>
+                    </p>
                </div>
                <div>
-                   <p>開始時間</p>
                    <ul>
 
                    </ul>

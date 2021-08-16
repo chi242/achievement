@@ -12,13 +12,12 @@ use Illuminate\Http\Request;
 
 class PlanlistController extends Controller
 {
-    public function index(Plan $plan,Goal $goal)
+    public function index(Plan $plan)
     {
-        $plan = Plan::select('id','plan_content','plan_start_time','plan_times','selected_date')->orderBy('selected_date','desc')->get();
-
+        // $plan = Plan::orderby('selected_date','desc')->get();
         
-        return view('planlist/index',['plan' => $plan]);
-        // ->with(['goal' => $goal->orderby('id','desc')->first()])->with(['plan' => $plan->get()]);
+        return view('planlist/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
+        
     }
 
     public function edit(Plan $plan)

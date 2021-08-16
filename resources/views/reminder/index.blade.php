@@ -8,37 +8,84 @@
         <link href="secure_asset{{'../../../assets/css/review/create.style.css'}}" rel="stylesheet">
     </head>
     <body>
-        <nav class="nav">
+        <nav class="nav" name="first">
             <div class="navhome"><h2><a class="mousenav" href="/">Home</a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/goals"> 目標データ </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/planlists"> Planリスト </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
             <div class="navgoal"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid" name="content">
           <div class="row">
             <div class="col-6">
-              振り返り未記入
+            <p>振り返り未記入</p>  
             <p> 
             <?php
               $plan = \App\Models\Plan::get();
+              $all_reflection_content = null;
               foreach($plan as $plan){
-              $all_reflection_content = $plan['refrection_content'];
-              if($all_reflection_content === '○○をする'){
-              echo $plan['plan_content'];
+              $all_reflection_content = $plan['reflection_content'];
+              if($all_reflection_content === '未記入'){
+              echo $plan['selected_date']."\n";
+              echo $plan['plan_content']. '<br />';
               }
+              }
+              if( empty($all_reflection_content)){
+              echo "振り返りは書いていません。";
+              }
+              elseif($all_reflection_content !== '未記入'){
+              echo "振り返りはすべて記入済です。";
               }
             ?>
             </p>
             </div>
-            <div class="col-6">
-              未達成のPlan
+            <div class="col-6" name="second">
+            <p>未達成のPlan</p>
               <?php
-              $plan = \App\Models\Plan::get();
+              $plan = \App\Models\Plan::orderby('selected_date','desc')->orderby('id','desc')->get();
+              $all_status = null;
               foreach($plan as $plan){
               $all_status = $plan['status'];
               if($all_status === 0){
-              echo $plan['plan_content'];
+              echo $plan['selected_date']."\n";
+              echo $plan['plan_content'].'<br />';
+              }
+              }
+              if($all_status === 100){
+              echo "Planはすべて達成されました！";
+              }
+              ?>
+            
+            <select onchange="return selectStatus()" name="status" required>  
+                        <option value=0>0</button>
+                        <option value=10>10</button>
+                        <option value=20>20</button>                        
+                        <option value=30>30</button>
+                        <option value=40>40</button>
+                        <option value=50>50</button>
+                        <option value=60>60</button>
+                        <option value=70>70</button>                        
+                        <option value=80>80</button>
+                        <option value=90>90</button>
+                        <option value=100>100</button>
+            </select>
+
+              
+              <?php
+              $plan = \App\Models\Plan::orderby('selected_date','desc')->orderby('id','desc')->get();
+              foreach($plan as $plan){
+              ?>
+              <script type="text/javascript">
+                function selectStatus() {
+                  var status = document.content.second.status.value;
+                  console.log();
+                }
+              </script>
+            <?php
+              $all_status = $plan['status'];
+              if($all_status >= 40){
+              echo $plan['selected_date']."\n";
+              echo $plan['plan_content'].'<br />';
               }
               }
               ?>
