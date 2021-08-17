@@ -12,11 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('oauths/login','App\Http\Controllers\HomeController@index');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('login/google', 'App\Http\Controllers\Auth\LoginController@getGoogleAuth');
+
+Route::get('login/google/callback', 'Auth\LoginController@authGoogleCallback');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 

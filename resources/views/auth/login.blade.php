@@ -64,6 +64,12 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row mt-5">
+                        <label for="name" class="col-sm-4 col-form-label text-md-right">SNSログイン</label>
+                        <div class="col-md-6">
+                            <a href="{{ url('login/google')}}" class="btn btn-danger"><i class="fa fa-google"> Google</i></a>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
