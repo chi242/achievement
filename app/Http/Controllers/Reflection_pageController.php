@@ -6,6 +6,7 @@ use App\Models\Plan;
 use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 
 
@@ -18,7 +19,8 @@ class Reflection_pageController extends Controller
     
     public function store(Request $request,Plan $plan)
     {   
-        $plans = \App\Models\Plan::orderby('id','desc')->first();;
+        $plans = \App\Models\Plan::orderby('id','desc')->first();
+        $plans->user_id = Auth::user()->id;
         $plans->reflection_content = $request->reflection_content;
         $plans->reflection_start_time = $request->reflection_start_time;
         $plans->reflection_times = $request->reflection_times;
