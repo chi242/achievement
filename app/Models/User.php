@@ -44,11 +44,6 @@ class User extends Authenticatable
 
     use Notifiable;
 
-     function IdentityProviders()
-    {
-        // IdentityProviderモデルと紐付ける 1対多の関係
-        return $this->hasMany(IdentityProvider::class);
-    }
 
     
 
