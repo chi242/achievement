@@ -18,6 +18,10 @@
         <!--達成率表示-->
         <div>
             <p>達成度</p>
+            <?php 
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+?>
                 <?php 
                 /*planテーブルのレコード数を取得*/
                 $totalNumbers = \Illuminate\Support\Facades\DB::table('plans')->count();
