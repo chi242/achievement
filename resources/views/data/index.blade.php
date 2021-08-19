@@ -19,7 +19,6 @@
         <div>
             <p>達成度</p>
                 <?php 
-                
                 /*planテーブルのレコード数を取得*/
                 $totalNumbers = \Illuminate\Support\Facades\DB::table('plans')->count();
                 $plans = \App\Models\Plan::where('status','0');
