@@ -17,7 +17,7 @@ class GoalController extends Controller
     
     public function index(Goal $goal)
     {
-        $plans = Plan::where('user\id',Auth::user()->id)->orderBy('selected_date','desc');
+        $plans = \App\Models\Plan::where('user\id',Auth::user()->id)->orderBy('selected_date','desc');
         
         return view('goal/index')->with(['goal' => $goal->orderby('id','desc')->first()]);
     }

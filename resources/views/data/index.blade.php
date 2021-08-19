@@ -40,21 +40,16 @@
                 }else{
                 echo 'Planはまだありません。';
                 }
-                
-                
-                
-                
-                
                 ?>
         </div>
         <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><? php echo $round_rate ?></div>
-            </div>
-        <div>
-            
-            <div>
-                @foreach($plan as $plan)
-               <div>
+        </div>
+
+            <div class="row">
+               
+               <div class="col-md-4 offset-md-4">
+                @foreach($plan as $plan)   
                     <h3><?php echo $plan['selected_date'] ?></h3>
                     <p>取り組んだ時間</p>
                     <p>
@@ -66,13 +61,10 @@
                     <p>予定開始時間　<?php echo $plan['reflection_start_time'] ?></p>
                     <p>実行開始時間　<?php echo $plan['plan_start_time'] ?></p>
                     </p>
+                @endforeach
+                 
                </div>
-               <div>
-                   <ul>
 
-                   </ul>
-               </div>
-               @endforeach
             </div>
             
         </div>

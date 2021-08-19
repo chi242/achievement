@@ -16,7 +16,7 @@ class ReminderController extends Controller
     
     public function index()
     {
-        $plans = Plan::where('user\id',Auth::user()->id);
+        $plans = \App\Models\Plan::where('user\id',Auth::user()->id);
 
         return view('reminder/index');
     }

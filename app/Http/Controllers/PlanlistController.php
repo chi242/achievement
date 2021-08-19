@@ -16,7 +16,7 @@ class PlanlistController extends Controller
     {
         // $plan = Plan::orderby('selected_date','desc')->get();
         
-        $plans = Plan::where('user\id',Auth::user()->id);
+        $plans = Plan::where('user_id',Auth::user()->id);
         
         return view('planlist/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
         
