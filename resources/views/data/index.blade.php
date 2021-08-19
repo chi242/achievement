@@ -18,11 +18,29 @@
         <!--達成率表示-->
         <div>
             <p>達成度</p>
-            <?php 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-?>
-            
+                <?php 
+                
+                /*planテーブルのレコード数を取得*/
+                $totalNumbers = \Illuminate\Support\Facades\DB::table('plans')->count();
+                $plans = \App\Models\Plan::where('status','0');
+                $statusNumbers = $plans->count();
+                
+                if($totalNumbers !== 0){
+                function achievement_rate($totalNumbers,$statusNumbers){
+                $rate = $statusNumbers/$totalNumbers*100;
+                return $rate;
+                $rate = achievement_rate($totalNumbers,$statusNumbers);//達成率
+                $round_rate= round($rate);//四捨五入
+                print '達成率'.$round_rate.'%';
+                
+                echo $statusNumbers;
+                echo '/';
+                echo $totalNumbers,PHP_EOL;
+                }
+                }else{
+                echo 'Planはまだありません。';
+                }
+                ?>
         </div>
         <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><? php echo $round_rate ?></div>
