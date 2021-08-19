@@ -50,23 +50,6 @@ error_reporting(E_ALL);
         </div>
 
             <div class="row">
-               
-               <div class="col-md-4 offset-md-4">
-                @foreach($plan as $plan)   
-                    <h3><?php echo $plan['selected_date'] ?></h3>
-                    <p>取り組んだ時間</p>
-                    <p>
-                    <?php
-                    echo $plan['reflection_times'];
-                    echo '/';
-                    echo $plan['plan_times'];
-                    ?>
-                    <p>予定開始時間　<?php echo $plan['reflection_start_time'] ?></p>
-                    <p>実行開始時間　<?php echo $plan['plan_start_time'] ?></p>
-                    </p>
-                @endforeach
-                 
-               </div>
 
             </div>
             
