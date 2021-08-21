@@ -42,8 +42,8 @@
             </div>
             <div class="col-6" name="second">
             <p>未達成のPlan</p>
-              <div>
-                <select onchange="return selectStatus()" name="status" required>  
+              <div>達成度
+                <select id="select_status" name="status" required>  
                   <option value=0>0</button>
                   <option value=10>10</button>
                   <option value=20>20</button>                        
@@ -56,6 +56,7 @@
                   <option value=90>90</button>
                   <option value=100>100</button>
                 </select>
+              以上
               </div>
               <?php
               $plan = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
@@ -81,18 +82,18 @@
               ?>
               <script type="text/javascript">
                 function selectStatus() {
-                  var status = document.content.second.status.value;
-                  console.log();
+                  var status = document.getElementById("select_status").value;
+                <?php
+                  $all_status = $plan['status'];
+                  if($all_status >= 40){
+                  echo $plan['selected_date']."\n";
+                  echo $plan['plan_content'].'<br />';
+                  }
+                  }
+                  ?>   
                 }
               </script>
-            <?php
-              $all_status = $plan['status'];
-              if($all_status >= 40){
-              echo $plan['selected_date']."\n";
-              echo $plan['plan_content'].'<br />';
-              }
-              }
-              ?>
+            
             </div>
           </div>
         </div>
