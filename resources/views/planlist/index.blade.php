@@ -29,7 +29,7 @@
             <div class="navhome nav-home"><h2><a class="mousenav" href="/">Home</a></h2></div>
             <div class="navgoal nav-goal"><h2><a class="mousenav" href="/goals"> 目標データ </a></h2></div>
             <div class="navgoal nav-planlist"><h2><a class="mousenav" href="/planlists"> Planリスト </a></h2></div>
-            <div class="navgoal nav-data"><h2><a class="mousenav" href="/datas"> 分析 </a></h2></div>
+            <div class="navgoal nav-data"><h2><a class="mousenav" href="/analysis_pages"> 分析 </a></h2></div>
             <div class="navgoal nav-reminder"><h2><a class="mousenav" href="/reminders"> リマインダー </a></h2></div>
         </nav>
         <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->

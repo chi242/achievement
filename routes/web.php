@@ -61,7 +61,7 @@ Route::get('/goals/create','App\Http\Controllers\GoalController@create');
 
 Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
-Route::get('/datas', 'App\Http\Controllers\DataController@index');
+Route::get('/analysis_pages', 'App\Http\Controllers\Analysis_pageController@index');
 
 Route::get('/planlists/{planlists}/edit', 'App\Http\Controllers\PlanlistController@edit');
 

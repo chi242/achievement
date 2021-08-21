@@ -12,7 +12,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 
 
-class DataController extends Controller
+class Analysis_pageController extends Controller
 {
     
     public function index(Plan $plan)
@@ -23,7 +23,7 @@ class DataController extends Controller
         
         // return view('data/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
         
-        return view('data/index')->with(['plan' => $plan->where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get()]);
+        return view('analysis_page/index')->with(['plan' => $plan->where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get()]);
     
         // return view('data/index', ['plans' => $plans]);
         

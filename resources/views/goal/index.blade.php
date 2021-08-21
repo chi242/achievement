@@ -69,7 +69,7 @@
             <a class="nav-link nav-another nav-planlist" href="/planlists">Planリスト</a>
           </li>
           <li class="nav-item nav-another nav-data">
-            <a class="nav-link" href="/datas">分析</a>
+            <a class="nav-link" href="/analysis_pages">分析</a>
           </li>
           <li class="nav-item nav-another nav-reminder">
             <a class="nav-link" href="/reminders">リマインダー</a>
