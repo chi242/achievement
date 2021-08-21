@@ -22,29 +22,23 @@
                 
                 /*planテーブルのレコード数を取得*/
                 $totalNumbers = \App\Models\Plan::where('user_id',Auth::user()->id)->count();
-                $plans = \App\Models\Plan::where('user_id',Auth::user()->id)->where('status','0');
+                $plans = \App\Models\Plan::where('user_id',Auth::user()->id)->where('status','100');
                 $statusNumbers = $plans->count();
                 
                 if($totalNumbers !== 0){
-                function achievement_rate($totalNumbers,$statusNumbers){
                 $rate = $statusNumbers/$totalNumbers*100;
-                return $rate;
-                $rate = achievement_rate($totalNumbers,$statusNumbers);//達成率
-                $round_rate= round($rate);//四捨五入
-                print '達成率'.$round_rate.'%';
-                
+                $round_rate= round($rate);
+                print '達成率'.$round_rate.'%'.PHP_EOL;
                 echo $statusNumbers;
                 echo '/';
-                echo $totalNumbers,PHP_EOL;
-                }
+                echo $totalNumbers;
+                
                 }else{
                 echo 'Planはまだありません。';
                 }
                 ?>
         </div>
-        <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><? php echo $round_rate ?></div>
-        </div>
+        
 
             <div class="row">
                
