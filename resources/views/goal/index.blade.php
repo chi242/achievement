@@ -71,42 +71,57 @@
         </ul>
         <div class="detail">
         <?php
-        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
+          $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
+          //maingoal
           if(isset($goal['maingoal'])){
-        
-            echo $goal['maingoal'];
-          }
-          else{
-            echo 'maingoal 未設定'. '<br />';
-          }
-        
-      
-          if(isset($goals_measurable)){
         ?>
-            <div class="goals"><p>measurable<p>{{ $goal->measurable }}</div>
-        <?php  
+          <p>maingoal</p>
+        <?php echo $goal['maingoal'];
           }
           else{
-            echo 'measurable 未設定'. '<br />';
-          }
-        
-          if(isset($goals_maingoal)){
         ?>
-            <div class="goals"><p>actionable</p>{{ $goal->actionable }}</div>
-        <?php  
+          <p>maingoal</p>
+        <?php
+          echo '未設定'. '<br />';
           }
-          else{
-            echo 'actionable 未設定'. '<br />';
-          }
-        
-    
-          if(isset($goals_maingoal)){
+          //measurable
+          if(isset($goal['measurable'])){
         ?>
-            <div class="goals"><p>competent</p>{{ $goal->competent }}</div>
-                <?php  
+          <p>measurable</p>  
+        <?php 
+          echo $goal['measurable'];
           }
           else{
-            echo 'competent 未設定'. '<br />';
+        ?>
+          <p>measurable</p>  
+        <?php
+            echo '未設定'. '<br />';
+          }
+         //actionable
+          if(isset($goal['actionable'])){
+        ?>
+          <p>actionable</p>  
+        <?php
+          echo $goal['actionable'];  
+          }
+          else{
+        ?>
+          <p>actionable</p>
+        <?php
+        echo '未設定'. '<br />';
+          }
+        //competent
+          if(isset($goal['competent'])){
+        ?>
+          <p>competent</p>
+        <?php
+            echo $goal['competent'];  
+          }
+          else{
+        ?>
+          <p>competent</p>
+        <?php
+            echo '未設定'. '<br />';
           }
         ?>
         </div>
