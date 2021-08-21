@@ -45,7 +45,7 @@
           </button>
           <ul class="dropdown-menu">
             <li>ログアウトする
-              <a href="/oauths/login" onclick="signOut();">Sign out</a>
+              <a href="{{ route('logout') }}" onclick="signOut();">Sign out</a>
               <script>
                 function signOut() {
                   var auth2 = gapi.auth2.getAuthInstance();

@@ -27,7 +27,9 @@ class PlanController extends Controller
         $plan = \App\Models\Plan::orderby('id','desc')->first();
         $input = $request['plan'];
         $plan->fill($input)->save();
-        return redirect('/');
+        
+        $plan = \App\Models\Plan::where('user_id',Auth::id());
+        return redirect('/planlists');
     }
      
     public function show(Plan $plan)

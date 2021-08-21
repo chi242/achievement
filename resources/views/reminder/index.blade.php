@@ -21,7 +21,7 @@
             <p>振り返り未記入</p>  
             <p> 
             <?php
-              $plan = \App\Models\Plan::get();
+              $plan = \App\Models\Plan::where('user_id',Auth::id())->get();
               $all_reflection_content = null;
               foreach($plan as $plan){
               $all_reflection_content = $plan['reflection_content'];
@@ -42,7 +42,7 @@
             <div class="col-6" name="second">
             <p>未達成のPlan</p>
               <?php
-              $plan = \App\Models\Plan::orderby('selected_date','desc')->orderby('id','desc')->get();
+              $plan = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
               $all_status = null;
               foreach($plan as $plan){
               $all_status = $plan['status'];

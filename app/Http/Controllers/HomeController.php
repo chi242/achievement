@@ -30,10 +30,6 @@ class HomeController extends Controller
     {
         return view('index')->with(['goal' => $goal->orderby('id','desc')->first()]);
         
-        
-        $totalNumbers = DB::table('plans_table')->count('plan_content')->get();
-        
-        $achievementNumbers = DB::table('executions_table')-> count('achivement_rate')->get();
     }
     
     

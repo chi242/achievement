@@ -34,9 +34,8 @@
         </nav>
         <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
         <div>
-            <a href= onclick="document">
                         <?php 
-                        $plan = App\Models\Plan::orderBy('selected_date','desc')->get();
+                        $plan = App\Models\Plan::where('user_id',Auth::id())->orderBy('selected_date','desc')->get();
                         foreach($plan as $plan){
                         echo $plan['selected_date']."\n";?>
                         <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}."><?php echo $plan['plan_content'].'<br />';?></a>

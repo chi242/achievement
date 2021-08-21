@@ -17,7 +17,7 @@ class GoalController extends Controller
     
     public function index(Goal $goal)
     {
-        $plans = \App\Models\Plan::where('user\id',Auth::user()->id)->orderBy('selected_date','desc');
+        $plans = \App\Models\Goal::where('user_id',Auth::user()->id)->orderBy('selected_date','desc');
         
         return view('goal/index')->with(['goal' => $goal->orderby('id','desc')->first()]);
     }
@@ -28,7 +28,9 @@ class GoalController extends Controller
     }
     
     public function store(Request $request , Goal $goal)
-    {   
+    {
+        $goal = new \App\Models\Goal;
+        $goal->user_id = Auth::id();
         $input = $request['goal'];
         $goal->fill($input)->save();
         return redirect('/goals');

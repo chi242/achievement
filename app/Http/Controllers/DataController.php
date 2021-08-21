@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
 
+use Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 
@@ -17,10 +17,13 @@ class DataController extends Controller
     
     public function index(Plan $plan)
     {
-        $plan = \App\Models\Plan::where('user_id',Auth::user()->id);
+        // $plan = Plan::get();
+
+        // $plan = \App\Models\Plan::where('user_id',Auth::user()->id)->get();
         
-        return view('data/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
+        // return view('data/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
         
+        return view('data/index')->with(['plan' => $plan->where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get()]);
     
         // return view('data/index', ['plans' => $plans]);
         
