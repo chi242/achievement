@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use App\Models\Plan;
-use App\Http\Requests\DiaryRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GoalRequest;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -17,9 +17,9 @@ class GoalController extends Controller
     
     public function index(Goal $goal)
     {
-        $plans = \App\Models\Goal::where('user_id',Auth::user()->id)->orderBy('selected_date','desc');
         
-        return view('goal/index')->with(['goal' => $goal->orderby('id','desc')->first()]);
+        
+        return view('goal/index',['goal' => $goal]);
     }
     
     public function create(Goal $goal)

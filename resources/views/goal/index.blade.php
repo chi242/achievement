@@ -76,14 +76,46 @@
           </li>
         </ul>
         <div class="detail">
-        @if($goal)
+        <?php
+        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
+          if(isset($goal['maingoal'])){
         
-            <div class="goals"><h3>maingoal</h3>{{ $goal->maingoal }}</div>
-            <div class="goals"><h3>measurable</h3>{{ $goal->measurable }}</div>
-            <div class="goals"><h3>actionable</h3>{{ $goal->actionable }}</div>
-            <div class="goals"><h3>competent</h3>{{ $goal->competent }}</div>
-        
-        @endif
+            echo $goal['maingoal'];
+          }
+          else{
+            echo 'maingoal 未設定'. '<br />';
+          }
+        ?>
+        <?php
+          if(isset($goals_measurable)){
+        ?>
+            <div class="goals"><p>measurable<p>{{ $goal->measurable }}</div>
+        <?php  
+          }
+          else{
+            echo 'measurable 未設定'. '<br />';
+          }
+        ?>
+        <?php
+          if(isset($goals_maingoal)){
+        ?>
+            <div class="goals"><p>actionable</p>{{ $goal->actionable }}</div>
+        <?php  
+          }
+          else{
+            echo 'actionable 未設定'. '<br />';
+          }
+        ?>
+        <?php
+          if(isset($goals_maingoal)){
+        ?>
+            <div class="goals"><p>competent</p>{{ $goal->competent }}</div>
+                <?php  
+          }
+          else{
+            echo 'competent 未設定'. '<br />';
+          }
+        ?>
         </div>
         <div class="newgoal"><a href="/goals/create">目標を設定する</a></div>
     </body>

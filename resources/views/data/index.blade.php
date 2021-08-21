@@ -21,7 +21,7 @@
                 <?php 
                 
                 /*planテーブルのレコード数を取得*/
-                $totalNumbers = \Illuminate\Support\Facades\DB::table('plans')->where('user_id',Auth::user()->id)->count();
+                $totalNumbers = \App\Models\Plan::where('user_id',Auth::user()->id)->count();
                 $plans = \App\Models\Plan::where('user_id',Auth::user()->id)->where('status','0');
                 $statusNumbers = $plans->count();
                 

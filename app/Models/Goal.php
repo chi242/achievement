@@ -18,8 +18,6 @@ class Goal extends Model
     'measurable',
     'actionable',
     'competent',
-    'id',
-    'user_id',
     ];
     
     public function user()
@@ -28,7 +26,7 @@ class Goal extends Model
     }
     public function plans()
   {
-    return $this->hasMany(Plan::class,'goal_id','id');
+    return $this->hasMany(Plan::class);
   }
     public function reviews()
   {
