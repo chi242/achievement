@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
+Route::get('/logout',[
+'uses' => 'App\Http\Controllers\HomeController@getLogout',
+'as' => 'user.logout'
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

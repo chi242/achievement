@@ -6,6 +6,7 @@ use App\Models\Plan;
 use App\Models\Goal;
 use App\Models\Date;
 use App\Models\Execution;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -30,6 +31,11 @@ class HomeController extends Controller
     {
         return view('index')->with(['goal' => $goal->orderby('id','desc')->first()]);
         
+    }
+    
+    public function getLogout(){
+      Auth::logout();
+      return redirect('/login');
     }
     
     

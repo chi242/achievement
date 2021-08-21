@@ -44,18 +44,12 @@
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu">
-            <li>ログアウトする
-              <a href="{{ route('logout') }}" onclick="signOut();">Sign out</a>
-              <script>
-                function signOut() {
-                  var auth2 = gapi.auth2.getAuthInstance();
-                  auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                  });
-                }
-              </script>
-            </li>
-            <li><a href="/">Home</a></li>
+            
+              
+              <li><a href="/logout">ログアウト</a></li>
+              
+            
+            <li><a href="/home">Home</a></li>
           </ul>
         </div>
         <ul class="nav nav-tabs">
@@ -85,8 +79,8 @@
           else{
             echo 'maingoal 未設定'. '<br />';
           }
-        ?>
-        <?php
+        
+      
           if(isset($goals_measurable)){
         ?>
             <div class="goals"><p>measurable<p>{{ $goal->measurable }}</div>
@@ -95,8 +89,7 @@
           else{
             echo 'measurable 未設定'. '<br />';
           }
-        ?>
-        <?php
+        
           if(isset($goals_maingoal)){
         ?>
             <div class="goals"><p>actionable</p>{{ $goal->actionable }}</div>
@@ -105,8 +98,8 @@
           else{
             echo 'actionable 未設定'. '<br />';
           }
-        ?>
-        <?php
+        
+    
           if(isset($goals_maingoal)){
         ?>
             <div class="goals"><p>competent</p>{{ $goal->competent }}</div>
