@@ -23,10 +23,11 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+    
     protected function schedule(Schedule $schedule)
-    {
-        $schedule->command('line:notify')->everyMinute()->timezone('Asia/Tokyo');
-    }
+{
+    $schedule->command('line:notify')->everyMinute();
+}
 
     /**
      * Register the commands for the application.

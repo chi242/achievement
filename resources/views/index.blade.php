@@ -74,6 +74,7 @@
         </ul>
       </div>
         <div class="main row">
+          <div class="container-sm card">
             <div class="container-calendar col-md-4 offset-md-4">
                 <h3>maingoal</h3>
                 <?php
@@ -91,7 +92,7 @@
             <div id='app' class="col-md-4 offset-md-4">
                 <form action="/selected_date" method="POST">
                     @csrf
-                    <lavel for="floatingInput" class="form-label">日付選択<input type="date" class="form-control" name="selected_date" max="9999-12-31" required></lavel>
+                    <lavel for="floatingInput" class="form-label">日付選択<input type="date" class="form-control" name="selected_date" max="9999-12-31" value="<?php echo date('Y-m-d');?>" required></lavel>
                     <button type="submit" class="btn btn-outline-primary">登録</button>
                 </form>
             </div>
@@ -105,6 +106,7 @@
                  })
                 </script>
         </div> 
+        </div>
         <script src="../../assets/js/index.js" type="text/javascript"></script>
         <script src="../../assets/js/index-percentage.js" type="text/javascript"></script>
     </body>
