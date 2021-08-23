@@ -4,9 +4,32 @@
         <meta charset="utf-8">
         <title>振り返りの編集画面</title>
         <!-- Fonts -->
-        <link href="secure_asset{{'../../../../assets/css/reflection/edit.style.css'}}"  rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     </head>
     <body>
+        <div class="nav justify-content-end">
+            <!--ゴールメニューボタン-->
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </button>
+              <ul class="dropdown-menu">
+                <li>goal1</li>
+                <li>goal2</li>
+                <li>goal3</li>
+              </ul>
+            </div>
+            <!--ユーザーボタン（ログアウト・ホームボタン）-->
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                User
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/logout">ログアウト</a></li>
+                <li><a href="/home">Home</a></li>
+              </ul>
+            </div>
+        </div>
         @if($reflection)
         <div class="reflection">
             <form action="/reflection_page/{{$reflection->id}}/store" method="POST">
@@ -34,4 +57,5 @@
         <div class="back">[<a href='/reflections/{{ $reflection->id }}'>Back</a>]</div>
         @endif
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

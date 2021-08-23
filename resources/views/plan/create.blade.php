@@ -13,9 +13,39 @@
         </style>
     </head>
     <body>
+        <div class="nav justify-content-end">
+            <!--ゴールメニューボタン-->
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </button>
+              <ul class="dropdown-menu">
+                <li>goal1</li>
+                <li>goal2</li>
+                <li>goal3</li>
+              </ul>
+            </div>
+            <!--ユーザーボタン（ログアウト・ホームボタン）-->
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                User
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/logout">ログアウト</a></li>
+                <li><a href="/home">Home</a></li>
+              </ul>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞  Plan</a>
+             </li>
+        </ul>
         <form action="/plans" method="POST" >
         @csrf
-            <p>Plan</p>
             <div class="container-sm card">
                 <div class="form">
                         
@@ -30,9 +60,9 @@
                           <label for="floatingTextarea" class="form-label">内容</label>
                           <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
                           <label for="floatingInput" class="form-label">開始時間</label>
-                          <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" required>
+                          <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" style="width:100px" required>
                           <label for="floatingPassword" class="form-label">取り組む時間</label>
-                          <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" required>
+                          <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
                 </div>
             </div>
             <div class="button frame">

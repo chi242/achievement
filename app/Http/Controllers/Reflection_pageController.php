@@ -51,8 +51,8 @@ class Reflection_pageController extends Controller
         return redirect('/planlists/' . $reflection->id); 
     }
     
-    public function delete(Reflection $reflection){
-        $reflection->delete();
+    public function delete(Plan $plan){
+        $plan->delete();
         return redirect('reflection_pages/create');
     }
     

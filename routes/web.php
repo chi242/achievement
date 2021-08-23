@@ -56,7 +56,7 @@ Route::get('/reflection_pages/{plan}/edit','App\Http\Controllers\Reflection_page
 
 Route::put('/reflection_pages/{plan}/store','App\Http\Controllers\Reflection_pageController@update');
 
-Route::delete('/reflection_pages/{reflection}','App\Http\Controllers\Reflection_pageController@delete');
+Route::delete('/reflection_pages/{plan}','App\Http\Controllers\Reflection_pageController@delete');
 
 Route::get('/goals', 'App\Http\Controllers\GoalController@index');
 
@@ -66,7 +66,7 @@ Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
 Route::get('/analysis_pages', 'App\Http\Controllers\Analysis_pageController@index');
 
-Route::get('/planlists/{planlists}/edit', 'App\Http\Controllers\PlanlistController@edit');
+Route::get('/planlists/{plan}/edit', 'App\Http\Controllers\PlanlistController@edit');
 
 Route::get('/planlists', 'App\Http\Controllers\PlanlistController@index');
 
