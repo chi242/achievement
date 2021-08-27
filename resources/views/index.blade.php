@@ -89,8 +89,9 @@
                 ?>
             </div>
             <!--選択カレンダー-->
-            <div id='app' class="col-md-4 offset-md-4">
-                <form action="/selected_date" method="POST">
+ <div class="col-md-5 offset-md-5">
+      <div class="card m-4 p-4" style="width:25rem;">
+                        <form action="/selected_date" method="POST">
                     @csrf
                     <lavel for="floatingInput" class="form-label">日付選択<input type="date" class="form-control" name="selected_date" max="9999-12-31" value="<?php echo date('Y-m-d');?>" required></lavel>
                     <button type="submit" class="btn btn-outline-primary">登録</button>

@@ -33,18 +33,18 @@
         
         <form action="/goals" method="POST">
             @csrf
-        <div class="container-sm card">
+        <div class="container-sm card m-4 p-4">
             <div class="form">
             <label for="floatingTextarea" class="form-label">MainGoal</label>
-                          <textarea class="form-control" placeholder="メインの目標を書いてください。" id="floatingTextarea" name="goal[maingoal]" required/></textarea>
+                          <textarea class="form-control" placeholder="メインの目標を書いてください。" id="floatingTextarea" name="goal[maingoal]"/></textarea>
                           <label for="floatingInput" class="form-label">Measurable</label>
-                          <textarea class="form-control" placeholder="数字的な目標を書いてください。" id="floatingInput" name="goal[measurable]" required></textarea>
+                          <textarea class="form-control" placeholder="数字的な目標を書いてください。" id="floatingInput" name="goal[measurable]"></textarea>
                           <label for="floatingPassword" class="form-label">Actionable</label>
-                          <textarea class="form-control" placeholder="目標にたどり着くまでのプロセスを書いてください。" id="floatingPassword" name="goal[actionable]" required></textarea>
+                          <textarea class="form-control" placeholder="目標にたどり着くまでのプロセスを書いてください。" id="floatingPassword" name="goal[actionable]"></textarea>
                           <label for="floatingPassword" class="form-label">Competent</label>
-                          <textarea class="form-control" placeholder="目標内容が自分の価値観に基づいているかについて書いてください" id="floatingPassword" name="goal[competent]" required></textarea>
+                          <textarea class="form-control" placeholder="目標内容が自分の価値観に基づいているかについて書いてください。" id="floatingPassword" name="goal[competent]"></textarea>
         <div class="button frame">
-                <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>
+                <button type="submit" class="btn btn-outline-primary m-4" value="保存">保存</button>
             </div>
              </div>
             </div>

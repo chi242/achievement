@@ -67,18 +67,18 @@
             <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
         </ul>
-      </div>        <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
-        <div class="col-md-5 offset-md-5">
-                        <?php 
-                        $plan = App\Models\Plan::where('user_id',Auth::id())->orderBy('selected_date','desc')->get();
-                        foreach($plan as $plan){
-                        echo $plan['selected_date']."\n";?>
-                        <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}."><?php echo $plan['plan_content'].'<br />';?></a>
-                        <?php } ?>
-                
-            
-        </div>   
-            
+      </div>
+      <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
+      <div class="col-md-5 offset-md-5">
+        <div class="card m-4 p-4" style="width:18rem;">
+          <?php 
+            $plan = App\Models\Plan::where('user_id',Auth::id())->orderBy('selected_date','desc')->get();
+            foreach($plan as $plan){
+            echo $plan['selected_date']."\n";?>
+            <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}."><?php echo $plan['plan_content'].'<br />';?></a>
+          <?php } ?>
+        </div>
+      </div>   
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

@@ -74,61 +74,66 @@
           </li>
         </ul>
       </div>
+       <div class="col-md-4 offset-md-4">
+      <div class="card m-4 p-4" style="width:30rem;">
+
         <div class="detail row">
         <?php
           $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
           //maingoal
           if(isset($goal['maingoal'])){
         ?>
-          <dd class="col-md-4 offset-md-4">maingoal</dd>
+          <dd>maingoal</dd>
         <?php echo $goal['maingoal'];
           }
           else{
         ?>
-          <dd class="col-md-4 offset-md-4">maingoal</dd>
+          <dd>maingoal</dd>
         <?php
           echo '未設定';
           }
           //measurable
           if(isset($goal['measurable'])){
         ?>
-          <dd class="col-md-4 offset-md-4">measurable</dd>  
+          <dd>measurable</dd>  
         <?php 
           echo $goal['measurable'];
           }
           else{
         ?>
-          <dd class="col-md-4 offset-md-4">measurable</dd>  
+          <dd>measurable</dd>  
         <?php
             echo '未設定';
           }
          //actionable
           if(isset($goal['actionable'])){
         ?>
-          <dd class="col-md-4 offset-md-4">actionable</dd>  
+          <dd>actionable</dd>  
         <?php
           echo $goal['actionable'];  
           }
           else{
         ?>
-          <dd class="col-md-4 offset-md-4">actionable</dd>  
+          <dd>actionable</dd>  
         <?php
         echo '未設定';
           }
         //competent
           if(isset($goal['competent'])){
         ?>
-          <dd class="col-md-4 offset-md-4">competent</dd>  
+          <dd>competent</dd>  
         <?php
             echo $goal['competent'];  
           }
           else{
         ?>
-          <dd class="col-md-4 offset-md-4">competent</dd>  
+          <dd>competent</dd>  
         <?php
             echo '未設定';
           }
         ?>
+        </div>
+        </div>
         </div>
     <a href="/goals/create" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">目標を設定する</a>
     </body>

@@ -30,8 +30,6 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::post('/selected_date', 'App\Http\Controllers\Selected_dateController@store');
 
-// Route::post('/selected_dates', 'function(Request $request){dd($request)}');
-
 Route::get('/plans', 'App\Http\Controllers\PlanController@index');
 
 Route::get('/plans/create','App\Http\Controllers\PlanController@create');
@@ -73,6 +71,15 @@ Route::get('/planlists', 'App\Http\Controllers\PlanlistController@index');
 Route::get('/planlists/{plan}', 'App\Http\Controllers\PlanlistController@show');
 
 Route::get('/reminders', 'App\Http\Controllers\ReminderController@index');
+
+Route::get('/reminders/getJson/{status}', 'App\Http\Controllers\ReminderController@getJson_achievement');
+
+Route::get('/reminders/getJson', 'App\Http\Controllers\ReminderController@getJson_unreflection');
+
+Route::get('/reminders/getJson/{reflection_page}', 'App\Http\Controllers\ReminderController@getJson_reflection_page');
+
+
+
 
 
 

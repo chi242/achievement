@@ -79,87 +79,56 @@
               <div class="col-6">
                 <div class="container-sm card">
                 <p>振り返り未記入</p>  
-                <p> 
-                <?php
-                  $plan = \App\Models\Plan::where('user_id',Auth::id())->get();
-                  $all_reflection_content = null;
-                  foreach($plan as $plan){
-                  $all_reflection_content = $plan['reflection_content'];
-                  if($all_reflection_content === '未記入'){
-                  echo $plan['selected_date']."\n";
-                  echo $plan['plan_content']. '<br />';
-                  }
-                  }
-                  if( empty($all_reflection_content)){
-                  echo "振り返りは書いていません。";
-                  }
-                  elseif($all_reflection_content !== '未記入'){
-                  echo "振り返りはすべて記入済です。";
-                  }
-                ?>
-                </p>
+                <ul id='unreflection_list'> 
+                @foreach($unreflection_plans as $plan)
+                <li>
+                  <a id="anchor" href="reflection_pages/{{ $plan->id }}">{{$plan->plan_content}}</a>
+                </li>
+                @endforeach
+                </ul>
                 </div>
+                <button id="reload" type="button" class="btn btn-outline-secondary">リロード</button>
               </div>
             
             <div class="col-6" name="second">
               <div class="container-sm card">
-                <p>未達成のPlan</p>
+                <div id="app" class="container">
+                 <p>未達成のPlan</p>
+                </div>
                   <div>達成度
                     <select id="select_status" name="status" required>  
-                      <option value=0>0</button>
-                      <option value=10>10</button>
-                      <option value=20>20</button>                        
-                      <option value=30>30</button>
-                      <option value=40>40</button>
-                      <option value=50>50</button>
-                      <option value=60>60</button>
-                      <option value=70>70</button>                        
-                      <option value=80>80</button>
-                      <option value=90>90</button>
-                      <option value=100>100</button>
+                      <option value=0>0</option>
+                      <option value=10>10</option>
+                      <option value=20>20</option>                       
+                      <option value=30>30</option>
+                      <option value=40>40</option>
+                      <option value=50>50</option>
+                      <option value=60>60</option>
+                      <option value=70>70</option>                        
+                      <option value=80>80</option>
+                      <option value=90>90</option>
+                      <option value=100>100</option>
                     </select>
                   以上
                   </div>
-                  <?php
-                  $plan = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
-                  $all_status = null;
-                  foreach($plan as $plan){
-                  $all_status = $plan['status'];
-                  if($all_status === 0){
-                  echo $plan['selected_date']."\n";
-                  echo $plan['plan_content'].'<br />';
-                  }
-                  }
-                  if($all_status === 100){
-                  echo "Planはすべて達成されました！";
-                  }
-                  ?>
+                  <ul id="achievement_list"> 
+                    @foreach($achievement_plans as $plan)
+                    <li>
+                      {{$plan->plan_content}}
+                    </li>
+                    @endforeach
+                  </ul>
               
-            
-
               
-              <?php
-              $plan = \App\Models\Plan::orderby('selected_date','desc')->orderby('id','desc')->get();
-              foreach($plan as $plan){
-              ?>
-              <script type="text/javascript">
-                function selectStatus() {
-                  var status = document.getElementById("select_status").value;
-                <?php
-                  $all_status = $plan['status'];
-                  if($all_status >= 40){
-                  echo $plan['selected_date']."\n";
-                  echo $plan['plan_content'].'<br />';
-                  }
-                  }
-                  ?>   
-                
-              </script>
-            
             </div>
           </div>
         </div>
       </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="/js/status.js"></script>
+    <script src="/js/entry.js"></script>
+    <script src="/js/unreflection.js"></script>
 </html>

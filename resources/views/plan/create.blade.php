@@ -46,7 +46,7 @@
         </ul>
         <form action="/plans" method="POST" >
         @csrf
-            <div class="container-sm card">
+            <div class="container-sm card m-4 p-4">
                 <div class="form">
                         
                          <h2>
