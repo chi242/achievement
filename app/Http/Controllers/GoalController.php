@@ -14,14 +14,15 @@ use Auth;
 
 class GoalController extends Controller
 {
-    
     public function index(Goal $goal)
     {
-        
-        
-        return view('goal/index',['goal' => $goal]);
-    }
-    
+        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc');
+        $maingoal = $goal->first(['maingoal'])->toArray();
+        $measurable = $goal->first(['measurable'])->toArray();
+        $actionable = $goal->first(['actionable'])->toArray();
+        $competent = $goal->first(['competent'])->toArray();
+         return view('goal/index',compact('maingoal','measurable','actionable','competent'))->with(['goal' => $goal]);
+    }   
     public function create(Goal $goal)
     {
         return view('goal/create');

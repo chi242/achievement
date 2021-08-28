@@ -16,14 +16,15 @@ class PlanlistController extends Controller
 {
     public function index(Plan $plan)
     {
-        $plans = \App\Models\Plan::where('user_id',Auth::id());
-        
-        return view('planlist/index')->with(['plan' => $plan->orderby('selected_date','desc')->orderby('id','desc')->get()]);
-        
+        $plans = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
+        return view('planlist/index',['plans' => $plans]);
     }
 
     public function edit(Plan $plan)
     {
+        if(isset($plan['selected_date'])){
+            $plan = App\Models\Plan::where('user_id',Auth::id())->orderby('id','desc')->first();
+        }
         return view('planlist/edit',['plan' => $plan]);
     }
     public function show(Plan $plan)

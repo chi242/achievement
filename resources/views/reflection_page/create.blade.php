@@ -45,7 +45,7 @@
                  @csrf 
                     <div class="form">
                         @if($plan)
-                        <h2>{{$plan->created_at}}</h2>
+                        <h2>{{$plan->selected_at}}</h2>
                         @endif
                         <div class="frame">
                             <p>振り返り</p>
@@ -77,7 +77,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="button frame form">
+                    <div class="button frame form m-3">
                         <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>
                     </div>
                 </form>

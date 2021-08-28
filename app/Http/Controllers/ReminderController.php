@@ -22,13 +22,11 @@ class ReminderController extends Controller
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
-        dump(Auth::id());        
         $unreflection_plans = Plan::where('user_id',Auth::id())
                 ->where('reflection_content','未記入')
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
-        dump($achievement_plans);
         return view('reminder/index',compact('achievement_plans','unreflection_plans'));
         
         

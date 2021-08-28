@@ -32,21 +32,18 @@
         </div>
         <div class="row">
         @if($plan)
-      
         <div class="plan col-md-5 offset-md-5">
             <form action="/reflection_pages/{{ $plan->id }}" id="form_{{ $plan->id }}" method="POST" style="display:inline">
                 @csrf
                 @method('DELETE')
-                
                 <div class="date"><h2>{{$plan->selected_date}}</h2></div>
                 <div>
                     <div class="reflection item">
                         <p>Plan：{{$plan->plan_content}}</p>
                     </div>
                     <div class="item">
-                        <p>振り返り:{{$plan->reflection_content}}</p>
+                        <p>振り返り: {{$plan->reflection_content}}</p>
                     </div>
-    
                     <div class="button">
                         <p><a href="/reflection_pages/create">振り返りを書く</a></p>
                         <p><a href="/plans/{{ $plan->id }}/edit">Planを編集する</a></p>

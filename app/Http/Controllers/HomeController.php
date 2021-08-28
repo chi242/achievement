@@ -29,16 +29,21 @@ class HomeController extends Controller
      */
     public static function index(Goal $goal)
     {
-        return view('index')->with(['goal' => $goal->orderby('id','desc')->first()]);
+        if(isset($goal)){
+        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
+        }else{
+            echo 'Maingoalは未設定です。';
+        }
+        return view('index',['goal' => $goal]);
         
     }
     
-    public function getLogout(){
-      Auth::logout();
-      return redirect('/login');
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
-    
-    
-    
 }
+
+
 

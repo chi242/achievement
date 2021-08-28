@@ -1,32 +1,32 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <!DOCTYPE html>
+  <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <title>Planリスト一覧</title>
-        <!-- Fonts -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">    
-        <style>
-            .nav-home{
-              background-color: #F9C0C0
-            }
-            .nav-goal{
-              background-color: #F6D6AD
-            }
-            .nav-planlist{
-              background-color: #FAFCC2
-            }
-            .nav-data{
-             background-color: #CCF6C8
-             }
-            .nav-reminder{
-            background-color: #B0EFEB
-            }
-        </style> 
+      <meta charset="utf-8">
+      <title>Planリスト一覧</title>
+      <!-- Fonts -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">    
+      <style>
+      .nav-home{
+        background-color: #F9C0C0
+      }
+      .nav-goal{
+        background-color: #F6D6AD
+      }
+      .nav-planlist{
+        background-color: #FAFCC2
+      }
+      .nav-data{
+        background-color: #CCF6C8
+      }
+      .nav-reminder{
+        background-color: #B0EFEB
+      }
+      </style> 
     </head>
     <body>
-       <div class="nav justify-content-end">
+      <div class="nav justify-content-end">
         <!--ゴールメニューボタン-->
         <div class="btn-group">
           <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,16 +69,16 @@
         </ul>
       </div>
       <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
-      <div class="col-md-5 offset-md-5">
-        <div class="card m-4 p-4" style="width:18rem;">
-          <?php 
-            $plan = App\Models\Plan::where('user_id',Auth::id())->orderBy('selected_date','desc')->get();
-            foreach($plan as $plan){
-            echo $plan['selected_date']."\n";?>
-            <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}."><?php echo $plan['plan_content'].'<br />';?></a>
-          <?php } ?>
+      <div class="col-md-4 offset-md-4">
+        <div class="card m-2 p-2">
+          @foreach($plans as $plan)
+          <div class="card m-3 p-3" style="width:30rem;">
+            <p>{{ $plan->selected_date }}</p>
+            <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}.">{{$plan->plan_content}}</a>
+          </div>
+          @endforeach
         </div>
       </div>   
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-</html>
+  </html>

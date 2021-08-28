@@ -45,7 +45,6 @@ class Reflection_pageController extends Controller
     
     public function update(Request $request)
     {
-
         $input= $request['reflection'];
         $reflection->fill($input)->save();
         return redirect('/planlists/' . $reflection->id); 
