@@ -9,6 +9,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+      <!--グローバルナビゲーションのタグの色-->
       <style>
         body{
           font-family: 'Noto Sans JP', sans-serif;
@@ -49,25 +50,33 @@
             User
           </button>
           <ul class="dropdown-menu">
+            <!--ログアウトボタン-->
             <li><a href="/logout">ログアウト</a></li>
+            <!--Homeボタン-->
             <li><a href="/home">Home</a></li>
           </ul>
         </div>
       </div>
+      <!--グローバルナビゲーション-->
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
+          <!--Home画面に遷移するタグ-->
           <li class="nav-item nav-home flex-sm-fill text-sm-center">
             <a class="nav-link nav-another display-6" href="/">Home</a>
           </li>
+          <!--目標データ画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
+          <!--Planlist画面に遷移するタグ-->
           <li class="nav-item  flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
           </li>
+          <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
           </li>
+          <!--リマインダー画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
@@ -76,25 +85,30 @@
       <div class="col-md-6 offset-md-3">
         <div class="card m-4 p-4">
             <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <th scope="row">maingoal</th>
-                <td>{{$maingoal['maingoal']}}</td>
-              </tr>
-              <tr>
-                <th scope="row">measurable</th>
-                <td>{{$measurable['measurable']}}</td>
-              </tr>
-              <tr>
-                <th scope="row">actionable</th>
-                <td>{{$actionable['actionable']}}</td>
-              </tr>
+              <tbody>
                 <tr>
-                <th scope="row">competent</th>
-                <td>{{$competent['competent']}}</td>
-              </tr>
-            </tbody>
+                  <!--Maingoal表示-->
+                  <th scope="row">maingoal</th>
+                  <td>{{$maingoal['maingoal']}}</td>
+                </tr>
+                <tr>
+                  <!--Measurable表示-->
+                  <th scope="row">measurable</th>
+                  <td>{{$measurable['measurable']}}</td>
+                </tr>
+                <tr>
+                  <!--Actionable表示-->
+                  <th scope="row">actionable</th>
+                  <td>{{$actionable['actionable']}}</td>
+                </tr>
+                  <tr>
+                  <!--Competent表示-->
+                  <th scope="row">competent</th>
+                  <td>{{$competent['competent']}}</td>
+                </tr>
+              </tbody>
             </table>
+            <!--目標設定ページに遷移するボタン-->
             <a href="/goals/create" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true" style="width:8rem;">目標を設定する</a>
         </div>
       </div>

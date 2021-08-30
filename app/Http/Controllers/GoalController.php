@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use App\Models\Plan;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GoalRequest;
 use Illuminate\Http\Request;
@@ -11,11 +12,11 @@ use Auth;
 
 
 
-
 class GoalController extends Controller
 {
     public function index(Goal $goal)
     {
+
         $goal = Goal::where('user_id',Auth::id())->orderby('id','desc');
         
         $maingoal = $goal->first(['maingoal'])->toArray();
@@ -37,6 +38,7 @@ class GoalController extends Controller
         if(!isset($competent['competent'])){
         $competent['competent'] = "未記入";
         }
+        
 
         return view('goal/index',compact('maingoal','measurable','actionable','competent'))->with(['goal' => $goal]);
     }

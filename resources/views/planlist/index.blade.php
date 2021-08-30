@@ -7,6 +7,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">    
+      <!--グローバルナビゲーションのタグの色-->
       <style>
       .nav-home{
         background-color: #F9C0C0
@@ -44,37 +45,47 @@
             User
           </button>
           <ul class="dropdown-menu">
+            <!--ログアウトボタン-->
             <li><a href="/logout">ログアウト</a></li>
+            <!--Homeボタン-->
             <li><a href="/home">Home</a></li>
           </ul>
         </div>
       </div>
+      <!--グローバルナビゲーション-->
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
+          <!--Home画面に遷移するタグ-->
           <li class="nav-item nav-home flex-sm-fill text-sm-center">
             <a class="nav-link nav-another display-6" href="/">Home</a>
           </li>
+          <!--目標データ画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
+          <!--Planlist画面に遷移するタグ-->
           <li class="nav-item  flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
           </li>
+          <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
           </li>
+          <!--リマインダー画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
         </ul>
       </div>
-      <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
       <div class="col-md-4 offset-md-4">
+        <!--日付ごとのPlanリスト-->
         <div class="card m-4 p-4">
           @if($plans)
             @foreach($plans as $plan)
             <div class="card m-4 p-4" style="width:30rem;">
+              <!--選択日表示-->
               <p>{{ $plan->selected_date }}</p>
+              <!--Planで設定したデータをまとめたページに遷移するリンク-->
               <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}.">{{$plan->plan_content}}</a>
             </div>
             @endforeach

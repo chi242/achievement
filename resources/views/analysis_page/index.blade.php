@@ -72,19 +72,23 @@
           </li>
         </ul>
       </div>
-      <!--達成率表示-->
+        <!--達成率表示-->
         <div class="col-md-4 offset-md-4">
           <div class="container-sm card p-4 m-4">
           <h3>達成度</h3>
+          <!--達成率（四捨五入）-->
           <p>{{$round_rate}}</p>
+          <!--達成率が100％のPlanの数/すべてのPlanの数-->
           <p>{{$statusNumbers}} / {{$totalNumbers}}</p>
         </div>
       </div>
       <div class="col-md-4 offset-md-4">
         <div class="row">
+          <!--選択日の記録のまとめ-->
           <div class="container-sm card p-4 m-4">
             @foreach($plans as $plan)
             <div class="card m-4 p-4">
+            <!--日付-->
             <h3>{{$plan->selected_date}}</h3>
             <p>取り組んだ時間 {{$plan->reflection_times}}/{{$plan->plan_times}}</p>
             <p>予定開始時間 {{$plan->reflection_start_time}}</p>

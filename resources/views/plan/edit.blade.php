@@ -26,33 +26,47 @@
               User
               </button>
               <ul class="dropdown-menu">
+                <!--ログアウトボタン-->
                 <li><a href="/logout">ログアウト</a></li>
+                <!--Homeボタン-->
                 <li><a href="/home">Home</a></li>
               </ul>
             </div>
         </div>
         <ul class="nav">
+            <!--ホームに遷移するリンク-->
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+            <!--Planリストに遷移するリンク-->
             <li class="nav-item"><a class="nav-link" aria-disabled="true" href="/planlists">＞　Planlist</a></li>
             <li class="nav-item"><a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞  編集</a></li>
         </ul>
-        <form action="/plans/{{ $plan->id }}}}/store" method="POST" >
-        @csrf
-        @method('PUT')
-            <div class="container-sm card m-4 p-4">
-                <div class="form">
+        <div class="col-md-6 offset-md-3">
+            <!--Planの入力フォーム-->
+            <div class="form card m-4 p-4">
+                <form action="/plans/{{ $plan->id }}}}/store" method="POST" >
+                @csrf
+                @method('PUT')
+                    <!--選択した日を表示する-->
                     <h2>{{ $plan->selected_date }}</h2>
-                    <label for="floatingTextarea" class="form-label">内容</label>
-                    <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
-                    <label for="floatingInput" class="form-label">開始時間</label>
-                    <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" style="width:100px" required>
-                    <label for="floatingPassword" class="form-label">取り組む時間</label>
-                    <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
-                </div>
+                    <!--Planの内容記入欄-->
+                    <div class="p-1 m-1">
+                        <label for="floatingTextarea" class="form-label">内容</label>
+                        <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
+                    </div>
+                    <!--Planの開始時間記入欄-->
+                    <div class="p-1 m-1">
+                        <label for="floatingInput" class="form-label">開始時間</label>
+                        <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" style="width:100px" required>
+                        <!--Planの取り組む時間記入欄-->
+                    <div class="p-1 m-1">
+                        <label for="floatingPassword" class="form-label">取り組む時間</label>
+                        <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
+                    </div>   
+                    <!--保存ボタン-->
+                    <div class="button frame"><button type="submit" class="btn btn-outline-primary" value="保存">保存</button></div>
+                </form>
             </div>
-            <div class="button frame"><button type="submit" class="btn btn-outline-primary" value="保存">保存</button></div>
-        </form>
-        <div class="back">[<a href='/'>Home</a>]</div>
+        </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

@@ -49,25 +49,33 @@
               User
             </button>
             <ul class="dropdown-menu">
+              <!--ログアウトボタン-->
               <li><a href="/logout">ログアウト</a></li>
+              <!--Homeボタン-->
               <li><a href="/home">Home</a></li>
             </ul>
           </div>
         </div>
+      <!--グローバルナビゲーション-->
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
+          <!--Home画面に遷移するタグ-->
           <li class="nav-item nav-home flex-sm-fill text-sm-center">
             <a class="nav-link nav-another display-6" href="/">Home</a>
           </li>
+          <!--目標データ画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
+          <!--Planlist画面に遷移するタグ-->
           <li class="nav-item  flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
           </li>
+          <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
           </li>
+          <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
@@ -82,6 +90,7 @@
                 <ul id='unreflection_list'> 
                 @foreach($unreflection_plans as $plan)
                 <li>
+                  <!--Planをまとめたページに遷移するリンク-->
                   <a id="anchor" href="reflection_pages/{{ $plan->id }}">{{$plan->plan_content}}</a>
                 </li>
                 @endforeach
@@ -89,7 +98,7 @@
                 </div>
                 <button id="reload" type="button" class="btn btn-outline-secondary">リロード</button>
               </div>
-            
+            <!--未達成のPlanを達成度に応じてリアクティブに表示-->
             <div class="col-6">
               <div class="card m-4 p-4">
                 <div id="app" class="container">
@@ -111,6 +120,7 @@
                     </select>
                   以上
                   </div>
+                  <!--Planの内容表示-->
                   <ul id="achievement_list"> 
                     @foreach($achievement_plans as $plan)
                     <li>

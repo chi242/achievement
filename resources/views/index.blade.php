@@ -48,25 +48,33 @@
             User
           </button>
           <ul class="dropdown-menu">
+            <!--ログアウトボタン-->
             <li><a href="/logout">ログアウト</a></li>
+            <!--Homeボタン-->
             <li><a href="/home">Home</a></li>
           </ul>
         </div>
       </div>
+      <!--グローバルナビゲーション-->
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
+          <!--Home画面に遷移するタグ-->
           <li class="nav-item nav-home flex-sm-fill text-sm-center">
             <a class="nav-link nav-another display-6" href="/">Home</a>
           </li>
+          <!--目標データ画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
+          <!--Planlist画面に遷移するタグ-->
           <li class="nav-item  flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
           </li>
+          <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
           </li>
+          <!--リマインダー画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
             <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
@@ -75,14 +83,16 @@
       <div class="main">
         <div class="container-calendar col-md-4 offset-md-4">
           <div class="card p-4 m-4">
+            <!--maingoal表示-->
             <h3>maingoal</h3>
             <div class="maingoal">{{$maingoal['maingoal']}}</div>
-            <!--選択カレンダー-->
+            <!--日付選択表示（カレンダー）-->
             <div class="card m-4 p-4">
               <form action="/selected_date" method="POST">
                 @csrf
                 <lavel for="floatingInput" class="form-label">日付選択<input type="date" class="form-control" name="selected_date" max="9999-12-31" value="<?php echo date('Y-m-d');?>" required></lavel>
-                <button type="submit" class="btn btn-outline-primary m-3">登録</button>
+                <!--選択ボタン-->
+                <button type="submit" class="btn btn-outline-primary m-3">選択</button>
               </form>
             </div>
           </div> 
