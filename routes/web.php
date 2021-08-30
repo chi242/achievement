@@ -44,7 +44,7 @@ Route::put('/plans/{plan}/store','App\Http\Controllers\PlanController@update');
 
 Route::delete('/plans/{plan}','App\Http\Controllers\PlanController@delete');
 
-Route::get('/reflection_pages/create','App\Http\Controllers\Reflection_pageController@create')->name('reflection_page.create');
+Route::get('/reflection_pages/{plan}/create','App\Http\Controllers\Reflection_pageController@create')->name('reflection_page.create');
 
 Route::post('/reflection_pages', 'App\Http\Controllers\Reflection_pageController@store');
 

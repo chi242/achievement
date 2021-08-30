@@ -84,9 +84,9 @@
             @foreach($plans as $plan)
             <div class="card m-4 p-4" style="width:30rem;">
               <!--選択日表示-->
-              <p>{{ $plan->selected_date }}</p>
+              <p>{{ $plan->selected_date->format('Y年m月d日') }}</p>
               <!--Planで設定したデータをまとめたページに遷移するリンク-->
-              <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}.">{{$plan->plan_content}}</a>
+              <a href="reflection_pages/{{ $plan->id }}">{{$plan->plan_content}}</a>
             </div>
             @endforeach
           @else

@@ -24,6 +24,14 @@ class Plan extends Model
         'status',
     ];
     
+    protected $dates = [
+        'selected_date',
+        'plan_start_time',
+        'plan_times',
+        'reflection_start_time',
+        'reflection_times',
+    ];
+    
     
     
     public function goal()

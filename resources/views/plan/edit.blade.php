@@ -47,7 +47,7 @@
                 @csrf
                 @method('PUT')
                     <!--選択した日を表示する-->
-                    <h2>{{ $plan->selected_date }}</h2>
+                    <h2>{{ $plan->selected_date->format('Y年m月d日') }}</h2>
                     <!--Planの内容記入欄-->
                     <div class="p-1 m-1">
                         <label for="floatingTextarea" class="form-label">内容</label>

@@ -66,7 +66,7 @@
                     </div>
                     <div class="button">
                         <!--振り返りを入力するページに遷移するリンク-->
-                        <p><a href="/reflection_pages/create">振り返りを書く</a></p>
+                        <p><a href="/reflection_pages/{{$plan->id}}/create">振り返りを書く</a></p>
                         <!--Planを入力するページに遷移するリンク-->
                         <p><a href="/plans/{{ $plan->id }}/edit">Planを編集する</a></p>
                         <!--削除ボタン-->

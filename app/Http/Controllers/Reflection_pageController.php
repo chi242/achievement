@@ -14,12 +14,13 @@ class Reflection_pageController extends Controller
 {
     public function create(Plan $plan)
      {
+    
         return view('reflection_page/create')->with(['plan' => $plan]);
     }
     
     public function store(Request $request,Plan $plan)
     {   
-        $plans = \App\Models\Plan::orderby('id','desc')->first();
+        $plans = Plan::orderby('id','desc')->first();
         $plans->user_id = Auth::user()->id;
         $plans->reflection_content = $request->reflection_content;
         $plans->reflection_start_time = $request->reflection_start_time;
@@ -33,7 +34,6 @@ class Reflection_pageController extends Controller
     
     public function show(Plan $plan)
     {
-        $plans = \App\Models\Plan::orderby('id','desc')->first();;
         return view('reflection_page/show')->with(['plan' => $plan]);
     }
      

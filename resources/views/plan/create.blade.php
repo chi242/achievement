@@ -64,7 +64,7 @@
                         <!--Planの取り組む時間記入欄-->
                         <div class="p-1 m-1">
                             <label for="floatingPassword" class="form-label">取り組む時間</label>
-                            <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
+                            <input type="time" value="00:00" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
                         </div>
                     </div>
                         <!--保存ボタン-->

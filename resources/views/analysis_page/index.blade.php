@@ -89,10 +89,10 @@
             @foreach($plans as $plan)
             <div class="card m-4 p-4">
             <!--日付-->
-            <h3>{{$plan->selected_date}}</h3>
-            <p>取り組んだ時間 {{$plan->reflection_times}}/{{$plan->plan_times}}</p>
-            <p>予定開始時間 {{$plan->reflection_start_time}}</p>
-            <p>実行開始時間 {{$plan->plan_start_time}}</p>
+            <h3>{{$plan->selected_date->format('Y年m月d日')}}</h3>
+            <p>取り組んだ時間 {{$plan->reflection_times->format('G:i')}}/{{$plan->plan_times->format('G:i')}}</p>
+            <p>予定開始時間 {{$plan->reflection_start_time->format('H:i')}}</p>
+            <p>実行開始時間 {{$plan->plan_start_time->format('H:i')}}</p>
             </div>
             @endforeach
           </div>
