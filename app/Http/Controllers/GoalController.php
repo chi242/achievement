@@ -16,13 +16,31 @@ class GoalController extends Controller
 {
     public function index(Goal $goal)
     {
-        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc');
+        $goal = Goal::where('user_id',Auth::id())->orderby('id','desc');
+        
         $maingoal = $goal->first(['maingoal'])->toArray();
+        if(!isset($maingoal['maingoal'])){
+        $maingoal['maingoal'] = "未記入";
+        } 
+        
         $measurable = $goal->first(['measurable'])->toArray();
+        if(!isset($measurable['measurable'])){
+        $measurable['measurable'] = "未記入";
+        }
+        
         $actionable = $goal->first(['actionable'])->toArray();
+        if(!isset($actionable['actionable'])){
+        $actionable['actionable'] = "未記入";
+        }
+        
         $competent = $goal->first(['competent'])->toArray();
-         return view('goal/index',compact('maingoal','measurable','actionable','competent'))->with(['goal' => $goal]);
-    }   
+        if(!isset($competent['competent'])){
+        $competent['competent'] = "未記入";
+        }
+
+        return view('goal/index',compact('maingoal','measurable','actionable','competent'))->with(['goal' => $goal]);
+    }
+    
     public function create(Goal $goal)
     {
         return view('goal/create');

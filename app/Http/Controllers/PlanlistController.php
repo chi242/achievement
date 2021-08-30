@@ -17,6 +17,7 @@ class PlanlistController extends Controller
     public function index(Plan $plan)
     {
         $plans = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
+
         return view('planlist/index',['plans' => $plans]);
     }
 

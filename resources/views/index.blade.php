@@ -72,15 +72,13 @@
           </li>
         </ul>
       </div>
-      <div class="main row">
-        <div class="container-sm card">
-          <div class="container-calendar col-md-5 offset-md-5">
+      <div class="main">
+        <div class="container-calendar col-md-4 offset-md-4">
+          <div class="card p-4 m-4">
             <h3>maingoal</h3>
-            <div class="maingoal">{{$goal->maingoal}}</div>
-          </div>
-          <!--選択カレンダー-->
-          <div class="col-md-5 offset-md-5">
-            <div class="card m-4 p-4" style="width:25rem;">
+            <div class="maingoal">{{$maingoal['maingoal']}}</div>
+            <!--選択カレンダー-->
+            <div class="card m-4 p-4">
               <form action="/selected_date" method="POST">
                 @csrf
                 <lavel for="floatingInput" class="form-label">日付選択<input type="date" class="form-control" name="selected_date" max="9999-12-31" value="<?php echo date('Y-m-d');?>" required></lavel>

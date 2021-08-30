@@ -30,14 +30,25 @@
               </ul>
             </div>
         </div>
-        <div class="row">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/planlists">＞　Planlist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞　Plan</a>
+            </li>
+        </ul>
+        <div class="col-md-4 offset-md-4">
         @if($plan)
-        <div class="plan col-md-5 offset-md-5">
+        <div class="card m-4 p-4">
             <form action="/reflection_pages/{{ $plan->id }}" id="form_{{ $plan->id }}" method="POST" style="display:inline">
                 @csrf
                 @method('DELETE')
-                <div class="date"><h2>{{$plan->selected_date}}</h2></div>
                 <div>
+                    <div class="date"><h2>{{$plan->selected_date}}</h2></div>
                     <div class="reflection item">
                         <p>Plan：{{$plan->plan_content}}</p>
                     </div>
@@ -54,7 +65,6 @@
         </div>
         @endif
         </div>
-        <div class="back">[<a href='/'>Home</a>]</div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

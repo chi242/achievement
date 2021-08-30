@@ -44,32 +44,30 @@
                 <a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞  Plan</a>
              </li>
         </ul>
-        <form action="/plans" method="POST" >
-        @csrf
-            <div class="container-sm card m-4 p-4">
-                <div class="form">
-                        
-                         <h2>
-                            <?php
-                            $plan = App\Models\Plan::orderby('id','desc')->first();
-                             if(isset($plan['selected_date'])){
-                                echo $plan['selected_date'];
-                             }
-                            ?>
-                         </h2>
-                          <label for="floatingTextarea" class="form-label">内容</label>
-                          <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
-                          <label for="floatingInput" class="form-label">開始時間</label>
-                          <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" style="width:100px" required>
-                          <label for="floatingPassword" class="form-label">取り組む時間</label>
-                          <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
-                </div>
+        <div class="col-md-6 offset-md-3">
+            <div class="form card m-4 p-4">
+                <h2>{{ $plan->selected_date }}</h2>
+                <form action="/plans" method="POST" >
+                @csrf
+                    <div class="form card m-4 p-4">
+                        <div class="p-1 m-1">
+                            <label for="floatingTextarea" class="form-label">内容</label>
+                            <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
+                        </div>
+                        <div class="p-1 m-1">
+                            <label for="floatingInput" class="form-label">開始時間</label>
+                            <input type="time" class="form-control" id="floatingInput" name="plan[plan_start_time]" style="width:100px" required>
+                        </div>
+                        <div class="p-1 m-1">
+                            <label for="floatingPassword" class="form-label">取り組む時間</label>
+                            <input type="time" class="form-control" id="floatingPassword" name="plan[plan_times]" style="width:100px" required>
+                        </div>
+                    </div>
+                        <div class="button frame form m-3">
+                            <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>
+                        </div>
+                </form>
             </div>
-            <div class="button frame">
-                <button type="submit" class="btn btn-outline-primary" value="保存">保存</button>
-            </div>
-            </form>
-            <div class="back">[<a href='/'>Home</a>]</div>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

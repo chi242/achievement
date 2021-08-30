@@ -29,12 +29,13 @@ class HomeController extends Controller
      */
     public static function index(Goal $goal)
     {
-        if(isset($goal)){
-        $goal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first();
-        }else{
-            echo 'Maingoalは未設定です。';
-        }
-        return view('index',['goal' => $goal]);
+        $maingoal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first(['maingoal']);
+        
+        if($maingoal['maingoal'] == ""){
+        $maingoal['maingoal'] = "未記入";
+        } 
+
+        return view('index',['maingoal' => $maingoal]);
         
     }
     

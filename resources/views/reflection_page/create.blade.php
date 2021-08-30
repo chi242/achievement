@@ -33,35 +33,36 @@
         </div>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/planlists">Planlist</a>
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/planlists">＞　Planlist</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞  Planの振り返り</a>
              </li>
         </ul>
-        <div class="container-sm card">
-            <div class="form">
+        <div class="col-md-6 offset-md-3">
+            <div class="form card m-4 p-4">                        
+            <h5>振り返り</h5>
                 <form action="/reflection_pages" method="POST" >
                  @csrf 
-                    <div class="form">
+                    <div class="card m-4 p-4">
                         @if($plan)
-                        <h2>{{$plan->selected_at}}</h2>
+                        <h2>{{$plan->selected_date}}</h2>
                         @endif
-                        <div class="frame">
-                            <p>振り返り</p>
+                        <div class="p-1 m-1">
                             <label for="floatingTextarea" class="form-label">内容</label>
                             <textarea class="form-control" name="reflection_content" placeholder="今日のできたことやできなかったことを記入してください。" id="floatingTextarea" required></textarea>  
                         </div>
-                        <div>
+                        <div class="p-1 m-1">
                             <label for="floatingInput" class="form-label">開始した時間</label>
                             <input type="time" class="form-control" name="reflection_start_time" style="width:100px" required>
                         </div>
-                        <div>
+                        <div class="p-1 m-1">
                             <label for="floatingPassword" class="form-label">取り組んだ時間</label>
                             <input type="time" class="form-control" name="reflection_times" style="width:100px" required>
                         </div>
-                        <div class="frame">
-                            <p>達成度</p>
+                        <div class="p-1 m-1">達成度
                             <select name="status" required>  
                                 <option value=0>0</button>
                                 <option value=10>10</button>
@@ -83,7 +84,6 @@
                 </form>
             </div>
         </div>
-        <div class="back">[<a href='/'>Home</a>]</div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

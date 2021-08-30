@@ -30,10 +30,20 @@
             </ul>
           </div>
         </div>
-        
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/goals">＞　目標データ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" tabindex="-1" aria-disabled="true">＞　目標設定</a>
+             </li>
+        </ul>
+        <div class="col-md-6 offset-md-3">
         <form action="/goals" method="POST">
             @csrf
-        <div class="container-sm card m-4 p-4">
+        <div class="card m-4 p-4">
             <div class="form">
             <label for="floatingTextarea" class="form-label">MainGoal</label>
                           <textarea class="form-control" placeholder="メインの目標を書いてください。" id="floatingTextarea" name="goal[maingoal]"/></textarea>
@@ -50,7 +60,6 @@
             </div>
         </form>
        
-            <div class="back">[<a href='/'>Home</a>]</div>
         
         
 

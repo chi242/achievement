@@ -70,13 +70,17 @@
       </div>
       <!--idが入るようにPlanlistControllerでplans_tableからidの値を取るように設計する（？）-->
       <div class="col-md-4 offset-md-4">
-        <div class="card m-2 p-2">
-          @foreach($plans as $plan)
-          <div class="card m-3 p-3" style="width:30rem;">
-            <p>{{ $plan->selected_date }}</p>
-            <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}.">{{$plan->plan_content}}</a>
-          </div>
-          @endforeach
+        <div class="card m-4 p-4">
+          @if($plans)
+            @foreach($plans as $plan)
+            <div class="card m-4 p-4" style="width:30rem;">
+              <p>{{ $plan->selected_date }}</p>
+              <a href="reflection_pages/{{ $plan->id }}" onclick="document.{$plan['plan_content']}.">{{$plan->plan_content}}</a>
+            </div>
+            @endforeach
+          @else
+          <p>Planはまだありません。</p>
+          @endif
         </div>
       </div>   
     </body>

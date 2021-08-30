@@ -19,9 +19,9 @@ class Analysis_pageController extends Controller
     
         if($totalNumbers !== 0){
         $rate = $statusNumbers/$totalNumbers*100;
-        $round_rate= round($rate);
+        $round_rate= round($rate).'%';
         }else{
-        echo 'Planはまだありません。';
+        $round_rate = 'Planはまだありません。';
         }
         $plans = Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
         

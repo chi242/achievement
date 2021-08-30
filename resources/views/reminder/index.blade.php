@@ -77,7 +77,7 @@
           <div class="row">
             <!--振り返り未記入のPlanを表示-->
               <div class="col-6">
-                <div class="container-sm card">
+                <div class="card m-4 p-4">
                 <p>振り返り未記入</p>  
                 <ul id='unreflection_list'> 
                 @foreach($unreflection_plans as $plan)
@@ -90,8 +90,8 @@
                 <button id="reload" type="button" class="btn btn-outline-secondary">リロード</button>
               </div>
             
-            <div class="col-6" name="second">
-              <div class="container-sm card">
+            <div class="col-6">
+              <div class="card m-4 p-4">
                 <div id="app" class="container">
                  <p>未達成のPlan</p>
                 </div>

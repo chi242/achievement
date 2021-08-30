@@ -73,8 +73,8 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-4 offset-md-4">
-        <div class="card m-4 p-4" style="width:30rem;">
+      <div class="col-md-6 offset-md-3">
+        <div class="card m-4 p-4">
             <table class="table table-borderless">
             <tbody>
               <tr>
@@ -95,9 +95,9 @@
               </tr>
             </tbody>
             </table>
+            <a href="/goals/create" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true" style="width:8rem;">目標を設定する</a>
         </div>
       </div>
-      <a href="/goals/create" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">目標を設定する</a>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>
