@@ -13,6 +13,13 @@
 　・Web画面  
 ⑥ログイン機能  
 
+###使用言語
+フロントエンド：HTML,CSS,Bootstrap,JavaScript  
+バックエンド:PHP(Laravel)  
+
+###開発環境
+cloud9  
+
 ### 工夫したところ
 ・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
 ・分析機能の達成率の計算  
@@ -59,7 +66,14 @@ Plan記入
 ③保存を押すとPlanlist画面に移行する。  
 
 ### URL
-[目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/")
+[目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/)  
+
+####テストアカウント  
+Name: TestTaro
+Mail: test@gmail.com
+Password: test12345
+
+
 
 
 
