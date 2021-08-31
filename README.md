@@ -1,62 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## 目標達成アプリ
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### アプリの概要
+目標を達成するために予定を立て記録し、分析するアプリ。  
 
-## About Laravel
+### アプリの機能
+①目標設定  
+②Plan設定  
+③振り返り機能  
+④分析機能  
+⑤リマインダー機能  
+　・LINE  
+　・Web画面  
+⑥ログイン機能  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+###使用言語
+フロントエンド：HTML,CSS,Bootstrap,JavaScript  
+バックエンド:PHP(Laravel)  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+###開発環境
+cloud9  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 工夫したところ
+・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
+・分析機能の達成率の計算  
 
-## Learning Laravel
+### 難しかったところ
+・ログインのAPI連携
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### このアプリを作った経緯
+  私は、利用者が毎日を充実感をもって過ごせるようなアプリを作りたかった。  
+　そこで、アプリを利用することを通して自己成長できるようなものがあれば、人は一日一日を意味のあるものと感じるのではないかと考えた。  
+　自己成長について書籍を調べたり、自分の経験を振り返ると、自分成長に必要なのは「続けること」だと感じた。成長しようと意識するよりも、「昨日やったことを今日少しできるようにする」ということを毎日積み重ねて、結果的に自己成長になるのではないかと考えた。  
+　ささいなことでも「達成したいもの＝目標」として設定し、継続できるようにするために、私は人が続けられなくなる要因を考え、科学的根拠のある目標達成の視点を取り入れた。それが、MACの法則である。MACの法則とは、オランダのアイントホーフェン工科大学の研究チームが推奨した目標の達成率が上がる方法のことである。これを目標のデータとして導入した。また、人が続けられなくなる要因の一つに「時間が経つにつれて、自分で立てた目標の意義が薄まってしまう」ということが考えられたため、Home画面に目標が見えるようにして、「リマインダー機能」を設定した。  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### ターゲット
+・目標を達成できた経験が少ないが、目標を立てて頑張りたい人。  
+・何か物事を継続させたい人。  
 
-## Laravel Sponsors
+### 使い方
+ログイン  
+⓪右上の「Register」を押して、名前・メールアドレス・パスワードを登録する。  
+①ログイン画面からメールアドレスとパスワードを記入する。  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+目標記入  
+①「目標データ」画面を開き、青いボタン「目標を設定する」を押す。  
+②目標設定画面には4つの項目がある。  
+　1．MainGoal  
+　2．Measurable  
+　　1で立てた目標を数値化する。  
+　3．Actionable  
+　　1で立てた目標までのプロセスを明確にする  
+　4．Competent  
+　　目標を設定した理由を自分のもっている価値観に基づいて考える。  
+③保存ボタンを押すと、目標データ画面に移行し、データが追加される。  
+※2，3，4は全部記入しなくても、登録できる。  
+Plan記入
+目標を設定した上で、毎日予定と振り返りを記入する。  
+①Home画面の日付選択から日付を選択する。  
+②Plan画面には、予定の内容・開始時間・取り組む時間を記入する。  
+③保存を押すと、Planlist画面に移行し、追加される。  
 
-### Premium Partners
+振り返り記入
+①Planlistから振り返りを書きたい予定内容の項目を選択する。  
+②「振り返りを書く」をクリックし、振り返りの内容・開始時間・取り組む時間・達成度を記入する。  
+③保存を押すとPlanlist画面に移行する。  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+### URL
+[目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/)  
 
-## Contributing
+####テストアカウント  
+Name: TestTaro
+Mail: test@gmail.com
+Password: test12345
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
