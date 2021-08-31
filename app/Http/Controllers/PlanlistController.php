@@ -17,7 +17,7 @@ class PlanlistController extends Controller
     public function index(Plan $plan)
     {
         $plans = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
-
+        // dd($plans);
         return view('planlist/index',['plans' => $plans]);
     }
 
@@ -33,3 +33,4 @@ class PlanlistController extends Controller
         return view('planlist/show',['plan' => $plan]);
     }
 }
+

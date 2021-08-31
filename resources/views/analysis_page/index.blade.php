@@ -27,6 +27,10 @@
       .nav-reminder{
         background-color: #B0EFEB
       }
+      .nav-one{
+        border-color: #79DFC1;
+    	  border-style: solid;	
+      }         
       </style> 
     </head>
     <body>
@@ -56,19 +60,19 @@
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
           <li class="nav-item nav-home flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another display-6" href="/">Home</a>
+            <a class="nav-link display-6" href="/">Home</a>
           </li>
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
+            <a class="nav-link nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
           <li class="nav-item  flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
+            <a class="nav-link nav-planlist display-6" href="/planlists">Planリスト</a>
+          </li>
+          <li class="nav-item flex-sm-fill text-sm-center nav-one">
+            <a class="nav-link nav-data display-6" href="/analysis_pages">分析</a>
           </li>
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
-          </li>
-          <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
+            <a class="nav-link nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
         </ul>
       </div>
@@ -86,15 +90,17 @@
         <div class="row">
           <!--選択日の記録のまとめ-->
           <div class="container-sm card p-4 m-4">
-            @foreach($plans as $plan)
-            <div class="card m-4 p-4">
-            <!--日付-->
-            <h3>{{$plan->selected_date->format('Y年m月d日')}}</h3>
-            <p>取り組んだ時間 {{$plan->reflection_times->format('G:i')}}/{{$plan->plan_times->format('G:i')}}</p>
-            <p>予定開始時間 {{$plan->reflection_start_time->format('H:i')}}</p>
-            <p>実行開始時間 {{$plan->plan_start_time->format('H:i')}}</p>
-            </div>
-            @endforeach
+            @isset($plans)
+              @foreach($plans as $plan)
+              <div class="card m-4 p-4">
+              <!--日付-->
+              <h3>{{$plan->selected_date->format('Y年m月d日')}}</h3>
+              <p>取り組んだ時間 {{$plan->reflection_times->format('G:i')}}/{{$plan->plan_times->format('G:i')}}</p>
+              <p>予定開始時間 {{$plan->reflection_start_time->format('H:i')}}</p>
+              <p>実行開始時間 {{$plan->plan_start_time->format('H:i')}}</p>
+              </div>
+              @endforeach
+            @endisset
           </div>
         </div>
       </div>

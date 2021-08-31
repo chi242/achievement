@@ -14,7 +14,7 @@ class Reflection_pageController extends Controller
 {
     public function create(Plan $plan)
      {
-    
+        
         return view('reflection_page/create')->with(['plan' => $plan]);
     }
     
@@ -52,7 +52,7 @@ class Reflection_pageController extends Controller
     
     public function delete(Plan $plan){
         $plan->delete();
-        return redirect('reflection_pages/create');
+        return redirect('planlists');
     }
     
     

@@ -27,6 +27,10 @@
         .nav-reminder{
           background-color: #B0EFEB
         }
+        .nav-one{
+          border-color: #EA868F;
+	        border-style: solid;	
+        }
       </style> 
     </head>
     <body>
@@ -59,24 +63,24 @@
       <div class="container-fluid">
         <ul class="nav nav-tabs nav-pills">
           <!--Home画面に遷移するタグ-->
-          <li class="nav-item nav-home flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another display-6" href="/">Home</a>
+          <li class="nav-item nav-home flex-sm-fill text-sm-center nav-tabs nav-one">
+            <a class="nav-link display-6" href="/">Home</a>
           </li>
           <!--目標データ画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-one nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
+            <a class="nav-link nav-goal display-6" aria-current="page" href="/goals">目標データ</a>
           </li>
           <!--Planlist画面に遷移するタグ-->
           <li class="nav-item  flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-planlist display-6" href="/planlists">Planリスト</a>
+            <a class="nav-link nav-planlist display-6" href="/planlists">Planリスト</a>
           </li>
           <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
+            <a class="nav-link nav-data display-6" href="/analysis_pages">分析</a>
           </li>
           <!--リマインダー画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
+            <a class="nav-link nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
         </ul>
       </div>

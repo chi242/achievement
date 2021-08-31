@@ -16,9 +16,14 @@ class GoalController extends Controller
 {
     public function index(Goal $goal)
     {
-
         $goal = Goal::where('user_id',Auth::id())->orderby('id','desc');
         
+        if($goal == null){
+            $maingoal = '未記入';
+            $measurable = '未記入';
+            $actionable = '未記入';
+            $competent = '未記入';
+        }else{
         $maingoal = $goal->first(['maingoal'])->toArray();
         if(!isset($maingoal['maingoal'])){
         $maingoal['maingoal'] = "未記入";
@@ -37,6 +42,7 @@ class GoalController extends Controller
         $competent = $goal->first(['competent'])->toArray();
         if(!isset($competent['competent'])){
         $competent['competent'] = "未記入";
+        }
         }
         
 

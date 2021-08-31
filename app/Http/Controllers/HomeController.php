@@ -31,6 +31,10 @@ class HomeController extends Controller
     {
         $maingoal = \App\Models\Goal::where('user_id',Auth::id())->orderby('id','desc')->first(['maingoal']);
         
+        if($maingoal == null){
+        $maingoal['maingoal'] = "未記入";
+        } 
+        
         if($maingoal['maingoal'] == ""){
         $maingoal['maingoal'] = "未記入";
         } 
