@@ -13,19 +13,19 @@
 　・Web画面  
 ⑥ログイン機能  
 
-###使用言語
+### 使用言語  
 フロントエンド：HTML,CSS,Bootstrap,JavaScript  
 バックエンド:PHP(Laravel)  
 
-###開発環境
+### 開発環境  
 cloud9  
 
-### 工夫したところ
+### 工夫したところ  
 ・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
 ・分析機能の達成率の計算  
 
-### 難しかったところ
-・ログインのAPI連携
+### 難しかったところ  
+・ログインのAPI連携  
 
 ### このアプリを作った経緯
   私は、利用者が毎日を充実感をもって過ごせるようなアプリを作りたかった。  
@@ -60,7 +60,7 @@ Plan記入
 ②Plan画面には、予定の内容・開始時間・取り組む時間を記入する。  
 ③保存を押すと、Planlist画面に移行し、追加される。  
 
-振り返り記入
+振り返り記入  
 ①Planlistから振り返りを書きたい予定内容の項目を選択する。  
 ②「振り返りを書く」をクリックし、振り返りの内容・開始時間・取り組む時間・達成度を記入する。  
 ③保存を押すとPlanlist画面に移行する。  
@@ -68,15 +68,23 @@ Plan記入
 ### URL
 [目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/)  
 
-####テストアカウント  
-Name: TestTaro
-Mail: test@gmail.com
-Password: test12345
+#### テストアカウント  
+Name: TestTaro  
+Mail: test@gmail.com  
+Password: test12345  
 
 
 
 
 
+##### ホーム画面  
+![S__56074245](https://user-images.githubusercontent.com/78404592/131443120-1d4ac9f9-6dd6-474d-a072-9be709225c56.jpg)  
+##### Plan記入画面  
+![スクリーンショット (522)](https://user-images.githubusercontent.com/78404592/131443458-7d0dcc2a-b0ab-4352-ae03-66ea4938dc28.png)  
+##### 分析画面  
+![S__56074247](https://user-images.githubusercontent.com/78404592/131443123-dcaed5cc-ce12-40d1-aae0-dfdb32fb747b.jpg)  
+##### リマインダー画面  
+![S__56074248](https://user-images.githubusercontent.com/78404592/131443127-e0f94d8f-4efc-42e2-98b6-5c58d055c3ff.jpg)  
 
 
 
