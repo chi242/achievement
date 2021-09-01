@@ -16,9 +16,12 @@ class PlanlistController extends Controller
 {
     public function index(Plan $plan)
     {
-        $plans = \App\Models\Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->get();
+        $plans = Plan::where('user_id',Auth::id())->orderby('selected_date','desc')->orderby('id','desc')->limit(10)->offset(0)->get();
         // dd($plans);
+        // $plans = [];
         return view('planlist/index',['plans' => $plans]);
+        //return view('planlist/index');
+        
     }
 
     public function edit(Plan $plan)

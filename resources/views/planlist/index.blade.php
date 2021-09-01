@@ -73,18 +73,22 @@
           </li>
           <!--分析画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-data display-6" href="/analysis_pages">分析</a>
+            <a class="nav-link nav-another nav-data display-6" href="/analysis_pages">分析</a>
           </li>
           <!--リマインダー画面に遷移するタグ-->
           <li class="nav-item flex-sm-fill text-sm-center">
-            <a class="nav-link nav-reminder display-6" href="/reminders">リマインダー</a>
+            <a class="nav-link nav-another nav-reminder display-6" href="/reminders">リマインダー</a>
           </li>
         </ul>
       </div>
       <div class="col-md-4 offset-md-4">
         <!--日付ごとのPlanリスト-->
         <div class="card m-4 p-4">
-                    @if($plans['selected_date'])
+            
+          @if(count($plans)=== 0)
+            <p>Planはまだありません。</p>
+          @else
+            
             @foreach($plans as $plan)
             <div class="card m-4 p-4" style="width:30rem;">
               <!--選択日表示-->
@@ -94,9 +98,7 @@
             </div>
             @endforeach
           @endif
-          @if(empty($plan['selected_date']))
-          <p>Planはまだありません。</p>
-          @endif
+          
 
 
         </div>

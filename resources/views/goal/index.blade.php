@@ -93,23 +93,23 @@
                 <tr>
                   <!--Maingoal表示-->
                   <th scope="row">maingoal</th>
-                  <td>{{$maingoal['maingoal']}}</td>
+                  <td>{{$goal_array[0]}}</td>
                 </tr>
                 <tr>
-                  <!--Measurable表示-->
-                  <th scope="row">measurable</th>
-                  <td>{{$measurable['measurable']}}</td>
-                </tr>
-                <tr>
-                  <!--Actionable表示-->
+                  <!--Maingoal表示-->
                   <th scope="row">actionable</th>
-                  <td>{{$actionable['actionable']}}</td>
+                  <td>{{$goal_array[1]}}</td>
                 </tr>
-                  <tr>
-                  <!--Competent表示-->
+                <tr>
+                  <!--Maingoal表示-->
+                  <th scope="row">measurable</th>
+                  <td>{{$goal_array[2]}}</td>
+                </tr>
+                <tr>
+                  <!--Maingoal表示-->
                   <th scope="row">competent</th>
-                  <td>{{$competent['competent']}}</td>
-                </tr>
+                  <td>{{$goal_array[3]}}</td>
+                </tr>              
               </tbody>
             </table>
             <!--目標設定ページに遷移するボタン-->

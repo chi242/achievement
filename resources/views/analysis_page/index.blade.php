@@ -89,8 +89,10 @@
       <div class="col-md-4 offset-md-4">
         <div class="row">
           <!--選択日の記録のまとめ-->
-          <div class="container-sm card p-4 m-4">
-            @isset($plans)
+            @if(count($plans) === 0)
+            
+            @else
+              <div class="container-sm card p-4 m-4">
               @foreach($plans as $plan)
               <div class="card m-4 p-4">
               <!--日付-->
@@ -100,7 +102,7 @@
               <p>実行開始時間 {{$plan->plan_start_time->format('H:i')}}</p>
               </div>
               @endforeach
-            @endisset
+            @endif
           </div>
         </div>
       </div>

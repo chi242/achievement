@@ -16,37 +16,24 @@ class GoalController extends Controller
 {
     public function index(Goal $goal)
     {
-        $goal = Goal::where('user_id',Auth::id())->orderby('id','desc');
-        
-        if($goal == null){
+        $goal = Goal::where('user_id',Auth::id())->orderby('id','desc')->select('maingoal','measurable','actionable','competent')->first();
+        if(!isset($goal)){
             $maingoal = '未記入';
             $measurable = '未記入';
             $actionable = '未記入';
             $competent = '未記入';
+            $goal_array = array($maingoal,$measurable,$actionable,$competent);
         }else{
-        $maingoal = $goal->first(['maingoal'])->toArray();
-        if(!isset($maingoal['maingoal'])){
-        $maingoal['maingoal'] = "未記入";
-        } 
-        
-        $measurable = $goal->first(['measurable'])->toArray();
-        if(!isset($measurable['measurable'])){
-        $measurable['measurable'] = "未記入";
-        }
-        
-        $actionable = $goal->first(['actionable'])->toArray();
-        if(!isset($actionable['actionable'])){
-        $actionable['actionable'] = "未記入";
-        }
-        
-        $competent = $goal->first(['competent'])->toArray();
-        if(!isset($competent['competent'])){
-        $competent['competent'] = "未記入";
-        }
-        }
-        
+        $maingoal = $goal->orderby('id','desc')->value('maingoal');
+        $measurable = $goal->orderby('id','desc')->value('measurable');
+        $actionable = $goal->orderby('id','desc')->value('actionable');
+        $competent = $goal->orderby('id','desc')->value('competent');
 
-        return view('goal/index',compact('maingoal','measurable','actionable','competent'))->with(['goal' => $goal]);
+        $goal_array = array($maingoal,$measurable,$actionable,$competent);
+            
+        }
+        
+        return view('goal/index',compact('goal_array'))->with(['goal' => $goal]);
     }
     
     public function create(Goal $goal)
