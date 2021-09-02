@@ -98,9 +98,9 @@
             </div>
             @endforeach
           @endif
-          
-
-
+        </div>
+        <div class="col-md-6 offset-md-3">
+          <span>{{$plans->links()}}</span>
         </div>
       </div>   
     </body>

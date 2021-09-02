@@ -60,6 +60,11 @@ Route::get('/analysis_pages', 'App\Http\Controllers\Analysis_pageController@inde
 
 Route::get('/planlists', 'App\Http\Controllers\PlanlistController@index');
 
+
+Route::get('/planlists/getJson', function () {
+    return User::paginate();
+});
+
 Route::get('/reminders', 'App\Http\Controllers\ReminderController@index');
 
 Route::get('/reminders/getJson/{status}', 'App\Http\Controllers\ReminderController@getJson_achievement');
