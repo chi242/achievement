@@ -1,3 +1,6 @@
+![PHP](https://img.shields.io/badge/php-%5E8.0.8-blue)
+![Laravel](https://img.shields.io/badge/laravel-%5E8.3.0-red)
+
 ## 目標達成アプリ
 
 ### アプリの概要
