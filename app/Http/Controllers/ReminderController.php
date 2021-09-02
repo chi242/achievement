@@ -17,11 +17,13 @@ class ReminderController extends Controller
     
     public function index()
     {
+        // 達成度に応じた（初期値＝０）Planの取得
         $achievement_plans = Plan::where('user_id',Auth::id())
                 ->where('status','>=',0)
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
+        // 振り返りを書いていないPlanの内容を取得
         $unreflection_plans = Plan::where('user_id',Auth::id())
                 ->where('reflection_content','未記入')
                 ->orderby('selected_date','desc')
@@ -32,25 +34,24 @@ class ReminderController extends Controller
         
     }
     
+    // 達成度に応じたPlanをJson形式で取得
     public function getJson_achievement($status){
         $achievement_plans = Plan::where('user_id',Auth::id())
                 ->where('status','>=',$status)
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
-        // dump(Auth::id());        
         return response()->json(compact('achievement_plans'));
     }
 
-
+    
+    // 振り返りが未記入のPlanをJson形式で取得
     public function getJson_unreflection(){
         $unreflection_plans = Plan::where('user_id',Auth::id())
                 ->where('reflection_content','未記入')
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
-        // dump($achievement_plans);
-        // return response()->json(compact('achievement_plans','unreflection_plans'));
         return response()->json(compact('unreflection_plans'));
     }
     

@@ -12,12 +12,13 @@ use Auth;
 
 class Reflection_pageController extends Controller
 {
+    // 振り返り記入画面
     public function create(Plan $plan)
-     {
-        
+    {
         return view('reflection_page/create')->with(['plan' => $plan]);
     }
     
+    // 振り返りの内容と開始時間、取り組み時間、達成度の保存処理
     public function store(Request $request,Plan $plan)
     {   
         $plans = Plan::orderby('id','desc')->first();
@@ -29,20 +30,15 @@ class Reflection_pageController extends Controller
         $plans->save();
         
         return redirect('/planlists/' . $plan->id);
-        
     }
     
+    // Plan詳細一覧画面
     public function show(Plan $plan)
     {
         return view('reflection_page/show')->with(['plan' => $plan]);
     }
-     
-    public function edit(Plan $plan)
-    {
-        $reflection = reflection::all();
-        return view('reflection_page/edit',['plan'-> $plan]);
-    }
     
+    // 振り返り更新処理
     public function update(Request $request)
     {
         $input= $request['reflection'];
@@ -50,6 +46,7 @@ class Reflection_pageController extends Controller
         return redirect('/planlists/' . $reflection->id); 
     }
     
+    // Planの削除処理
     public function delete(Plan $plan){
         $plan->delete();
         return redirect('planlists');

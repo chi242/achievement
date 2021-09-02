@@ -12,7 +12,7 @@ use Auth;
 
 class Selected_dateController extends Controller
 {
-    
+    // 選択日保存処理
     public function store(Request $request,Plan $plan)
     {
         $plans = new \App\Models\Plan;

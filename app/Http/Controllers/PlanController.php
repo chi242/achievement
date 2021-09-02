@@ -12,16 +12,13 @@ use Auth; //認証モデルを使用する
 
 class PlanController extends Controller
 {
-    public function index(Plan $plan ,Goal $goal)
-    {
-        return view('plan/index')->with(['plan' => $plan]);
-    }
-    
+    // Plan記入画面
     public function create(Plan $plan)
      {
         return view('plan/create')->with(['plan' => $plan]);
     }
     
+    // Plan保存処理
     public function store(Request $request,Plan $plan)
     {   
         $plan = \App\Models\Plan::orderby('id','desc')->first();
@@ -31,30 +28,18 @@ class PlanController extends Controller
         $plan = \App\Models\Plan::where('user_id',Auth::id());
         return redirect('/planlists');
     }
-     
-    public function show(Plan $plan)
-    {   
-        return view('plan/show')->with(['plan' => $plan]);
-    }
-     
+
+    // Plan詳細内容編集画面
     public function edit(Plan $plan)
     {
         return view('plan/edit')->with(['plan' => $plan]);
     }
     
+    // Plan詳細内容更新処理
     public function update(Request $request,Plan $plan)
     {
         $input= $request['plan'];
         $plan->fill($input)->save();
-        // return $plan;
-        return redirect('/'); 
+        return redirect('/planlists'); 
     }
-   
-    
-    public function delete(Plan $plan){
-        $plan->delete();
-        return redirect('plans/create');
-    }
-    
-    
 }
