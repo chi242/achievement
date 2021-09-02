@@ -30,19 +30,13 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::post('/selected_date', 'App\Http\Controllers\Selected_dateController@store');
 
-Route::get('/plans', 'App\Http\Controllers\PlanController@index');
-
 Route::get('/plans/create','App\Http\Controllers\PlanController@create');
 
 Route::post('/plans', 'App\Http\Controllers\PlanController@store');
 
-Route::get('/plans/{plan}','App\Http\Controllers\PlanController@show');
-
 Route::get('/plans/{plan}/edit','App\Http\Controllers\PlanController@edit')->name('plan.edit');
 
 Route::put('/plans/{plan}/store','App\Http\Controllers\PlanController@update');
-
-Route::delete('/plans/{plan}','App\Http\Controllers\PlanController@delete');
 
 Route::get('/reflection_pages/{plan}/create','App\Http\Controllers\Reflection_pageController@create')->name('reflection_page.create');
 
@@ -64,11 +58,7 @@ Route::post('/goals', 'App\Http\Controllers\GoalController@store');
 
 Route::get('/analysis_pages', 'App\Http\Controllers\Analysis_pageController@index');
 
-Route::get('/planlists/{plan}/edit', 'App\Http\Controllers\PlanlistController@edit');
-
 Route::get('/planlists', 'App\Http\Controllers\PlanlistController@index');
-
-Route::get('/planlists/{plan}', 'App\Http\Controllers\PlanlistController@show');
 
 Route::get('/reminders', 'App\Http\Controllers\ReminderController@index');
 
