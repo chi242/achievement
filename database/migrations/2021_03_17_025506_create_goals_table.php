@@ -19,6 +19,7 @@ class CreateGoalsTable extends Migration
             $table->text('measurable')->nullable();
             $table->text('actionable')->nullable();
             $table->text('competent')->nullable();
+            $table->smallInteger('favorite')->default(0);
             $table->timestamps();
             $table->timestamp('deleted_at')->useCurrent()->nullable();
             
@@ -33,6 +34,8 @@ class CreateGoalsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('plans');
+        
         Schema::dropIfExists('goals');
     }
 }

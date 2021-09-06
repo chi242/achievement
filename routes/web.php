@@ -73,6 +73,13 @@ Route::get('/reminders/getJson', 'App\Http\Controllers\ReminderController@getJso
 
 Route::get('/reminders/getJson/{reflection_page}', 'App\Http\Controllers\ReminderController@getJson_reflection_page');
 
+Route::get('/collections', 'App\Http\Controllers\CollectionController@index');
+
+Route::get('/collections/getJson', 'App\Http\Controllers\CollectionController@getJson_favorite');
+
+
+
+
 
 
 
