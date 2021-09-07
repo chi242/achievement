@@ -13,9 +13,10 @@
                 @foreach($goals as $goal)
                 <div class="card m-4 p-4" id="app">
                     <p>@{{ message }}</p>
+                    <p>@{{ info }}</p>
                     <p>{{$goal->maingoal}}</p>
                     <favorite onclick="checkFavorite"></favorite>
-                    <p>{{$favorite_number}}</p>                
+                    <p id="favorite_number">{{$favorite_number}}</p>                
                 </div>
                 @endforeach
             </div>

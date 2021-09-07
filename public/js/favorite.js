@@ -3,9 +3,26 @@ const appdata = {
     data(){
         return{
             message: 'MainGoal',
-            
+            info: null,
         }
     },
+    created () {
+        //  let vm = this
+    axios
+      .get('/collections/getJson')
+      .then((response) => {
+        const favorite_number = document.getElementById('favorite_number');
+        favorite_number.innerHTML = '';
+        
+        const numbers = response.data.favorite_number;
+        console.log(numbers)
+        
+        let row = document.createElement("li");
+        row.innerHTML = numbers.favorite_number;
+        console.log(row)
+        
+      })
+  }
     
 }
 var app = Vue.createApp(appdata)
