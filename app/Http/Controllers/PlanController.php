@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 use Auth; //認証モデルを使用する
 
-
 class PlanController extends Controller
 {
     // Plan記入画面

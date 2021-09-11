@@ -13,9 +13,11 @@
                 @foreach($goals as $goal)
                 <div class="card m-4 p-4" id="app">
                     <p>@{{ message }}</p>
-                    <p>@{{ info }}</p>
+                    
                     <p>{{$goal->maingoal}}</p>
-                    <favorite onclick="checkFavorite"></favorite>
+                    <button id="firstBtn" type="button" v-on:click="favorite_add" class="btn btn-outline-warning">&#9825;</button>
+                    <!--<favorite></favorite>-->
+                    <!--<p>@{{ count }}</p>-->
                     <p id="favorite_number">{{$favorite_number}}</p>                
                 </div>
                 @endforeach

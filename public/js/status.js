@@ -1,6 +1,4 @@
 
-
-
         var selecter = document.getElementById("select_status");
         selecter.addEventListener('change',(event)=>{
         const value = event.target.value;

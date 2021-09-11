@@ -1,102 +1,42 @@
-
-const appdata = {
-    data(){
-        return{
-            message: 'MainGoal',
-            info: null,
-        }
-    },
-    created () {
-        //  let vm = this
-    axios
-      .get('/collections/getJson')
-      .then((response) => {
-        const favorite_number = document.getElementById('favorite_number');
-        favorite_number.innerHTML = '';
-        
-        const numbers = response.data.favorite_number;
-        console.log(numbers)
-        
-        let row = document.createElement("li");
-        row.innerHTML = numbers.favorite_number;
-        console.log(row)
-        
-      })
-  }
-    
-}
-var app = Vue.createApp(appdata)
+// const app = Vue.createApp({
+//     template:`<favorite></favorite>`
+// })
 
 // app.component('favorite',{
-//     template:`
-//     <button v-if="status == false" type="button" @click="favorite_check" class="btn btn-outline-warning">&#9825;</button><a v-if="status == false" href="#">{{$favorite_number}}</a>
-//     <button v-else type="button" @click="favorite_check" class="btn btn-success">&#9829;</button><a v-if="status == true" href="#">a</a>
-//     `,
-//     data(){() =>{
-        
-//         if($my_favorite == 1){
-//             this.status = true;    
-//         }else{
-//             this.status = false;  
+//     data(){
 //         return{
-            
+//             message: 'MainGoal',
+//             count: null,
 //         }
-//     }
-//     }},
-
-app.component('favorite',{
-    data(){
-        return{
-            status : true
-        }
-    },
-    methods(){
-        checkFavorite:() =>{
-        my_favorite = 0       
-                if($my_favorite === 1){
-                    this.status.push = true;    
-                }else{
-                    this.status.push = false;  
+//     },
+//     created () {
+//          let vm = this
+//     axios
+//       .get('/collections/getJson')
+//       .then((response) => {
+//         // const btn = document.getElementById('firstBtn');
+//         // btn.remove();
         
-}}},
-    template:`
-    <p>status={{status}}</p>
-    <button v-if="status == true" type="button" @click="favorite_check" class="btn btn-outline-warning">&#9825;</button><a v-if="status == false" href="#">{{$favorite_number}}</a>
-    <button v-else type="button" @click="favorite_check" class="btn btn-success">&#9829;</button><a v-if="status == true" href="#">a</a>
-    `,
-})
+//         const numbers = response.data.favorite_number[0].favorite;
+//         vm.info = numbers 
+//         console.log(numbers)
+        
+//         let row = document.createElement("li");
+//         row.innerHTML = numbers.favorite_number ;
+//         console.log(row)
+        
+//       })
+//     },
+    
+//     template:`
+//     <button type="button" @click="count++" class="btn btn-outline-warning">&#9825;</button>
+    
+//     `,
+//     })
 
-    
-    
-    
-    
-    // mounted(){
-    // // methods: {
-    // //     favorite_check(){   
-    //     this.axios.get('/collections/getJson')
-    //         .then((response) => {console.log(response.data)
-    //     if(response.data[0] == 1) {
-    //      console.log(response)
-    //      this.status = true
-    //      this.count = response.data[1]
-    //   } else {
-    //      console.log(response)
-    //      this.status = false
-    //      this.count = response.data[1]
-    //   }
-    //  })
-    // }
-     
-    // }
-    // }
-    
-    
-// })
-    
+// app.mount('#app')
 
 
-
-app.mount('#app')
 
 //自分用(Auth::user_id)
     // 初期(get_collection)
@@ -116,13 +56,41 @@ app.mount('#app')
         
         //  status==true()かplanのfavotite=0のとき
         // $favoriteNumber 
+
+
+
+
+
+    axios
+      .get('/collections/getJson')
+      .then((response) => {
+          
+        const firstNumber = document.getElementById('favorite_number');
+        firstNumber.innerHTML = '';
         
+        // const numbers = response.data.favorite_number[0].favorite;
+        // this.favorite_number = numbers 
+        // console.log(numbers)
+        let numbers = document.getElementById('favorite_number')
         
+        var btn = document.getElementById('firstBtn');
+        btn.addEventListener('click',function(numbers){
+           numbers =  this.count++
+           console.log(numbers)
+        })
+        
+        let nextNumber = document.createElement("p");
+        nextNumber.innerHTML = numbers.favorite_number ;
+        console.log(nextNumber)
+
+btn.appendChild(nextNumber);
+                        }
+                    )
+        
+
+
+
     
-    
-
-
-
 
 
     
