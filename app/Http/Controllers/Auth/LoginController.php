@@ -43,16 +43,24 @@ class LoginController extends Controller
     public function authGoogleCallback()
     {
         $googleUser = Socialite::driver('google')->stateless()->user();
-        $user = User::firstOrCreate([
-            'email' => $googleUser->email
-        ], [
-            'email_verified_at' => now(),
-            'google_id' => $googleUser->getId()
-        ]);
-        Auth::login($user, true);
+        // dd($googleUser);
+        $user = User::where('email', $googleUser->email)->first();
+         if ($user == null) {
+            $user = $this->createUserByGoogle($googleUser);
+         \Auth::login($user, true);
         return redirect('/home');
-    }   
-
+        }
+}
+        public function createUserByGoogle($gUser)
+    {
+        $user = User::create([
+            'name'     => $gUser->name,
+            'email'    => $gUser->email,
+            'password' => \Hash::make(uniqid()),
+        ]);
+        return $user;
+    }
+            
     /**
      * Create a new controller instance.
      *
@@ -63,3 +71,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
+

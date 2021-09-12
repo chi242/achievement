@@ -24,7 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('login/google', 'App\Http\Controllers\Auth\LoginController@getGoogleAuth');
 
-Route::get('login/google/callback', 'Auth\LoginController@authGoogleCallback');
+Route::get('login/google/callback', 'App\Http\Controllers\Auth\LoginController@authGoogleCallback');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
