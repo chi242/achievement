@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
+use App\Models\User;
 use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ class Reflection_pageController extends Controller
     // 振り返り記入画面
     public function create(Plan $plan)
     {
+        User::userAuthenticate($plan->user_id);
         return view('reflection_page/create')->with(['plan' => $plan]);
     }
     
