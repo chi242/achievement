@@ -45,11 +45,12 @@ class LoginController extends Controller
         $googleUser = Socialite::driver('google')->stateless()->user();
         // dd($googleUser);
         $user = User::where('email', $googleUser->email)->first();
+        //   dd($user);
          if ($user == null) {
             $user = $this->createUserByGoogle($googleUser);
+         }
          \Auth::login($user, true);
         return redirect('/home');
-        }
 }
         public function createUserByGoogle($gUser)
     {
