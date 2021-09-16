@@ -51,7 +51,7 @@
                     <!--Planの内容記入欄-->
                     <div class="p-1 m-1">
                         <label for="floatingTextarea" class="form-label">内容</label>
-                        <textarea class="form-control" placeholder="今日やるべきことを記入してください。" id="floatingTextarea" name="plan[plan_content]" required></textarea>
+                        <textarea class="form-control" placeholder="{{ $plan->plan_content }}" id="floatingTextarea" name="plan[plan_content]" required></textarea>
                     </div>
                     <!--Planの開始時間記入欄-->
                     <div class="p-1 m-1">

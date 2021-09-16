@@ -36,29 +36,28 @@ class LoginController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
     
     public function getGoogleAuth()
-        {
-            return Socialite::driver('google')
-                ->redirect();
-        }
+    {
+        return Socialite::driver('google')->redirect();
+    }
     public function authGoogleCallback()
     {
-        $googleUser = Socialite::driver('google')->stateless()->user();
-        // dd($googleUser);
-        $user = User::where('email', $googleUser->email)->first();
-        //   dd($user);
-         if ($user == null) {
-            $user = $this->createUserByGoogle($googleUser);
-         }
-         \Auth::login($user, true);
+    $googleUser = Socialite::driver('google')->stateless()->user();
+    // dd($googleUser);
+    $user = User::where('email', $googleUser->email)->first();
+    //   dd($user);
+    if ($user == null) {
+        $user = $this->createUserByGoogle($googleUser);
+    }
+    \Auth::login($user, true);
         return redirect('/home');
-}
-        public function createUserByGoogle($gUser)
+    }
+    public function createUserByGoogle($gUser)
     {
-        $user = User::create([
-            'name'     => $gUser->name,
-            'email'    => $gUser->email,
-            'password' => \Hash::make(uniqid()),
-        ]);
+    $user = User::create([
+        'name'     => $gUser->name,
+        'email'    => $gUser->email,
+        'password' => \Hash::make(uniqid()),
+    ]);
         return $user;
     }
             
