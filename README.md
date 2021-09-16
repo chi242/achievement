@@ -16,14 +16,14 @@
 　・LINE  
 　・Web画面  
 ⑥ログイン機能  
-
+　・Laravel  
+  ・Google
 ## 使用言語  
 フロントエンド：HTML,CSS,Bootstrap,JavaScript  
 バックエンド:PHP(Laravel)  
 
 ## 開発環境  
-cloud9  
-インフラ：AWS,Heroku  
+AWS(EC2,cloud9),Heroku  
 
 ## 工夫したところ  
 ・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
@@ -93,6 +93,9 @@ https://user-images.githubusercontent.com/78404592/131789441-ae950de8-3842-45b1-
 ②「振り返りを書く」をクリックし、振り返りの内容・開始時間・取り組む時間・達成度を記入する。  
 ③保存を押すとPlanlist画面に移行する。  
 
+## セキュリティ面  
+・認可処理  
+本人以外にログインしているユーザーが本人の登録内容を変更しようとした場合ホーム画面にリダイレクトする
 ## URL
 [目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/)  
 
