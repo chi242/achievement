@@ -90,7 +90,7 @@
           @else
             
             @foreach($plans as $plan)
-            <div class="card m-4 p-4" style="width:30rem;">
+            <div class="card m-4 p-4">
               <!--選択日表示-->
               <p>{{ $plan->selected_date->format('Y年m月d日') }}</p>
               <!--Planで設定したデータをまとめたページに遷移するリンク-->
@@ -102,7 +102,7 @@
         <div class="col-md-6 offset-md-3">
           <span>{{$plans->links()}}</span>
         </div>
-      </div>   
+      </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </html>
