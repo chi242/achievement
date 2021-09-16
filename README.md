@@ -1,5 +1,5 @@
-![PHP](https://img.shields.io/badge/php-%5E8.0.8-blue)
-![Laravel](https://img.shields.io/badge/laravel-%5E8.3.0-red)
+![PHP](https://img.shields.io/badge/php-%5E7.3.29-blue)
+![Laravel](https://img.shields.io/badge/laravel-%5E8.1.2-red)
 
 # 目標達成アプリ
 
@@ -16,14 +16,14 @@
 　・LINE  
 　・Web画面  
 ⑥ログイン機能  
-
+　・Laravel  
+  ・Google
 ## 使用言語  
 フロントエンド：HTML,CSS,Bootstrap,JavaScript  
 バックエンド:PHP(Laravel)  
 
 ## 開発環境  
-cloud9  
-インフラ：AWS,Heroku  
+AWS(EC2,cloud9),Heroku  
 
 ## 工夫したところ  
 ・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
@@ -51,6 +51,11 @@ https://user-images.githubusercontent.com/78404592/132115356-6c83f573-06e4-45d1-
 
 ## 使い方
 ログイン  
+
+
+https://user-images.githubusercontent.com/78404592/133580539-c1111bde-f4ea-4108-bbc1-6aa9fd4526af.mp4
+
+
 ⓪右上の「Register」を押して、名前・メールアドレス・パスワードを登録する。  
 ①ログイン画面からメールアドレスとパスワードを記入する。  
 
@@ -93,6 +98,9 @@ https://user-images.githubusercontent.com/78404592/131789441-ae950de8-3842-45b1-
 ②「振り返りを書く」をクリックし、振り返りの内容・開始時間・取り組む時間・達成度を記入する。  
 ③保存を押すとPlanlist画面に移行する。  
 
+## セキュリティ面  
+・認可処理  
+本人以外にログインしているユーザーが本人の登録内容を変更しようとした場合ホーム画面にリダイレクトする
 ## URL
 [目標達成アプリ](https://sheltered-sierra-83292.herokuapp.com/)  
 
