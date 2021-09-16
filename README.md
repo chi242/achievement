@@ -51,6 +51,11 @@ https://user-images.githubusercontent.com/78404592/132115356-6c83f573-06e4-45d1-
 
 ## 使い方
 ログイン  
+
+
+https://user-images.githubusercontent.com/78404592/133580539-c1111bde-f4ea-4108-bbc1-6aa9fd4526af.mp4
+
+
 ⓪右上の「Register」を押して、名前・メールアドレス・パスワードを登録する。  
 ①ログイン画面からメールアドレスとパスワードを記入する。  
 
