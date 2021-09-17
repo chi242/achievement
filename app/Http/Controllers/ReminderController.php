@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Auth;
 
-
-
-
 class ReminderController extends Controller
 {
     
@@ -30,8 +27,6 @@ class ReminderController extends Controller
                 ->orderby('id','desc')
                 ->get();
         return view('reminder/index',compact('achievement_plans','unreflection_plans'));
-        
-        
     }
     
     // 達成度に応じたPlanをJson形式で取得
@@ -61,8 +56,6 @@ class ReminderController extends Controller
                 ->orderby('selected_date','desc')
                 ->orderby('id','desc')
                 ->get();
-        // dump($achievement_plans);
-        // return response()->json(compact('achievement_plans','unreflection_plans'));
         return response()->json(compact('unreflection_plans'));
-}
+    }
 }

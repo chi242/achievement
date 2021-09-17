@@ -31,18 +31,7 @@
       </style> 
     </head>
     <body>
-      <div class="nav justify-content-end">
-        <!--ゴールメニューボタン-->
-        <div class="btn-group">
-          <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu
-          </button>
-          <ul class="dropdown-menu">
-            <li>goal1</li>
-            <li>goal2</li>
-            <li>goal3</li>
-          </ul>
-        </div>
+      <div class="nav justify-content-end m-2">
         <!--ユーザーボタン（ログアウト・ホームボタン）-->
         <div class="btn-group">
           <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,11 +73,9 @@
       <div class="col-md-4 offset-md-4">
         <!--日付ごとのPlanリスト-->
         <div class="card m-4 p-4">
-            
           @if(count($plans)=== 0)
             <p>Planはまだありません。</p>
           @else
-            
             @foreach($plans as $plan)
             <div class="card m-4 p-4">
               <!--選択日表示-->

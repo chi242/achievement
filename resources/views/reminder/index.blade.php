@@ -7,45 +7,34 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
-            <style>
-        　　body{
-        　　font-family: 'Noto Sans JP', sans-serif;
-        　　}
-            .nav-home{
-              background-color: #F9C0C0
-            }
-            .nav-goal{
-              background-color: #F6D6AD
-            }
-            .nav-planlist{
-              background-color: #FAFCC2
-            }
-            .nav-data{
-             background-color: #CCF6C8
-             }
-            .nav-reminder{
-            background-color: #B0EFEB
-            }
-            .nav-one{
-              border-color: #6EDFF6;
-    	        border-style: solid;	
-            }       
-            </style> 
+        <style>
+    　　body{
+    　　font-family: 'Noto Sans JP', sans-serif;
+    　　}
+        .nav-home{
+          background-color: #F9C0C0
+        }
+        .nav-goal{
+          background-color: #F6D6AD
+        }
+        .nav-planlist{
+          background-color: #FAFCC2
+        }
+        .nav-data{
+         background-color: #CCF6C8
+         }
+        .nav-reminder{
+        background-color: #B0EFEB
+        }
+        .nav-one{
+          border-color: #6EDFF6;
+	        border-style: solid;	
+        }       
+        </style> 
     </head>
     <body>
     <body>
-        <div class="nav justify-content-end">
-          <!--ゴールメニューボタン-->
-          <div class="btn-group">
-            <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
-            </button>
-            <ul class="dropdown-menu">
-              <li>goal1</li>
-              <li>goal2</li>
-              <li>goal3</li>
-            </ul>
-          </div>
+        <div class="nav justify-content-end m-2">
           <!--ユーザーボタン（ログアウト・ホームボタン）-->
           <div class="btn-group">
             <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -99,7 +88,6 @@
                 @endforeach
                 </ul>
                 </div>
-                <button id="reload" type="button" class="btn btn-outline-secondary">リロード</button>
               </div>
             <!--未達成のPlanを達成度に応じてリアクティブに表示-->
             <div class="col-6">
@@ -131,8 +119,6 @@
                     </li>
                     @endforeach
                   </ul>
-              
-              
             </div>
           </div>
         </div>

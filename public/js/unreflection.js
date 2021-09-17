@@ -2,12 +2,10 @@ var reloader = document.getElementById("reload");
         reloader.addEventListener('click',(event)=>{
         const value = event.target.value;
         
-                
         axios.get('/reminders/getJson/')
         .then(response => {
         const list = document.getElementById('unreflection_list');
         list.innerHTML = '';
-                    
                     
         const plans = response.data.unreflection_plans;
         console.log(plans);

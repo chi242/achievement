@@ -10,8 +10,6 @@ use App\Http\Requests\GoalRequest;
 use Illuminate\Http\Request;
 use Auth;
 
-
-
 class GoalController extends Controller
 {
     // 目標データ画面
@@ -27,11 +25,11 @@ class GoalController extends Controller
             $competent = '未記入';
             $goal_array = array($maingoal,$measurable,$actionable,$competent);
         }else{
-        $maingoal = $goal->orderby('id','desc')->value('maingoal');
-        $measurable = $goal->orderby('id','desc')->value('measurable');
-        $actionable = $goal->orderby('id','desc')->value('actionable');
-        $competent = $goal->orderby('id','desc')->value('competent');
-        $goal_array = array($maingoal,$measurable,$actionable,$competent);
+            $maingoal = $goal->orderby('id','desc')->value('maingoal');
+            $measurable = $goal->orderby('id','desc')->value('measurable');
+            $actionable = $goal->orderby('id','desc')->value('actionable');
+            $competent = $goal->orderby('id','desc')->value('competent');
+            $goal_array = array($maingoal,$measurable,$actionable,$competent);
         }
         
         return view('goal/index',compact('goal_array'))->with(['goal' => $goal]);
@@ -51,10 +49,7 @@ class GoalController extends Controller
         $input = $request['goal'];
         $goal->fill($input)->save();
         return redirect('/goals');
-        
     }
-  
-    
 }
 
 

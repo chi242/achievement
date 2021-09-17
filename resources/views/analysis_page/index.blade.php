@@ -35,19 +35,8 @@
     </head>
     <body>
       <div class="nav justify-content-end">
-        <!--ゴールメニューボタン-->
-        <div class="btn-group">
-          <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu
-          </button>
-          <ul class="dropdown-menu">
-            <li>goal1</li>
-            <li>goal2</li>
-            <li>goal3</li>
-          </ul>
-        </div>
         <!--ユーザーボタン（ログアウト・ホームボタン）-->
-        <div class="btn-group">
+        <div class="btn-group m-2">
           <button class="btn btn-outline-primary btn-sm dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             User
           </button>

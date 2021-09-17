@@ -10,7 +10,6 @@ class Plan extends Model
 {
     use HasFactory;
     
-    
     protected $table = 'plans';
     
     protected $fillable = [
@@ -31,9 +30,7 @@ class Plan extends Model
         'reflection_start_time',
         'reflection_times',
     ];
-    
-    
-    
+
     public function goal()
     {
     return $this->belongsTo(Goal::class);

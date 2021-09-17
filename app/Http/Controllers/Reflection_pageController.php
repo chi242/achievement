@@ -9,8 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 
-
-
 class Reflection_pageController extends Controller
 {
     // 振り返り記入画面

@@ -7,9 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 
-
-
-
 class Selected_dateController extends Controller
 {
     // 選択日保存処理
@@ -24,8 +21,6 @@ class Selected_dateController extends Controller
         
         return view('plan/create',['plan' => $plan]);
     }
-
-    
 }
 
 

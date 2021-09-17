@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Plan;
 use App\Models\Goal;
 use App\Http\Controllers\Controller;
@@ -10,8 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent;
 use Auth;
-
-
 
 class PlanlistController extends Controller
 {

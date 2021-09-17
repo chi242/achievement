@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use Auth; //認証モデルを使用する
 
 class PlanController extends Controller
@@ -32,9 +31,6 @@ class PlanController extends Controller
     // Plan詳細内容編集画面
     public function edit(Plan $plan)
     {
-    //         if($plan->user_id !== Auth::id()){
-    //   return redirect('/home');
-    // }
         User::userAuthenticate($plan->user_id);
         return view('plan/edit')->with(['plan' => $plan]);
     }

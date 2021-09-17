@@ -38,7 +38,6 @@ class HomeController extends Controller
         if($maingoal == null || $maingoal['maingoal'] == ""){
         $maingoal['maingoal'] = "未記入";
         } 
-
         return view('index',['maingoal' => $maingoal]);
     }
     

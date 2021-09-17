@@ -11,8 +11,6 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 
-
-
 class LoginController extends Controller
 {
     /*
@@ -39,25 +37,27 @@ class LoginController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
+    
+    // Googleユーザーログイン
     public function authGoogleCallback()
     {
-    $googleUser = Socialite::driver('google')->stateless()->user();
-    // dd($googleUser);
-    $user = User::where('email', $googleUser->email)->first();
-    //   dd($user);
-    if ($user == null) {
-        $user = $this->createUserByGoogle($googleUser);
-    }
-    \Auth::login($user, true);
+        $googleUser = Socialite::driver('google')->stateless()->user();
+        $user = User::where('email', $googleUser->email)->first();
+        if ($user == null) {
+            $user = $this->createUserByGoogle($googleUser);
+        }
+        \Auth::login($user, true);
         return redirect('/home');
     }
+    
+    // Googleユーザー新規登録
     public function createUserByGoogle($gUser)
     {
-    $user = User::create([
-        'name'     => $gUser->name,
-        'email'    => $gUser->email,
-        'password' => \Hash::make(uniqid()),
-    ]);
+        $user = User::create([
+            'name'     => $gUser->name,
+            'email'    => $gUser->email,
+            'password' => \Hash::make(uniqid()),
+        ]);
         return $user;
     }
             
