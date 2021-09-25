@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
       <meta charset="utf-8">
-      <meta name="google-site-verification" content="IJ2nGXbCbPEZb5hdzpcyqEmljZv1L3htW6sjZ3Vic78" />
       <title>目標</title>
       <!-- Fonts -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -33,6 +32,7 @@
 	        border-style: solid;	
         }
       </style> 
+      <meta name="google-site-verification" content="IJ2nGXbCbPEZb5hdzpcyqEmljZv1L3htW6sjZ3Vic78" />
     </head>
     <body>
       <div class="nav justify-content-end m-2">
