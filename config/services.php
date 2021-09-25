@@ -36,6 +36,11 @@ return [
         'redirect' =>'https://sheltered-sierra-83292.herokuapp.com/login/google/callback',
         // 'redirect' =>'https://d3f4dc1354254c83b93f5ba70053adb8.vfs.cloud9.us-east-2.amazonaws.com/login/google/callback',
     ],
+    
+    'line' => [
+        'channel_token'=>env('LINE_CHANNEL_TOKEN'),
+        'messenger_secret'=>env('LINE_MESSENGER_SECRET')
+    ],
 
 ];
 

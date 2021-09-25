@@ -38,24 +38,4 @@ class ReminderController extends Controller
                 ->get();
         return response()->json(compact('achievement_plans'));
     }
-
-    
-    // 振り返りが未記入のPlanをJson形式で取得
-    public function getJson_unreflection(){
-        $unreflection_plans = Plan::where('user_id',Auth::id())
-                ->where('reflection_content','未記入')
-                ->orderby('selected_date','desc')
-                ->orderby('id','desc')
-                ->get();
-        return response()->json(compact('unreflection_plans'));
-    }
-    
-    public function getJson_reflection_page(){
-        $unreflection_plans = Plan::where('user_id',Auth::id())
-                ->where('reflection_content','未記入')
-                ->orderby('selected_date','desc')
-                ->orderby('id','desc')
-                ->get();
-        return response()->json(compact('unreflection_plans'));
-    }
 }

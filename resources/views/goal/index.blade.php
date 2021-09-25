@@ -85,17 +85,17 @@
                   <td>{{$goal_array[0]}}</td>
                 </tr>
                 <tr>
-                  <!--Maingoal表示-->
+                  <!--Actionable表示-->
                   <th scope="row">actionable</th>
                   <td>{{$goal_array[1]}}</td>
                 </tr>
                 <tr>
-                  <!--Maingoal表示-->
+                  <!--Measurable表示-->
                   <th scope="row">measurable</th>
                   <td>{{$goal_array[2]}}</td>
                 </tr>
                 <tr>
-                  <!--Maingoal表示-->
+                  <!--Competent表示-->
                   <th scope="row">competent</th>
                   <td>{{$goal_array[3]}}</td>
                 </tr>              

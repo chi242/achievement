@@ -95,30 +95,30 @@
                 <div id="app" class="container">
                  <p>未達成のPlan</p>
                 </div>
-                  <div>達成度
-                    <select id="select_status" name="status" required>  
-                      <option value=0>0</option>
-                      <option value=10>10</option>
-                      <option value=20>20</option>                       
-                      <option value=30>30</option>
-                      <option value=40>40</option>
-                      <option value=50>50</option>
-                      <option value=60>60</option>
-                      <option value=70>70</option>                        
-                      <option value=80>80</option>
-                      <option value=90>90</option>
-                      <option value=100>100</option>
-                    </select>
-                  以上
-                  </div>
-                  <!--Planの内容表示-->
-                  <ul id="achievement_list"> 
-                    @foreach($achievement_plans as $plan)
-                    <li>
-                      {{$plan->plan_content}}
-                    </li>
-                    @endforeach
-                  </ul>
+                <div>達成度
+                  <select id="select_status" name="status" required>  
+                    <option value=0>0</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>                       
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>                        
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                  </select>
+                以上
+                </div>
+                <!--Planの内容表示-->
+                <ul id="achievement_list"> 
+                  @foreach($achievement_plans as $plan)
+                  <li>
+                    {{$plan->plan_content}}
+                  </li>
+                  @endforeach
+                </ul>
             </div>
           </div>
         </div>
@@ -128,6 +128,4 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="/js/status.js"></script>
-    <script src="/js/entry.js"></script>
-    <script src="/js/unreflection.js"></script>
 </html>
