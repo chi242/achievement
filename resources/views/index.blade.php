@@ -32,8 +32,7 @@
 	        border-style: solid;	
         }
       </style> 
-<meta name="google-site-verification" content="IJ2nGXbCbPEZb5hdzpcyqEmljZv1L3htW6sjZ3Vic78" />
-</head>
+    </head>
     <body>
       <div class="nav justify-content-end m-2">
         <!--ユーザーボタン（ログアウト・ホームボタン）-->
