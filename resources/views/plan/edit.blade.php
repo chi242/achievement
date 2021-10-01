@@ -37,7 +37,6 @@ ini_set( 'display_errors', 1 );
             <div class="form card m-4 p-4">
                 <form action="/plans/{{ $plan->id }}}}/store" method="POST" >
                 @csrf
-                @method('PUT')
                     <!--選択した日を表示する-->
                     <h2>{{ $plan->selected_date->format('Y年m月d日') }}</h2>
                     <!--Planの内容記入欄-->
