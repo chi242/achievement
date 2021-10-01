@@ -33,6 +33,7 @@ class PlanController extends Controller
     // Plan詳細内容編集画面
     public function edit(Plan $plan)
     {
+        User::userAuthenticate($plan->user_id);
         return view('plan/edit')->with(['plan' => $plan]);
     }
     
