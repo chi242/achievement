@@ -35,7 +35,7 @@ ini_set( 'display_errors', 1 );
         <div class="col-md-6 offset-md-3">
             <!--Planの入力フォーム-->
             <div class="form card m-4 p-4">
-                <form action="/plans/{{ $plan->id }}}}/store" method="POST" >
+                <form action="/plans/{{ $plan->id }}/store" method="POST" >
                 @csrf
                 @method('PUT')
                     <!--選択した日を表示する-->
