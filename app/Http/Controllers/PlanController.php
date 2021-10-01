@@ -39,8 +39,8 @@ class PlanController extends Controller
     public function update(Request $request,Plan $plan)
     {
         $input= $request['plan'];
+        dd($input);
         $plan->fill($input)->save();
-        dump($plan);
         return redirect('/planlists'); 
     }
 }
