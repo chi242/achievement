@@ -40,6 +40,7 @@ class PlanController extends Controller
     {
         $input= $request['plan'];
         $plan->fill($input)->save();
+        dump($plan);
         return redirect('/planlists'); 
     }
 }
