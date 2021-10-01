@@ -1,6 +1,4 @@
 <?php
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
 
 namespace App\Http\Controllers;
 
@@ -10,6 +8,9 @@ use App\Http\Requests\PlanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth; //認証モデルを使用する
+
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 
 class PlanController extends Controller
 {
