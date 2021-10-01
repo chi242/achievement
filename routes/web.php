@@ -36,7 +36,7 @@ Route::post('/plans', 'App\Http\Controllers\PlanController@store');
 
 Route::get('/plans/{plan}/edit','App\Http\Controllers\PlanController@edit')->name('plan.edit');
 
-Route::post('/plans/{plan}/store','App\Http\Controllers\PlanController@update');
+Route::put('/plans/{plan}/stor','App\Http\Controllers\PlanController@update');
 
 Route::get('/reflection_pages/{plan}/create','App\Http\Controllers\Reflection_pageController@create')->name('reflection_page.create');
 
