@@ -22,11 +22,11 @@ class PlanController extends Controller
     // Plan保存処理
     public function store(Request $request,Plan $plan)
     {   
-        $plan = \App\Models\Plan::orderby('id','desc')->first();
+        $plan = Plan::orderby('id','desc')->first();
         $input = $request['plan'];
         $plan->fill($input)->save();
         
-        $plan = \App\Models\Plan::where('user_id',Auth::id());
+        $plan = Plan::where('user_id',Auth::id());
         return redirect('/planlists');
     }
 

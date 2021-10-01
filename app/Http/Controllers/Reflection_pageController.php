@@ -47,7 +47,9 @@ class Reflection_pageController extends Controller
     }
     
     // Planの削除処理
-    public function delete(Plan $plan){
+    public function delete(Plan $plan)
+    {
+        User::userAuthenticate($plan->user_id);
         $plan->delete();
         return redirect('planlists');
     }
