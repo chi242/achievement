@@ -38,8 +38,8 @@ class PlanController extends Controller
     // Plan詳細内容更新処理
     public function update(Request $request,Plan $plan)
     {
-        $input= $request['plan'];
-        $plan->fill($input)->save();
+        // $input= $request['plan'];
+        // $plan->fill($input)->save();
         return redirect('/planlists'); 
     }
 }
