@@ -35,6 +35,7 @@ class Reflection_pageController extends Controller
     // Plan詳細一覧画面
     public function show(Plan $plan)
     {
+        User::userAuthenticate($plan->user_id);
         return view('reflection_page/show')->with(['plan' => $plan]);
     }
     
