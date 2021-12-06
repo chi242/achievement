@@ -19,11 +19,18 @@
 　・Laravel  
   ・Google
 ## 使用言語  
-フロントエンド：HTML,CSS,Bootstrap,JavaScript  
-バックエンド:PHP(Laravel)  
+フロントエンド 
+- 開発言語: HTML,CSS,JavaScript
+- フレームワーク: Bootstrap  
+
+バックエンド
+- 開発言語：PHP
+- フレームワーク: Laravel
 
 ## 開発環境  
-AWS(EC2,cloud9),Heroku  
+- データベース: PostgreSQL
+- インフラ: Heroku, AWS
+- 各種ツール: Github 
 
 ## 難しかったところ  
 ・リマインダー機能で、データの有無や振り返り記入の有無によって場合分けしたところ。  
