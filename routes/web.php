@@ -76,8 +76,6 @@ Route::get('/collections', 'App\Http\Controllers\CollectionController@index');
 
 Route::get('/collections/getJson', 'App\Http\Controllers\CollectionController@getJson_favorite');
 
-// Route::get('/line/webhook', 'App\Http\Controllers\LineMessengerController@webhook')->name('line.webhook');
-
 Route::post('/line/webhook', 'App\Http\Controllers\LineMessengerController@webhook')->name('line.webhook');
 
 Route::get('/line/message', 'App\Http\Controllers\LineMessengerController@message');
