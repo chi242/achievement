@@ -25,10 +25,10 @@ class GoalController extends Controller
             $competent = '未記入';
             $goal_array = array($maingoal,$measurable,$actionable,$competent);
         }else{
-            $maingoal = $goal->orderby('id','desc')->value('maingoal');
-            $measurable = $goal->orderby('id','desc')->value('measurable');
-            $actionable = $goal->orderby('id','desc')->value('actionable');
-            $competent = $goal->orderby('id','desc')->value('competent');
+            $maingoal = Goal::where('user_id',Auth::id())->orderby('id','desc')->value('maingoal');
+            $measurable = Goal::where('user_id',Auth::id())->orderby('id','desc')->value('measurable');
+            $actionable = Goal::where('user_id',Auth::id())->orderby('id','desc')->value('actionable');
+            $competent = Goal::where('user_id',Auth::id())->orderby('id','desc')->value('competent');
             $goal_array = array($maingoal,$measurable,$actionable,$competent);
         }
         
